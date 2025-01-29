@@ -1,0 +1,159 @@
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal Web CENATE</title>
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+
+    <meta name="description" content="Descripción de la página para SEO" />
+    <meta property="og:title" content="Título para redes sociales" />
+    <meta property="og:description" content="Descripción para redes sociales" />
+    <meta property="og:image" content="URL de la imagen para redes sociales" />
+  </head>
+  <body>
+    <!--HEADER-->
+    <header class="header">
+      <div class="header__container">
+        <img
+          src="./assets/img/Web Development Logo.png"
+          class="header__img__rectangle"
+        />
+        <div class="header__toggle">
+          <i class="bx bx-menu" id="header-toggle"></i>
+        </div>
+      </div>
+    </header>
+   
+
+    <!--CONTENIDO-->
+<!-- SECTION -->
+<div class="main-panel" id="teledot-content" style="display: block;"> <!-- Cambio display a 'block' para que se vea -->
+  <h1 style="color: aliceblue;" class="main-panel__title">PANEL PRINCIPAL TELEDOT</h1>
+  <div class="main-panel__content">
+    <!-- Aquí van los botones de la biblioteca -->
+
+    <!-- Tarjeta 1: Estadísticas de Producción -->
+    <div
+      class="card"
+      onclick="window.open('https://app.powerbi.com/view?r=eyJrIjoiMzg2NmMxNTItMjFkNy00MzE4LTljNGItNjVjYjYxNDExNzU0IiwidCI6IjM0ZjMyNDE5LTFjMDUtNDc1Ni04OTZlLTQ1ZDYzMzcyNjU5YiIsImMiOjR9', '_blank');"
+      aria-label="Estadísticas de Producción"
+    >
+      <img
+        src="./assets/img/Iconos_Estadisticas de produccion.svg"
+        alt="Icono de Estadísticas de Producción, gráfico de barras"
+        class="card-img"
+        style="width: 80px; height: auto; object-fit: contain;" <!-- Mejorado para asegurar que la imagen no se deforme -->
+      
+      <span>Estadísticas de Producción</span>
+    </div>
+
+    <!-- Tarjeta 2: Carga de Teledot -->
+    <div
+      class="card"
+      onclick="window.open('https://app.powerbi.com/view?r=eyJrIjoiMzljNWUxZDQtMmE2MC00NWRjLTlhYzktZDVmMDk3NTEzYjgzIiwidCI6IjM0ZjMyNDE5LTFjMDUtNDc1Ni04OTZlLTQ1ZDYzMzcyNjU5YiIsImMiOjR9', '_blank');"
+      aria-label="Carga de Teledot"
+    >
+      <img
+        src="./assets/img/Iconos_Estadisticas de produccion.svg"
+        alt="Icono de Carga de Teledot, gráfico de subida"
+        class="card-img"
+        style="width: 80px; height: auto; object-fit: contain;"
+      />
+      <span>Rendimiento de Teledot</span>
+    </div>
+
+    <!-- Tarjeta 3: Presentación de Teledot -->
+    <div
+      class="card"
+      onclick="window.open('https://drive.google.com/file/d/1GoKhg_8wwwj2lK9KuZwwDxSeEaPRQ7vq/view?usp=sharing', '_blank');"
+      aria-label="Presentación de Teledot"
+    >
+      <img
+<<<<<<< HEAD
+        src="./assets/img/icons8-ppt.svg"
+=======
+        src="./assets/img/Presentación.png"
+>>>>>>> 0d50d2b (Commit inicial de nuevo proyecto)
+        alt="Icono de Presentación en PowerPoint"
+        class="card-img"
+        style="width: 80px; height: auto; object-fit: contain;"
+      />
+      <span>Presentación de Teledot</span>
+    </div>
+
+    <!-- Tarjeta 4: Video de Teledot -->
+    <div
+<<<<<<< HEAD
+      class="card"
+      onclick="window.open('https://www.youtube.com/watch?v=p6YGeSV6vOI', '_blank');"
+      aria-label="Video de Teledot"
+    >
+      <img
+        src="./assets/img/Iconos_ESSI.svg"
+        alt="Icono de Video de Teledot"
+        class="card-img"
+        style="width: 80px; height: auto; object-fit: contain;"
+      />
+      <span>Video de Teledot</span>
+    </div>
+
+
+     <!-- Tarjeta 4: Video de Teledot -->
+=======
+  class="card"
+  onclick="openVideoModal()"
+  aria-label="Video de Teledot"
+>
+  <img
+    src="./assets/img/Video.png"
+    alt="Icono de Video de Teledot"
+    class="card-img"
+    style="width: 80px; height: auto; object-fit: contain;"
+  />
+  <span>¿Cómo usar el APP Mi Consulta por primera vez?</span>
+</div>
+    
+    <div id="videoModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeVideoModal()">&times;</span>
+        <h2>¿Cómo usar el APP Mi Consulta por primera vez?</h2>
+        <video id="videoPlayer" controls>
+          <source src="./assets/video/App EsSalud MiConsulta - REGISTRO.mp4" type="video/mp4" />
+          Tu navegador no soporta la reproducción de este video.
+        </video>
+        <a href="./assets/video/App EsSalud MiConsulta - REGISTRO.mp4" download="tutorial.mp4" class="download-btn">Descargar Video</a>
+      </div>
+    </div>
+
+
+     <!-- Tarjeta 5: Whatsapp -->
+>>>>>>> 0d50d2b (Commit inicial de nuevo proyecto)
+     <div
+     class="card"
+     onclick="window.open('https://chat.whatsapp.com/Bmg5u3tamop77Wykl1C6x6', '_blank');"
+     aria-label="Grupo Whatsapp"
+   >
+     <img
+<<<<<<< HEAD
+       src="./assets/img/whatsapp-64x64.ico"
+=======
+       src="./assets/img/WhatsApp.png"
+>>>>>>> 0d50d2b (Commit inicial de nuevo proyecto)
+       alt="Icono de Video de Teledot"
+       class="card-img"
+       style="width: 75px;   height: auto; object-fit: contain;"
+     />
+     <span style="margin-top: 12px;">Grupo Whatsapp</span>
+   </div>
+  </div>
+</div>
+
+
+    <script src="./script.js"></script>
+  </body>
+</html>
