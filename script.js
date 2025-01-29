@@ -102,8 +102,6 @@ document.querySelectorAll(".sub-menu1 a, .sub-menu2 a").forEach((item) => {
     });
   });
 });
-<<<<<<< HEAD
-=======
 
 
 function openVideoModal() {
@@ -126,4 +124,3 @@ window.onclick = function (event) {
     closeVideoModal();
   }
 };
->>>>>>> 0d50d2b (Commit inicial de nuevo proyecto)
