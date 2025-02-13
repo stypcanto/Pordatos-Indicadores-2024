@@ -83,38 +83,28 @@
     </div>
 
     <!-- Tarjeta 4: Video de Teledot -->
-    <div
-  class="card"
-  onclick="openVideoModal()"
-  aria-label="Video de Teledot"
->
-  <img
-    src="./assets/img/Video.png"
-    alt="Icono de Video de Teledot"
-    class="card-img"
-    style="width: 80px; height: auto; object-fit: contain;"
-  />
-  <span>¿Cómo usar el APP Mi Consulta por primera vez?</span>
-</div>
+    <div class="card" onclick="openVideoModal()" aria-label="Video de Teledot">
+      <img
+        src="./assets/img/Video.png"
+        alt="Icono de Video de Teledot"
+        class="card-img"
+        style="width: 80px; height: auto; object-fit: contain;"
+      />
+      <span>¿Cómo usar el APP Mi Consulta por primera vez?</span>
+    </div>
     
-    <div id="videoModal" class="modal">
+    <div id="videoModal" class="modal" style="display: none;">
       <div class="modal-content">
         <span class="close" onclick="closeVideoModal()">&times;</span>
         <h2>¿Cómo usar el APP Mi Consulta por primera vez?</h2>
-        <div className="flex justify-center">
-          <iframe 
-            src="https://player.vimeo.com/video/1052370003?h=f6fee70090&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-            width="550" 
-            height="370" 
-            frameborder="0" 
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-            title="App EsSalud MiConsulta - REGISTRO_BAJA">
-          </iframe>
-        </div>
+        <div class="flex justify-center">
+          <div style="max-width: 640px"><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"><iframe src="https://segurosocialdesalud-my.sharepoint.com/personal/cenate_calidad_essalud_gob_pe/_layouts/15/embed.aspx?UniqueId=807872c4-7094-4bdc-a8d4-9230ec0e32b0&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="App EsSalud MiConsulta - REGISTRO.mp4" style="border:none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: 100%; max-width: 100%;"></iframe></div></div>
         
-       
+        </div>
       </div>
     </div>
+    
+
 
 
      <!-- Tarjeta 5: Whatsapp -->
