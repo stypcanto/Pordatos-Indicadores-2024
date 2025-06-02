@@ -575,6 +575,24 @@ img {
   transform: scale(1.1);
 }
 
+/* ==================== BOTON DE NUEVO VERDE ==================== */
+
+.new-badge {
+  display: inline-block;
+  margin-top: 8px;
+  background-color: #28a745;
+  color: #ffffff !important; /* Forzamos el color blanco */
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease;
+}
+
+
 
 /* ==================== FUNCION PARA POP UP DE PACIENTES CRONICOS ==================== */
 /* --- Modal Overlay --- */

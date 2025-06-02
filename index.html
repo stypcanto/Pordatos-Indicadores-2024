@@ -295,8 +295,8 @@
               style="width: 80px; height: auto" />
             <span>Sala Zoom</span>
             <span style="font-size: 12px">Para Teleconsultorios</span>
-            <!-- Indicador de nuevo 
-             <span class="new-badge">Nuevo</span> -->
+           
+         
           </div>
 
           <div
@@ -341,8 +341,7 @@
               style="width: 80px; height: auto" />
             <span>ANATPAT</span>
             <span style="font-size: 12px">Módulo Anatomía Patológica</span>
-            <!-- Indicador de nuevo 
-             <span class="new-badge">Nuevo</span> -->
+           
           </div>
 
           <div
@@ -355,57 +354,80 @@
               style="width: 80px; height: auto" />
             <span>Sistema de </span>
             <span style="font-size: 12px">Referenia y Contrareferencias</span>
-            <!-- Indicador de nuevo 
-             <span class="new-badge">Nuevo</span> -->
+        
           </div>
 
           <!-- Nueva funcion 2025 -->
-         <!-- CARD QUE ACTIVA EL MODAL -->
-<div
-id="cardSeguimiento"
-class="card"
+          <!-- CARD QUE ACTIVA EL MODAL -->
+          <div
+            id="cardSeguimiento"
+            class="card">
+            <img
+              src="./assets/img/Iconos_Informacion de las IPRESS.svg"
+              alt="Paquete Integral"
+              style="width: 80px; height: auto" />
+            <span style="display: block; font-weight: bold; margin-top: 10px"
+              >Paquete Integral</span
+            >
+            <span style="font-size: 12px">Pacientes Crónicos 2025</span>
+            <span class="new-badge">Nuevo</span>
 
->
-<img
-  src="./assets/img/Iconos_Informacion de las IPRESS.svg"
-  alt="Paquete Integral"
-  style="width: 80px; height: auto;"
-/>
-<span style="display: block; font-weight: bold; margin-top: 10px;">Paquete Integral</span>
-<span style="font-size: 12px;">Pacientes Crónicos 2025</span>
-<span class="new-badge" style="display: inline-block; margin-top: 8px; background-color: #28a745; color: white; padding: 2px 8px; border-radius: 10px; font-size: 12px;">Nuevo</span>
-</div>
 
-<!-- MODAL -->
-<div id="popupModal" class="modal-overlay">
-<div class="modal-content">
-  <!-- Botón de cierre arriba -->
-  <button id="cerrarModalTop" class="btn-close-top">X</button>
+            
+          </div>
 
-  <h2>Bienvenido a la nueva estrategia de seguimiento</h2>
-  <p>Por favor, seleccione su perfil profesional:</p>
+          <!-- MODAL -->
+          <div
+            id="popupModal"
+            class="modal-overlay">
+            <div class="modal-content">
+              <!-- Botón de cierre arriba -->
+              <button
+                id="cerrarModalTop"
+                class="btn-close-top">
+                X
+              </button>
 
-  <div class="profile-cards">
-    <div class="profile-card" data-profesion="medicina">Medicina</div>
-    <div class="profile-card inactive">Enfermería</div>
-    <div class="profile-card inactive">Psicología</div>
-    <div class="profile-card inactive">Nutrición</div>
-    <div class="profile-card inactive">Terapia Física</div>
-  </div>
+              <h2>Bienvenido a la nueva estrategia de seguimiento</h2>
+              <p>Por favor, seleccione su perfil profesional:</p>
 
-  <div id="medicina-lista" class="desplegable" style="display: none;">
-    <h4>Ingrese su nombre y realizar clic para redirigirse a la lista de sus pacientes</h4>
-    <input type="text" id="buscadorMedicos" placeholder="Ingrese el nombre del profesional" />
-    <ul id="listaMedicos"></ul>
-  </div>
+              <div class="profile-cards">
+                <div
+                  class="profile-card"
+                  data-profesion="medicina">
+                  Medicina
+                </div>
+                <div class="profile-card inactive">Enfermería</div>
+                <div class="profile-card inactive">Psicología</div>
+                <div class="profile-card inactive">Nutrición</div>
+                <div class="profile-card inactive">Terapia Física</div>
+              </div>
 
-  <!-- Botón cerrar inferior -->
-  <div class="btn-container">
-    <button id="cerrarModal" class="btn-close-bottom">Cerrar</button>
-  </div>
-</div>
-</div>
+              <div
+                id="medicina-lista"
+                class="desplegable"
+                style="display: none">
+                <h4>
+                  Ingrese su nombre y realizar clic para redirigirse a la lista
+                  de sus pacientes
+                </h4>
+                <input
+                  type="text"
+                  id="buscadorMedicos"
+                  placeholder="Ingrese el nombre del profesional" />
+                <ul id="listaMedicos"></ul>
+              </div>
 
+              <!-- Botón cerrar inferior -->
+              <div class="btn-container">
+                <button
+                  id="cerrarModal"
+                  class="btn-close-bottom">
+                  Cerrar
+                </button>
+              </div>
+            </div>
+          </div>
 
           <!-- Termino de la funcion -->
           <div
@@ -542,7 +564,6 @@ class="card"
             <!-- Indicador de nuevo -->
           </div>
 
-
           <div
             class="card"
             onclick="window.open('https://forms.gle/QCQMNcvreA6JkTxP8', '_blank');">
@@ -552,8 +573,10 @@ class="card"
               class="card-img"
               style="width: 80px; height: auto" />
             <span>Buzon de sugerencias</span>
-            <span class="new-badge" style="display: inline-block; margin-top: 8px; background-color: #28a745; color: white; padding: 2px 8px; border-radius: 10px; font-size: 12px;">Nuevo</span>
+            <span class="new-badge">Nuevo</span>
+
             
+
             <!-- Indicador de nuevo -->
           </div>
         </div>
@@ -698,6 +721,7 @@ class="card"
               style="width: 200px; height: auto" />
             <!-- Indicador de nuevo -->
             <span class="new-badge">Nuevo</span>
+
           </div>
         </div>
       </div>

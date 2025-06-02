@@ -23,28 +23,46 @@ function initMenuToggle() {
   if (!toggle || !nav) return;
 
   toggle.addEventListener('click', () => {
+    const isMobile = window.innerWidth <= 768;
     nav.classList.toggle('show-menu');
     toggle.classList.toggle('bx-x');
     toggle.classList.toggle('bx-menu');
+
+    // Solo para móviles, mostrar automáticamente Información General y submenús
+    if (isMobile && nav.classList.contains('show-menu')) {
+      // Mostrar sección principal
+      showMainSection();
+
+      // Agregar clase active al link principal si aplica
+      const homeLink = document.querySelector('.nav__link[href="#main-content"]');
+      if (homeLink) {
+        document.querySelectorAll('.nav__link').forEach(link => link.classList.remove('active'));
+        homeLink.classList.add('active');
+      }
+
+      // Desplegar submenús automáticamente
+      const subMenu1 = document.querySelector('.sub-menu1');
+      const subMenu2 = document.querySelector('.sub-menu2');
+      if (subMenu1) subMenu1.classList.add('show-submenu');
+      if (subMenu2) subMenu2.classList.add('show-submenu');
+    }
   });
 
-  // Cierra menú al hacer clic en un enlace (en móviles)
+  // Desactivar cierre de menú en enlaces que expanden submenús
   document.querySelectorAll('.nav__link, .nav__dropdown-item, .nav__dropdown-item1, .nav__dropdown-item2').forEach(link => {
     link.addEventListener('click', (event) => {
-      // Solo cerrar menú si NO es toggle (es decir, no tiene la clase dropdown-toggle)
       if (!link.classList.contains('dropdown-toggle1') && !link.classList.contains('dropdown-toggle2')) {
         if (window.innerWidth <= 768) {
           nav.classList.remove('show-menu');
           toggle.classList.replace('bx-x', 'bx-menu');
         }
       } else {
-        // Si es toggle, prevenimos el cierre para que el submenú se muestre
-        event.preventDefault();
+        event.preventDefault(); // evitar cerrar al hacer clic en toggle
       }
     });
   });
-  
 }
+
 
 // ----------------------------------------
 // 2. Activar Clase "Active" en Links de Navegación
