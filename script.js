@@ -30,13 +30,20 @@ function initMenuToggle() {
 
   // Cierra menú al hacer clic en un enlace (en móviles)
   document.querySelectorAll('.nav__link, .nav__dropdown-item, .nav__dropdown-item1, .nav__dropdown-item2').forEach(link => {
-    link.addEventListener('click', () => {
-      if (window.innerWidth <= 768) {
-        nav.classList.remove('show-menu');
-        toggle.classList.replace('bx-x', 'bx-menu');
+    link.addEventListener('click', (event) => {
+      // Solo cerrar menú si NO es toggle (es decir, no tiene la clase dropdown-toggle)
+      if (!link.classList.contains('dropdown-toggle1') && !link.classList.contains('dropdown-toggle2')) {
+        if (window.innerWidth <= 768) {
+          nav.classList.remove('show-menu');
+          toggle.classList.replace('bx-x', 'bx-menu');
+        }
+      } else {
+        // Si es toggle, prevenimos el cierre para que el submenú se muestre
+        event.preventDefault();
       }
     });
   });
+  
 }
 
 // ----------------------------------------
