@@ -51,6 +51,12 @@ function initMenuToggle() {
   // Desactivar cierre de menú en enlaces que expanden submenús
   document.querySelectorAll('.nav__link, .nav__dropdown-item, .nav__dropdown-item1, .nav__dropdown-item2').forEach(link => {
     link.addEventListener('click', (event) => {
+      // Si es el link "Información General" no hacer nada (no cerrar el menú)
+      if (link.classList.contains('nav__link') && link.getAttribute('href') === '#main-content') {
+        event.preventDefault(); // Evitar navegación y cierre
+        return; // No hacer nada más
+      }
+  
       if (!link.classList.contains('dropdown-toggle1') && !link.classList.contains('dropdown-toggle2')) {
         if (window.innerWidth <= 768) {
           nav.classList.remove('show-menu');
@@ -61,6 +67,7 @@ function initMenuToggle() {
       }
     });
   });
+  
 }
 
 
