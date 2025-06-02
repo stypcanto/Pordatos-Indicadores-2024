@@ -210,3 +210,81 @@ function showMainSection() {
   const homeLink = document.querySelector('.nav__link[href="#main-content"]');
   if (homeLink) homeLink.classList.add('active');
 }
+
+// ----------------------------------------
+// 7. POP UP DE PACIENTES CRONICOS
+// ----------------------------------------
+document.addEventListener("DOMContentLoaded", () => {
+  const card = document.getElementById("cardSeguimiento");
+  const modal = document.getElementById("popupModal");
+  const cerrarTop = document.getElementById("cerrarModalTop");
+  const cerrarBottom = document.getElementById("cerrarModal");
+  const medicinaCard = document.querySelector('[data-profesion="medicina"]');
+  const medicinaLista = document.getElementById("medicina-lista");
+  const buscador = document.getElementById("buscadorMedicos");
+  const lista = document.getElementById("listaMedicos");
+
+  const profesionales = [
+    { nombre: "ABRAHAM HURTADO, SAIRAH CAROLINA", url: "medicos/abraham.html" },
+    { nombre: "ANICAMA BUDIEL, DANIEL", url: "medicos/anicama.html" },
+    { nombre: "FEIJOO GALVEZ SERGIO MAURICIO", url: "medicos/feijoo.html" },
+    { nombre: "FLORES PEREZ, YOSSELYN GABRIELA", url: "medicos/flores.html" },
+    { nombre: "GARCÍA MARCANO, ENNIFER KARINA", url: "medicos/garcia.html" },
+    { nombre: "HERRERA MONCADA, SINDY ROMINA", url: "medicos/herrera.html" },
+    { nombre: "JIMENEZ TORNERO, XIMENA", url: "medicos/jimenez.html" },
+    { nombre: "LABAN LEIVA, DIANA EMPERATRIZ", url: "medicos/laban.html" },
+    { nombre: "MENDOZA SALDAÑA JUAN", url: "medicos/mendoza.html" },
+    { nombre: "RODRIGUEZ BRAVO MARIXANDRA", url: "medicos/rodriguez.html" },
+    { nombre: "TINAJEROS VEGA, IVETTE MARILYN", url: "medicos/tinajeros.html" },
+  ];
+
+  // Mostrar el modal
+  card.addEventListener("click", () => {
+    modal.style.display = "flex";
+  });
+
+  // Cerrar el modal desde X o botón inferior
+  [cerrarTop, cerrarBottom].forEach(btn =>
+    btn.addEventListener("click", () => {
+      cerrarModal();
+    })
+  );
+
+  // Mostrar buscador al hacer clic en Medicina
+  medicinaCard.addEventListener("click", () => {
+    medicinaLista.style.display = "block";
+    buscador.focus();
+  });
+
+  // Buscar profesionales por nombre
+  buscador.addEventListener("input", () => {
+    const texto = buscador.value.toLowerCase().trim();
+    lista.innerHTML = "";
+
+    if (texto.length === 0) return;
+
+    profesionales
+      .filter(p => p.nombre.toLowerCase().includes(texto))
+      .forEach(p => {
+        const li = document.createElement("li");
+        li.textContent = p.nombre;
+        li.style.cursor = "pointer";
+        li.addEventListener("click", () => {
+          window.open(p.url, "_blank"); // ✅ Abre en nueva pestaña
+        });
+        lista.appendChild(li);
+      });
+  });
+
+  // Cerrar modal haciendo clic fuera
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) cerrarModal();
+  });
+
+  function cerrarModal() {
+    modal.style.display = "none";
+    medicinaLista.style.display = "none";
+    buscador.value = "";
+    lista.innerHTML = "";
+  }
+});

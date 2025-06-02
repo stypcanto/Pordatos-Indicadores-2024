@@ -253,13 +253,13 @@
             </div>
           </div>
         </div>
-        <a href="#" id="btnCerrar" class="nav__link nav__logout">
+        <a
+          href="#"
+          id="btnCerrar"
+          class="nav__link nav__logout">
           <i class="bx bx-log-out nav__icon"></i>
           <span class="nav__name">Cerrar</span>
         </a>
-        
-        
-        
       </nav>
     </div>
 
@@ -359,22 +359,55 @@
              <span class="new-badge">Nuevo</span> -->
           </div>
 
+          <!-- Nueva funcion 2025 -->
+         <!-- CARD QUE ACTIVA EL MODAL -->
+<div
+id="cardSeguimiento"
+class="card"
 
-          <div
-          class="card"
-          onclick="window.open('http://oasprod.essalud.gob.pe:7777/Referencia/servlet/Index', '_blank');">
-          <img
-          src="./assets/img/Iconos_Informacion de las IPRESS.svg"
-            alt="Speech Atención "
-            class="card-img"
-            style="width: 80px; height: auto" />
-          <span>Paquete Intregral </span>
-          <span style="font-size: 12px">Pacientes Crónicos 2025</span>
-          <!-- Indicador de nuevo 
-           <span class="new-badge">Nuevo</span> -->
-           <span class="new-badge">Nuevo</span>
-        </div>
+>
+<img
+  src="./assets/img/Iconos_Informacion de las IPRESS.svg"
+  alt="Paquete Integral"
+  style="width: 80px; height: auto;"
+/>
+<span style="display: block; font-weight: bold; margin-top: 10px;">Paquete Integral</span>
+<span style="font-size: 12px;">Pacientes Crónicos 2025</span>
+<span class="new-badge" style="display: inline-block; margin-top: 8px; background-color: #28a745; color: white; padding: 2px 8px; border-radius: 10px; font-size: 12px;">Nuevo</span>
+</div>
 
+<!-- MODAL -->
+<div id="popupModal" class="modal-overlay">
+<div class="modal-content">
+  <!-- Botón de cierre arriba -->
+  <button id="cerrarModalTop" class="btn-close-top">X</button>
+
+  <h2>Bienvenido a la nueva estrategia de seguimiento</h2>
+  <p>Por favor, seleccione su perfil profesional:</p>
+
+  <div class="profile-cards">
+    <div class="profile-card" data-profesion="medicina">Medicina</div>
+    <div class="profile-card inactive">Enfermería</div>
+    <div class="profile-card inactive">Psicología</div>
+    <div class="profile-card inactive">Nutrición</div>
+    <div class="profile-card inactive">Terapia Física</div>
+  </div>
+
+  <div id="medicina-lista" class="desplegable" style="display: none;">
+    <h4>Ingrese su nombre y realizar clic para redirigirse a la lista de sus pacientes</h4>
+    <input type="text" id="buscadorMedicos" placeholder="Ingrese el nombre del profesional" />
+    <ul id="listaMedicos"></ul>
+  </div>
+
+  <!-- Botón cerrar inferior -->
+  <div class="btn-container">
+    <button id="cerrarModal" class="btn-close-bottom">Cerrar</button>
+  </div>
+</div>
+</div>
+
+
+          <!-- Termino de la funcion -->
           <div
             class="card"
             onclick="window.open('https://docs.google.com/spreadsheets/d/1FQPw2nPaRM74CXLOZ1nvFQR08qXQS8rwccPIRlHPCZ4/edit?gid=1416608776#gid=1416608776', '_blank');">
@@ -493,7 +526,6 @@
             >
 
             <!-- Indicador de nuevo -->
-            
           </div>
 
           <!-- Estadísticas de Abandonos -->
@@ -508,7 +540,6 @@
             <span>Deserciones y Abandonos</span>
             <span style="font-size: 12px">Ver pestaña 7</span>
             <!-- Indicador de nuevo -->
-          
           </div>
         </div>
       </div>
