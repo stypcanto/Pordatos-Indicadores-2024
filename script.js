@@ -232,17 +232,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const lista = document.getElementById("listaMedicos");
 
   const profesionales = [
-    { nombre: "ABRAHAM HURTADO, SAIRAH CAROLINA", url: "medicos/abraham.html" },
-    { nombre: "ANICAMA BUDIEL, DANIEL", url: "medicos/anicama.html" },
-    { nombre: "FEIJOO GALVEZ SERGIO MAURICIO", url: "medicos/feijoo.html" },
-    { nombre: "FLORES PEREZ, YOSSELYN GABRIELA", url: "medicos/flores.html" },
-    { nombre: "GARCÍA MARCANO, ENNIFER KARINA", url: "medicos/garcia.html" },
-    { nombre: "HERRERA MONCADA, SINDY ROMINA", url: "medicos/herrera.html" },
-    { nombre: "JIMENEZ TORNERO, XIMENA", url: "medicos/jimenez.html" },
-    { nombre: "LABAN LEIVA, DIANA EMPERATRIZ", url: "medicos/laban.html" },
-    { nombre: "MENDOZA SALDAÑA JUAN", url: "medicos/mendoza.html" },
-    { nombre: "RODRIGUEZ BRAVO MARIXANDRA", url: "medicos/rodriguez.html" },
-    { nombre: "TINAJEROS VEGA, IVETTE MARILYN", url: "medicos/tinajeros.html" },
+    { nombre: "ABRAHAM HURTADO, SAIRAH CAROLINA", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=13441560#gid=13441560" },
+    { nombre: "ANICAMA BUDIEL, DANIEL", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=29124731#gid=29124731" },
+    { nombre: "FEIJOO GALVEZ SERGIO MAURICIO", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1612924707#gid=1612924707" },
+    { nombre: "FLORES PEREZ, YOSSELYN GABRIELA", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1904161931#gid=1904161931" },
+    { nombre: "GARCÍA MARCANO, ENNIFER KARINA", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=2013866336#gid=2013866336" },
+    { nombre: "HERRERA MONCADA, SINDY ROMINA", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1597740568#gid=1597740568" },
+    { nombre: "JIMENEZ TORNERO, XIMENA", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1034229989#gid=1034229989" },
+    { nombre: "LABAN LEIVA, DIANA EMPERATRIZ", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1468718713#gid=1468718713" },
+    { nombre: "MENDOZA SALDAÑA JUAN", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1568390888#gid=1568390888" },
+    { nombre: "RODRIGUEZ BRAVO MARIXANDRA", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1075082221#gid=1075082221" },
+    { nombre: "TINAJEROS VEGA, IVETTE MARILYN", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1187901923#gid=1187901923" },
   ];
 
   // Mostrar el modal
