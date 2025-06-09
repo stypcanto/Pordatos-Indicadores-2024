@@ -295,8 +295,6 @@
               style="width: 80px; height: auto" />
             <span>Sala Zoom</span>
             <span style="font-size: 12px">Para Teleconsultorios</span>
-           
-         
           </div>
 
           <div
@@ -341,7 +339,6 @@
               style="width: 80px; height: auto" />
             <span>ANATPAT</span>
             <span style="font-size: 12px">Módulo Anatomía Patológica</span>
-           
           </div>
 
           <div
@@ -354,7 +351,6 @@
               style="width: 80px; height: auto" />
             <span>Sistema de </span>
             <span style="font-size: 12px">Referenia y Contrareferencias</span>
-        
           </div>
 
           <!-- Nueva funcion 2025 -->
@@ -364,68 +360,79 @@
             class="card">
             <img
               src="./assets/img/Iconos_Informacion de las IPRESS.svg"
-              alt="Paquete Integral"
+              alt="CENECRON"
               style="width: 80px; height: auto" />
             <span style="display: block; font-weight: bold; margin-top: 10px"
-              >Paquete Integral</span
+              >CENECRON</span
             >
-            <span style="font-size: 12px">Pacientes Crónicos 2025</span>
+            <span style="font-size: 12px"
+              >Estrategia de Atención de Pacientes Controlados mediante
+              Telemedicina</span
+            >
             <span class="new-badge">Nuevo</span>
-
-
-            
           </div>
 
           <!-- MODAL -->
+
+          <!-- Modal principal -->
+       <!-- Modal principal -->
+<div id="popupModal" class="modal-overlay" style="display: none;">
+  <div class="modal-content">
+    <!-- Botón de cierre en la parte superior -->
+    <button id="cerrarModalTop" class="btn-close-top">X</button>
+
+    <h2>Aquí podrás verificar información de tus pacientes</h2>
+    <p>Por favor, seleccione su perfil profesional:</p>
+
+    <!-- Tarjetas de selección de perfil -->
+    <div class="profile-cards">
+      <div class="profile-card" data-profesion="medicina">Medicina</div>
+      <div class="profile-card inactive" data-profesion="enfermeria">Enfermería</div>
+      <div class="profile-card inactive" data-profesion="psicologia">Psicología</div>
+      <div class="profile-card inactive" data-profesion="nutricion">Nutrición</div>
+      <div class="profile-card inactive" data-profesion="terapia">Terapia Física</div>
+    </div>
+
+    <!-- Desplegable de médicos (solo visible al seleccionar "Medicina") -->
+    <div id="medicina-lista" class="desplegable" style="display: none;">
+      <h4>
+        Ingrese su nombre y haga clic para redirigirse a la lista de sus pacientes
+      </h4>
+      <input
+        type="text"
+        id="buscadorMedicos"
+        placeholder="Ingrese el nombre del profesional" />
+      <ul id="listaMedicos"></ul>
+    </div>
+
+    <!-- Botones inferiores -->
+    <div class="btn-container">
+      <button id="cerrarModal" class="btn-close-bottom">Cerrar</button>
+      <button id="btnCriterio" class="btn-criterio">Criterios de Inclusión</button>
+    </div>
+  </div>
+</div>
+
+
+          <!-- Contenedor Criterios -->
           <div
-            id="popupModal"
-            class="modal-overlay">
-            <div class="modal-content">
-              <!-- Botón de cierre arriba -->
+            id="contenedorCriterios"
+            class="criterios-overlay"
+            style="display: none">
+            <div class="criterios-content">
               <button
-                id="cerrarModalTop"
+                id="cerrarCriterios"
                 class="btn-close-top">
                 X
               </button>
-
-              <h2>Bienvenido a la nueva estrategia de seguimiento</h2>
-              <p>Por favor, seleccione su perfil profesional:</p>
-
-              <div class="profile-cards">
-                <div
-                  class="profile-card"
-                  data-profesion="medicina">
-                  Medicina
-                </div>
-                <div class="profile-card inactive">Enfermería</div>
-                <div class="profile-card inactive">Psicología</div>
-                <div class="profile-card inactive">Nutrición</div>
-                <div class="profile-card inactive">Terapia Física</div>
-              </div>
-
-              <div
-                id="medicina-lista"
-                class="desplegable"
-                style="display: none">
-                <h4>
-                  Ingrese su nombre y realizar clic para redirigirse a la lista
-                  de sus pacientes
-                </h4>
-                <input
-                  type="text"
-                  id="buscadorMedicos"
-                  placeholder="Ingrese el nombre del profesional" />
-                <ul id="listaMedicos"></ul>
-              </div>
-
-              <!-- Botón cerrar inferior -->
-              <div class="btn-container">
-                <button
-                  id="cerrarModal"
-                  class="btn-close-bottom">
-                  Cerrar
-                </button>
-              </div>
+              <h3>Criterios de Inclusión y Exclusión</h3>
+              <img
+                src="./assets/img/criterios.jpeg"
+                alt="Criterios de inclusión y exclusión" />
+              <p class="texto-imagen-descripcion">
+                Esta imagen resume los lineamientos que rigen la inclusión y
+                exclusión de pacientes en la estrategia.
+              </p>
             </div>
           </div>
 
@@ -575,8 +582,6 @@
             <span>Buzon de sugerencias</span>
             <span class="new-badge">Nuevo</span>
 
-            
-
             <!-- Indicador de nuevo -->
           </div>
         </div>
@@ -721,7 +726,6 @@
               style="width: 200px; height: auto" />
             <!-- Indicador de nuevo -->
             <span class="new-badge">Nuevo</span>
-
           </div>
         </div>
       </div>
