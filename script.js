@@ -321,6 +321,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { nombre: "Jose Enrique Castañeda Apolinario", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1536927381#gid=1536927381" },
     { nombre: "Gonzales Graus Ivan", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1187237906#gid=1187237906" },
     { nombre: "Aquino Grande Dayhan Jennifer", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=786045073#gid=786045073" }
+    { nombre: "Raiza Fiorella Atoccsa Rojas ", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1914875513#gid=1914875513" }
   ];
 
   const profesionalesEnfermeria = [
