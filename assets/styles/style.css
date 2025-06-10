@@ -514,16 +514,23 @@ img {
 
 /* ==================== MODAL ==================== */
 .modal {
-  display: none;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 2000;
-  align-items: center;
-  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra vertical y horizontalmente */
+  z-index: 9999;
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  width: 90%;
+  max-width: 500px;
+  display: none; /* Oculto por defecto */
+}
+
+
+.modal.show {
+  display: block;
 }
 
 .modal-content {
@@ -1004,5 +1011,131 @@ h4 {
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+
+
+
+
+
+/* Contendor para POP UP de videos */
+
+
+
+
+
+
+.tutoriales-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tutoriales-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 1000px;
+  max-height: 90vh;
+  width: 95%;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.4s ease;
+}
+
+.tutoriales-btn-close {
+  background-color: #007bff; /* Azul por defecto */
+  color: white;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  position: absolute;  /* Absoluto relativo a .criterios-content */
+  right: 16px;
+  top: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-weight: bold;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 10; /* Asegura que esté sobre el contenido */
+}
+
+.tutoriales-btn-close:hover {
+  background-color: #0056b3; /* Azul más oscuro al hacer hover */
+  transform: scale(1.05);
+}
+
+.tutoriales-scrollable {
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.tutoriales-video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.video-item {
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.video-item:hover {
+  transform: scale(1.05);
+}
+
+.video-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+iframe {
+  width: 100%;
+  height: 180px;
+  border-radius: 8px;
+  border: none;
+}
+
+.tutoriales-heading {
+  font-size: 20px;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.tutoriales-descripcion {
+  font-size: 14px;
+  color: #555;
+  margin-top: 10px;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
 }

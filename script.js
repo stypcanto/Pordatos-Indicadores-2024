@@ -385,3 +385,42 @@ const profesionales = [
   }
 
 });
+
+
+
+// ----------------------------------------
+// 8. VIDEOS TUTORIALES
+// ----------------------------------------
+
+
+function openVideoModal() {
+  const modal = document.getElementById('videoModal');
+  modal.style.display = 'flex';
+}
+
+function closeVideoModal() {
+  const modal = document.getElementById("videoModal");
+  modal.style.display = "none";
+
+  // Detener los videos: reiniciar los src con un pequeño delay
+  const iframes = modal.querySelectorAll("iframe");
+  iframes.forEach((iframe) => {
+    const src = iframe.src;
+    iframe.src = ""; // Limpia primero
+
+    // Espera un poquito para recargar
+    setTimeout(() => {
+      iframe.src = src;
+    }, 100);
+  });
+}
+
+
+// Cerrar modal si haces clic fuera del contenido
+window.addEventListener('click', function (event) {
+  const modal = document.getElementById('videoModal');
+  const content = document.querySelector('.tutoriales-content');
+  if (event.target === modal) {
+    closeVideoModal();
+  }
+});

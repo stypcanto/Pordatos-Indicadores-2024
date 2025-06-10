@@ -1,60 +1,38 @@
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      http-equiv="X-UA-Compatible"
-      content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
-    <title>Portal Web CENATE</title>
-    <link
-      rel="stylesheet"
-      href="./assets/styles/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
 
-    <meta
-      name="description"
-      content="Descripción de la página para SEO" />
-    <meta
-      property="og:title"
-      content="Título para redes sociales" />
-    <meta
-      property="og:description"
-      content="Descripción para redes sociales" />
-    <meta
-      property="og:image"
-      content="URL de la imagen para redes sociales" />
-  </head>
-  <body>
-    <!--HEADER-->
-    <header class="header">
-      <div class="header__container">
-        <img
-          src="./assets/img/Web Development Logo.png"
-          class="header__img__rectangle" />
-        <div class="header__toggle">
-          <i
-            class="bx bx-menu"
-            id="header-toggle"></i>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal Web CENATE</title>
+  <link rel="stylesheet" href="./assets/styles/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+
+  <meta name="description" content="Descripción de la página para SEO" />
+  <meta property="og:title" content="Título para redes sociales" />
+  <meta property="og:description" content="Descripción para redes sociales" />
+  <meta property="og:image" content="URL de la imagen para redes sociales" />
+</head>
+
+<body>
+  <!--HEADER-->
+  <header class="header">
+    <div class="header__container">
+      <img src="./assets/img/Web Development Logo.png" class="header__img__rectangle" />
+      <div class="header__toggle">
+        <i class="bx bx-menu" id="header-toggle"></i>
       </div>
-    </header>
-    <!--NAV-->
-    <div
-      class="nav"
-      id="navbar">
-      <nav class="nav__container">
-        <div>
-          <a
-            href="#"
-            class="nav__link nav__logo">
-            <span class="nav__logo-name"> Portal de información </span>
-          </a>
-          <div class="nav__list">
-            <!-- PERFIL DE USUARIO QUE POR AHORA NO SE USARÁ
+    </div>
+  </header>
+  <!--NAV-->
+  <div class="nav" id="navbar">
+    <nav class="nav__container">
+      <div>
+        <a href="#" class="nav__link nav__logo">
+          <span class="nav__logo-name"> Portal de información </span>
+        </a>
+        <div class="nav__list">
+          <!-- PERFIL DE USUARIO QUE POR AHORA NO SE USARÁ
             <div class="nav__items">
               <h1 class="nav__subtitle">Profile</h1>
               <a href="#" class="nav__link active">
@@ -85,139 +63,85 @@
 
       -->
 
-            <div class="nav__items">
-              <h3 class="nav__subtitle_menu">Menú</h3>
+          <div class="nav__items">
+            <h3 class="nav__subtitle_menu">Menú</h3>
 
-              <div class="nav__dropdown">
-                <a
-                  href="#main-content"
-                  class="nav__link">
-                  <!--Por defecto cuando se pulsa sobre Informacion General mostrar la pagina de Panel Principal TC TM y TO, por ahora estara asi luego se cambiara-->
+            <div class="nav__dropdown">
+              <a href="#main-content" class="nav__link">
+                <!--Por defecto cuando se pulsa sobre Informacion General mostrar la pagina de Panel Principal TC TM y TO, por ahora estara asi luego se cambiara-->
 
-                  <i class="bx bx-sitemap nav__icon"></i>
-                  <span class="nav__name">Información General</span>
-                  <i
-                    class="bx bx-chevron-down nav__icon nav__dropdown-icon"></i>
-                </a>
-                <div class="nav__dropdown-collapse">
-                  <div class="nav__dropdown-content">
-                    <a
-                      href="#main-content"
-                      class="nav__dropdown-item"
-                      >Panel Principal TC TM TO</a
-                    >
-                    <a
-                      href="#librarytad-content"
-                      class="nav__dropdown-item"
-                      >Panel Principal TAD</a
-                    >
+                <i class="bx bx-sitemap nav__icon"></i>
+                <span class="nav__name">Información General</span>
+                <i class="bx bx-chevron-down nav__icon nav__dropdown-icon"></i>
+              </a>
+              <div class="nav__dropdown-collapse">
+                <div class="nav__dropdown-content">
+                  <a href="#main-content" class="nav__dropdown-item">Panel Principal TC TM TO</a>
+                  <a href="#librarytad-content" class="nav__dropdown-item">Panel Principal TAD</a>
 
-                    <a
-                      href="teledot.html"
-                      class="nav__dropdown-item"
-                      id="teledot-link">
-                      Teledot
-                    </a>
+                  <a href="teledot.html" class="nav__dropdown-item" id="teledot-link">
+                    Teledot
+                  </a>
 
-                    <script>
-                      document
-                        .getElementById("teledot-link")
-                        .addEventListener("click", function (event) {
-                          event.preventDefault(); // Prevenir la acción por defecto
-                          window.open("teledot.html", "_blank"); // Abrir la página en una nueva pestaña
-                        });
-                    </script>
+                  <script>
+                    document
+                      .getElementById("teledot-link")
+                      .addEventListener("click", function (event) {
+                        event.preventDefault(); // Prevenir la acción por defecto
+                        window.open("teledot.html", "_blank"); // Abrir la página en una nueva pestaña
+                      });
+                  </script>
 
-                    <div class="nav__dropdown-item dropdown1">
-                      <span class="dropdown-toggle dropdown-toggle1"
-                        >Biblioteca Médica</span
-                      >
-                      <ul class="sub-menu sub-menu1">
-                        <li>
-                          <a
-                            href="#subsection1"
-                            class="nav__dropdown-item1"
-                            >Recursos en Medicina</a
-                          >
-                        </li>
+                  <div class="nav__dropdown-item dropdown1">
+                    <span class="dropdown-toggle dropdown-toggle1">Biblioteca Médica</span>
+                    <ul class="sub-menu sub-menu1">
+                      <li>
+                        <a href="#subsection1" class="nav__dropdown-item1">Recursos en Medicina</a>
+                      </li>
 
-                        <li>
-                          <a
-                            href="#subsection2"
-                            class="nav__dropdown-item1"
-                            >Promoción de una buena prescripción</a
-                          >
-                        </li>
+                      <li>
+                        <a href="#subsection2" class="nav__dropdown-item1">Promoción de una buena prescripción</a>
+                      </li>
 
-                        <li>
-                          <a
-                            href="#subsection3"
-                            class="nav__dropdown-item1"
-                            >Endocrinología</a
-                          >
-                        </li>
+                      <li>
+                        <a href="#subsection3" class="nav__dropdown-item1">Endocrinología</a>
+                      </li>
 
-                        <li>
-                          <a
-                            href="#subsection4"
-                            class="nav__dropdown-item1"
-                            >Reumatología</a
-                          >
-                        </li>
+                      <li>
+                        <a href="#subsection4" class="nav__dropdown-item1">Reumatología</a>
+                      </li>
 
-                        <li>
-                          <a
-                            href="#subsection5"
-                            class="nav__dropdown-item1"
-                            >Urología</a
-                          >
-                        </li>
+                      <li>
+                        <a href="#subsection5" class="nav__dropdown-item1">Urología</a>
+                      </li>
 
-                        <li>
-                          <a
-                            href="#subsection6"
-                            class="nav__dropdown-item1"
-                            >Cardiología</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
+                      <li>
+                        <a href="#subsection6" class="nav__dropdown-item1">Cardiología</a>
+                      </li>
+                    </ul>
+                  </div>
 
-                    <div class="nav__dropdown-item dropdown2">
-                      <span class="dropdown-toggle dropdown-toggle2"
-                        >Leyes y Normas</span
-                      >
-                      <ul class="sub-menu sub-menu2">
-                        <li>
-                          <a
-                            href="#subsection7"
-                            class="nav__dropdown-item2"
-                            >Leyes</a
-                          >
-                        </li>
+                  <div class="nav__dropdown-item dropdown2">
+                    <span class="dropdown-toggle dropdown-toggle2">Leyes y Normas</span>
+                    <ul class="sub-menu sub-menu2">
+                      <li>
+                        <a href="#subsection7" class="nav__dropdown-item2">Leyes</a>
+                      </li>
 
-                        <li>
-                          <a
-                            href="#subsection8"
-                            class="nav__dropdown-item2"
-                            >Normas MINSA</a
-                          >
-                        </li>
+                      <li>
+                        <a href="#subsection8" class="nav__dropdown-item2">Normas MINSA</a>
+                      </li>
 
-                        <li>
-                          <a
-                            href="#subsection9"
-                            class="nav__dropdown-item2"
-                            >Normas EsSalud</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
+                      <li>
+                        <a href="#subsection9" class="nav__dropdown-item2">Normas EsSalud</a>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
+            </div>
 
-              <!-- PERFIL DE MENUS QUE POR AHORA NO SE USARÁ
+            <!-- PERFIL DE MENUS QUE POR AHORA NO SE USARÁ
               <a href="#" class="nav__link">
                 <i class="bx bx-analyse nav__icon"></i>
                 <span class="nav__name">Estadística</span>
@@ -250,272 +174,183 @@
               </a>
 
  -->
+          </div>
+        </div>
+      </div>
+      <a href="#" id="btnCerrar" class="nav__link nav__logout">
+        <i class="bx bx-log-out nav__icon"></i>
+        <span class="nav__name">Cerrar</span>
+      </a>
+    </nav>
+  </div>
+
+  <!--CONTENIDO-->
+  <!--SECTION 1-->
+  <main>
+    <div class="main-panel" id="main-content">
+      <h1 class="main-panel__title">PANEL PRINCIPAL TC TM TO</h1>
+      <div class="main-panel__content">
+        <div class="card"
+          onclick="window.open('https://docs.google.com/spreadsheets/d/1NNM4jmm-rpxMBxLsBbqnmCvkxQMlnK5vBLxsVg2jWbI/edit?gid=0#gid=0', '_blank');">
+          <img src="./assets/img/Iconos_Informacion para personal asistencial.svg" alt="Speech Atención "
+            class="card-img" style="width: 80px; height: auto" />
+          <span>Ubicaciones en Teleconsultorios y PC</span>
+          <span style="font-size: 12px">Rol Mensual de la Programación Asistencial</span>
+        </div>
+
+        <div class="card"
+          onclick="window.open('https://us02web.zoom.us/j/81483580541?pwd=9JHZ44eQKPv11MuTATtuyw9jDf9uJ7.1', '_blank');">
+          <img src="./assets/img/Zoom.svg" alt="Speech Atención " class="card-img" style="width: 80px; height: auto" />
+          <span>Sala Zoom</span>
+          <span style="font-size: 12px">Para Teleconsultorios</span>
+        </div>
+
+        <div class="card" onclick="window.open('http://10.56.1.158/sgss/servlet/hmain', '_blank');">
+          <img src="./assets/img/Iconos_ESSI.svg" alt="Speech Atención " class="card-img"
+            style="width: 80px; height: auto" />
+          <span>ESSI</span>
+        </div>
+        <div class="card"
+          onclick="window.open('https://docs.google.com/spreadsheets/d/1xYQfmu70tIV5QhhDEPDs26nC8GSRW6H9sPsgXMS6pW8/edit?usp=sharing', '_blank');">
+          <img src="./assets/img/Iconos_Informacion de las IPRESS.svg" alt="Lineamientos Básicos" class="card-img"
+            style="width: 60px; height: auto" />
+          <span>Información de las IPRESS</span>
+        </div>
+
+        <div class="card" onclick="window.open('http://10.0.89.139:8089/telemedicina/', '_blank');">
+          <img src="./assets/img/Iconos_Mesa de ayuda.svg" alt="Mesa de Ayuda" class="card-img"
+            style="width: 60px; height: auto" />
+          <span>Mesa de Ayuda</span>
+        </div>
+
+        <div class="card" onclick="window.open('http://anatpat.essalud/ANATPAT/', '_blank');">
+          <img src="./assets/img/Anatomia patologica.svg" alt="Speech Atención " class="card-img"
+            style="width: 80px; height: auto" />
+          <span>ANATPAT</span>
+          <span style="font-size: 12px">Módulo Anatomía Patológica</span>
+        </div>
+
+        <div class="card"
+          onclick="window.open('http://oasprod.essalud.gob.pe:7777/Referencia/servlet/Index', '_blank');">
+          <img src="./assets/img/Referencia.svg" alt="Speech Atención " class="card-img"
+            style="width: 80px; height: auto" />
+          <span>Sistema de </span>
+          <span style="font-size: 12px">Referenia y Contrareferencias</span>
+        </div>
+
+        <!-- Nueva funcion 2025 -->
+        <!-- CARD QUE ACTIVA EL MODAL -->
+        <div id="cardSeguimiento" class="card">
+          <img src="./assets/img/Iconos_Informacion de las IPRESS.svg" alt="CENACRON"
+            style="width: 80px; height: auto" />
+          <span style="display: block; font-weight: bold; margin-top: 10px">CENACRON</span>
+          <span style="font-size: 12px">Estrategia de Atención de Pacientes Controlados mediante
+            Telemedicina</span>
+          <span class="new-badge">Nuevo</span>
+        </div>
+
+        <!-- MODAL -->
+
+        <!-- Modal principal -->
+        <!-- Modal principal -->
+        <div id="popupModal" class="modal-overlay" style="display: none;">
+          <div class="modal-content">
+            <!-- Botón de cierre en la parte superior -->
+            <button id="cerrarModalTop" class="btn-close-top">X</button>
+
+            <h2>Aquí podrás verificar información de tus pacientes</h2>
+            <p>Por favor, seleccione su perfil profesional:</p>
+
+            <!-- Tarjetas de selección de perfil -->
+            <div class="profile-cards">
+              <div class="profile-card" data-profesion="medicina">Medicina</div>
+              <div class="profile-card inactive" data-profesion="enfermeria">Enfermería</div>
+              <div class="profile-card inactive" data-profesion="psicologia">Psicología</div>
+              <div class="profile-card inactive" data-profesion="nutricion">Nutrición</div>
+              <div class="profile-card inactive" data-profesion="terapia">Terapia Física</div>
+            </div>
+
+            <!-- Desplegable de médicos (solo visible al seleccionar "Medicina") -->
+            <div id="medicina-lista" class="desplegable" style="display: none;">
+              <h4>
+                Ingrese su nombre y haga clic para redirigirse a la lista de sus pacientes
+              </h4>
+              <input type="text" id="buscadorMedicos" placeholder="Ingrese el nombre del profesional" />
+              <ul id="listaMedicos"></ul>
+            </div>
+
+            <!-- Botones inferiores -->
+            <div class="btn-container">
+              <button id="cerrarModal" class="btn-close-bottom">Cerrar</button>
+              <button id="btnCriterio" class="btn-criterio">Criterios de Inclusión</button>
             </div>
           </div>
         </div>
-        <a
-          href="#"
-          id="btnCerrar"
-          class="nav__link nav__logout">
-          <i class="bx bx-log-out nav__icon"></i>
-          <span class="nav__name">Cerrar</span>
-        </a>
-      </nav>
-    </div>
 
-    <!--CONTENIDO-->
-    <!--SECTION 1-->
-    <main>
-      <div
-        class="main-panel"
-        id="main-content">
-        <h1 class="main-panel__title">PANEL PRINCIPAL TC TM TO</h1>
-        <div class="main-panel__content">
-          <div
-            class="card"
-            onclick="window.open('https://docs.google.com/spreadsheets/d/1NNM4jmm-rpxMBxLsBbqnmCvkxQMlnK5vBLxsVg2jWbI/edit?gid=0#gid=0', '_blank');">
-            <img
-              src="./assets/img/Iconos_Informacion para personal asistencial.svg"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 80px; height: auto" />
-            <span>Ubicaciones en Teleconsultorios y PC</span>
-            <span style="font-size: 12px"
-              >Rol Mensual de la Programación Asistencial</span
-            >
+
+        <!-- Contenedor Criterios -->
+        <div id="contenedorCriterios" class="criterios-overlay" style="display: none">
+          <div class="criterios-content">
+            <button id="cerrarCriterios" class="btn-close-top">
+              X
+            </button>
+            <h3>Criterios de Inclusión y Exclusión</h3>
+            <img src="./assets/img/criterios.jpeg" alt="Criterios de inclusión y exclusión" />
+            <p class="texto-imagen-descripcion">
+              Esta imagen resume los lineamientos que rigen la inclusión y
+              exclusión de pacientes en la estrategia.
+            </p>
           </div>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://us02web.zoom.us/j/81483580541?pwd=9JHZ44eQKPv11MuTATtuyw9jDf9uJ7.1', '_blank');">
-            <img
-              src="./assets/img/Zoom.svg"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 80px; height: auto" />
-            <span>Sala Zoom</span>
-            <span style="font-size: 12px">Para Teleconsultorios</span>
-          </div>
+        <!-- Termino de la funcion -->
+        <div class="card"
+          onclick="window.open('https://docs.google.com/spreadsheets/d/1FQPw2nPaRM74CXLOZ1nvFQR08qXQS8rwccPIRlHPCZ4/edit?gid=1416608776#gid=1416608776', '_blank');">
+          <img src="./assets/img/Iconos_listado de pacientes TC A-N.svg" alt="Speech Atención " class="card-img"
+            style="width: 60px; height: auto" />
+          <span><br />
+            Listado de pacientes TC (A-N)</span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('http://10.56.1.158/sgss/servlet/hmain', '_blank');">
-            <img
-              src="./assets/img/Iconos_ESSI.svg"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 80px; height: auto" />
-            <span>ESSI</span>
-          </div>
-          <div
-            class="card"
-            onclick="window.open('https://docs.google.com/spreadsheets/d/1xYQfmu70tIV5QhhDEPDs26nC8GSRW6H9sPsgXMS6pW8/edit?usp=sharing', '_blank');">
-            <img
-              src="./assets/img/Iconos_Informacion de las IPRESS.svg"
-              alt="Lineamientos Básicos"
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span>Información de las IPRESS</span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://docs.google.com/spreadsheets/d/1xB78sklAHAC1wi0-0F5v9xnIBVAUxfdjaHPzEV-anEE/edit?gid=2014624632#gid=2014624632', '_blank');">
+          <img src="./assets/img/Iconos_listado de pacientes TC O-Z.svg" alt="Speech Atención " class="card-img"
+            style="width: 60px; height: auto" />
+          <span><br />
+            Listado de pacientes TC (O-Z)</span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('http://10.0.89.139:8089/telemedicina/', '_blank');">
-            <img
-              src="./assets/img/Iconos_Mesa de ayuda.svg"
-              alt="Mesa de Ayuda"
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span>Mesa de Ayuda</span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://docs.google.com/spreadsheets/d/1T-i46PdoDImBYTev5C9Lbg2M8T-D-Hkw0fVaOXH-3oI/edit?pli=1&gid=1004858258#gid=1004858258', '_blank');">
+          <img src="./assets/img/Iconos_listado de pacientes TC de Oncolog¡a.svg" alt="Speech Atención "
+            class="card-img" style="width: 60px; height: auto" />
+          <span><br />
+            Listado de pacientes TC de Oncología</span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('http://anatpat.essalud/ANATPAT/', '_blank');">
-            <img
-              src="./assets/img/Anatomia patologica.svg"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 80px; height: auto" />
-            <span>ANATPAT</span>
-            <span style="font-size: 12px">Módulo Anatomía Patológica</span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://docs.google.com/spreadsheets/d/1kxaynWjZ8sqWDEhYTsn4G054AA3pX2-gkg-EY8MljS0/edit?gid=814128024#gid=814128024', '_blank');">
+          <img src="./assets/img/Iconos_listado de pacientes TO.svg" alt="Speech Atención " class="card-img"
+            style="width: 60px; height: auto" />
+          <span><br />
+            Listado de pacientes TO</span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('http://oasprod.essalud.gob.pe:7777/Referencia/servlet/Index', '_blank');">
-            <img
-              src="./assets/img/Referencia.svg"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 80px; height: auto" />
-            <span>Sistema de </span>
-            <span style="font-size: 12px">Referenia y Contrareferencias</span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://docs.google.com/spreadsheets/d/1NPti10knKUkohXwIJVTTE8OV3xQK6Zeh-cj2yBTN200/edit?gid=633431742#gid=633431742', '_blank');">
+          <img src="./assets/img/Iconos_listado de pacientes TM.svg" alt="Speech Atención " class="card-img"
+            style="width: 80px; height: auto" />
+          <span>Listado de pacientes TM</span>
+        </div>
 
-          <!-- Nueva funcion 2025 -->
-          <!-- CARD QUE ACTIVA EL MODAL -->
-          <div
-            id="cardSeguimiento"
-            class="card">
-            <img
-              src="./assets/img/Iconos_Informacion de las IPRESS.svg"
-              alt="CENACRON"
-              style="width: 80px; height: auto" />
-            <span style="display: block; font-weight: bold; margin-top: 10px"
-              >CENACRON</span
-            >
-            <span style="font-size: 12px"
-              >Estrategia de Atención de Pacientes Controlados mediante
-              Telemedicina</span
-            >
-            <span class="new-badge">Nuevo</span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://docs.google.com/spreadsheets/d/1MZwCPfmuW_-f0FHEaOKwdfwYwxz57WxjMz2dnYnmqno/edit?usp=sharing', '_blank');">
+          <img src="./assets/img/Iconos_Imagenes - teleconsulta.svg" alt="Imagenes - Teleconsulta" class="card-img"
+            style="width: 60px; height: auto" />
+          <span>Imagenes - Teleconsulta</span>
+        </div>
 
-          <!-- MODAL -->
-
-          <!-- Modal principal -->
-       <!-- Modal principal -->
-<div id="popupModal" class="modal-overlay" style="display: none;">
-  <div class="modal-content">
-    <!-- Botón de cierre en la parte superior -->
-    <button id="cerrarModalTop" class="btn-close-top">X</button>
-
-    <h2>Aquí podrás verificar información de tus pacientes</h2>
-    <p>Por favor, seleccione su perfil profesional:</p>
-
-    <!-- Tarjetas de selección de perfil -->
-    <div class="profile-cards">
-      <div class="profile-card" data-profesion="medicina">Medicina</div>
-      <div class="profile-card inactive" data-profesion="enfermeria">Enfermería</div>
-      <div class="profile-card inactive" data-profesion="psicologia">Psicología</div>
-      <div class="profile-card inactive" data-profesion="nutricion">Nutrición</div>
-      <div class="profile-card inactive" data-profesion="terapia">Terapia Física</div>
-    </div>
-
-    <!-- Desplegable de médicos (solo visible al seleccionar "Medicina") -->
-    <div id="medicina-lista" class="desplegable" style="display: none;">
-      <h4>
-        Ingrese su nombre y haga clic para redirigirse a la lista de sus pacientes
-      </h4>
-      <input
-        type="text"
-        id="buscadorMedicos"
-        placeholder="Ingrese el nombre del profesional" />
-      <ul id="listaMedicos"></ul>
-    </div>
-
-    <!-- Botones inferiores -->
-    <div class="btn-container">
-      <button id="cerrarModal" class="btn-close-bottom">Cerrar</button>
-      <button id="btnCriterio" class="btn-criterio">Criterios de Inclusión</button>
-    </div>
-  </div>
-</div>
-
-
-          <!-- Contenedor Criterios -->
-          <div
-            id="contenedorCriterios"
-            class="criterios-overlay"
-            style="display: none">
-            <div class="criterios-content">
-              <button
-                id="cerrarCriterios"
-                class="btn-close-top">
-                X
-              </button>
-              <h3>Criterios de Inclusión y Exclusión</h3>
-              <img
-                src="./assets/img/criterios.jpeg"
-                alt="Criterios de inclusión y exclusión" />
-              <p class="texto-imagen-descripcion">
-                Esta imagen resume los lineamientos que rigen la inclusión y
-                exclusión de pacientes en la estrategia.
-              </p>
-            </div>
-          </div>
-
-          <!-- Termino de la funcion -->
-          <div
-            class="card"
-            onclick="window.open('https://docs.google.com/spreadsheets/d/1FQPw2nPaRM74CXLOZ1nvFQR08qXQS8rwccPIRlHPCZ4/edit?gid=1416608776#gid=1416608776', '_blank');">
-            <img
-              src="./assets/img/Iconos_listado de pacientes TC A-N.svg"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span
-              ><br />
-              Listado de pacientes TC (A-N)</span
-            >
-          </div>
-
-          <div
-            class="card"
-            onclick="window.open('https://docs.google.com/spreadsheets/d/1xB78sklAHAC1wi0-0F5v9xnIBVAUxfdjaHPzEV-anEE/edit?gid=2014624632#gid=2014624632', '_blank');">
-            <img
-              src="./assets/img/Iconos_listado de pacientes TC O-Z.svg"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span
-              ><br />
-              Listado de pacientes TC (O-Z)</span
-            >
-          </div>
-
-          <div
-            class="card"
-            onclick="window.open('https://docs.google.com/spreadsheets/d/1T-i46PdoDImBYTev5C9Lbg2M8T-D-Hkw0fVaOXH-3oI/edit?pli=1&gid=1004858258#gid=1004858258', '_blank');">
-            <img
-              src="./assets/img/Iconos_listado de pacientes TC de Oncolog¡a.svg"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span
-              ><br />
-              Listado de pacientes TC de Oncología</span
-            >
-          </div>
-
-          <div
-            class="card"
-            onclick="window.open('https://docs.google.com/spreadsheets/d/1kxaynWjZ8sqWDEhYTsn4G054AA3pX2-gkg-EY8MljS0/edit?gid=814128024#gid=814128024', '_blank');">
-            <img
-              src="./assets/img/Iconos_listado de pacientes TO.svg"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span
-              ><br />
-              Listado de pacientes TO</span
-            >
-          </div>
-
-          <div
-            class="card"
-            onclick="window.open('https://docs.google.com/spreadsheets/d/1NPti10knKUkohXwIJVTTE8OV3xQK6Zeh-cj2yBTN200/edit?gid=633431742#gid=633431742', '_blank');">
-            <img
-              src="./assets/img/Iconos_listado de pacientes TM.svg"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 80px; height: auto" />
-            <span>Listado de pacientes TM</span>
-          </div>
-
-          <div
-            class="card"
-            onclick="window.open('https://docs.google.com/spreadsheets/d/1MZwCPfmuW_-f0FHEaOKwdfwYwxz57WxjMz2dnYnmqno/edit?usp=sharing', '_blank');">
-            <img
-              src="./assets/img/Iconos_Imagenes - teleconsulta.svg"
-              alt="Imagenes - Teleconsulta"
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span>Imagenes - Teleconsulta</span>
-          </div>
-
-          <!-- 
+        <!-- 
             <div class="card" onclick="window.location.href='#';">
               <img src="./assets/img/icon-Teleconsultoria.png" alt="Teleconsulta" class="card-img">
                 <span>Teleconsultoria</span>
@@ -526,964 +361,634 @@
         
         -->
 
-          <div
-            class="card"
-            onclick="window.open('https://docs.google.com/spreadsheets/d/1G62LZNvjvhtODJfzvve4kP6ulwiQAORI/edit?usp=sharing&ouid=100131508450278586704&rtpof=true&sd=true', '_blank');">
-            <img
-              src="./assets/img/Iconos_Protocolo de contacto y atencion.svg"
-              alt="Imagenes - Teleconsulta"
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span>Protocolo de contacto y atención</span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://docs.google.com/spreadsheets/d/1G62LZNvjvhtODJfzvve4kP6ulwiQAORI/edit?usp=sharing&ouid=100131508450278586704&rtpof=true&sd=true', '_blank');">
+          <img src="./assets/img/Iconos_Protocolo de contacto y atencion.svg" alt="Imagenes - Teleconsulta"
+            class="card-img" style="width: 60px; height: auto" />
+          <span>Protocolo de contacto y atención</span>
+        </div>
 
-          <!--
+
+
+        <!-- Tarjeta de acceso a Tutoriales -->
+        <div id="cardTutoriales" class="card" onclick="openVideoModal()">
+          <img src="./assets/img/VideoTutorial.svg" alt="Tutoriales" class="card-img"
+            style="width: 60px; height: auto" />
+          <span>Tutoriales CENATE</span>
+          <span class="new-badge">Nuevo</span>
+        </div>
+
+        <!-- Modal de Videos Educativos -->
+        <div id="videoModal" class="tutoriales-overlay" style="display: none">
+          <div class="tutoriales-content">
+            <button id="cerrarVideoModal" class="tutoriales-btn-close" onclick="closeVideoModal()">X</button>
+            <h3 class="tutoriales-heading">Tutoriales Educativos CENATE</h3>
+        
+            <div class="tutoriales-scrollable">
+              <div class="tutoriales-video-grid">
+                <div class="video-item">
+                  <h4 class="video-title">Firma Digital en el Módulo TAD</h4>
+                  <iframe src="https://www.youtube.com/embed/y6CWa3yOmdk" allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                  <h4 class="video-title">Lectura de imágenes en el ESSI</h4>
+                  <iframe src="https://www.youtube.com/embed/kNtMPDrlWnw" allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                  <h4 class="video-title">¿Sabías de la fiebre amarilla?</h4>
+                  <iframe src="https://www.youtube.com/embed/llJolKsgKKU" allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                  <h4 class="video-title">¿Qué es la fiebre amarilla?</h4>
+                  <iframe src="https://www.youtube.com/embed/ZfqnwI38gls" allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                  <h4 class="video-title">¿Conoces los sintomas de la fiebre amarilla?</h4>
+                  <iframe src="https://www.youtube.com/embed/_UaJTLi0Pe0" allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                  <h4 class="video-title">¿Cuales son las fases de la fiebre amarilla?</h4>
+                  <iframe src="https://www.youtube.com/embed/_qe98tgjLRs" allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                  <h4 class="video-title">¿Como se previene la fiebre amarilla?</h4>
+                  <iframe src="https://www.youtube.com/embed/e4zMayStPCI" allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                  <h4 class="video-title">Tratamiento de la fiebre amarilla</h4>
+                  <iframe src="https://www.youtube.com/embed/6BeXlcs8PCo" allowfullscreen></iframe>
+                </div>
+                
+              </div>
+            </div>
+        
+            <p class="tutoriales-descripcion">
+              Esta sección contiene videos educativos para el personal de CENATE.
+            </p>
+          </div>
+        </div>
+        
+
+
+
+        <!--
           onclick="window.open('https://app.powerbi.com/view?r=eyJrIjoiM2QyNmNhODItNjc0Ny00MmFmLWE0YjMtOGQyOTEzMjMyZjE2IiwidCI6IjM0ZjMyNDE5LTFjMDUtNDc1Ni04OTZlLTQ1ZDYzMzcyNjU5YiIsImMiOjR9', '_blank');"
           -->
 
-          <div
-            class="card"
-            onclick="window.open('https://app.powerbi.com/view?r=eyJrIjoiODA1OTUyOGItMTE4Zi00MTdiLWI4MjItMzlmYmY0OThhOGNhIiwidCI6IjM0ZjMyNDE5LTFjMDUtNDc1Ni04OTZlLTQ1ZDYzMzcyNjU5YiIsImMiOjR9', '_blank');">
-            <img
-              src="./assets/img/Iconos_Estadisticas de produccion.svg"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span
-              ><br />
-              Estadísticas de Producción</span
-            >
+        <div class="card"
+          onclick="window.open('https://app.powerbi.com/view?r=eyJrIjoiODA1OTUyOGItMTE4Zi00MTdiLWI4MjItMzlmYmY0OThhOGNhIiwidCI6IjM0ZjMyNDE5LTFjMDUtNDc1Ni04OTZlLTQ1ZDYzMzcyNjU5YiIsImMiOjR9', '_blank');">
+          <img src="./assets/img/Iconos_Estadisticas de produccion.svg" alt="Speech Atención " class="card-img"
+            style="width: 60px; height: auto" />
+          <span><br />
+            Estadísticas de Producción</span>
 
-            <!-- Indicador de nuevo -->
-          </div>
+          <!-- Indicador de nuevo -->
+        </div>
 
-          <!-- Estadísticas de Abandonos -->
-          <div
-            class="card"
-            onclick="window.open('https://app.powerbi.com/view?r=eyJrIjoiZjliMGM4NWYtMmYwOS00NjQ3LWFlNDctMDdhMGVjZDc4YjVlIiwidCI6IjM0ZjMyNDE5LTFjMDUtNDc1Ni04OTZlLTQ1ZDYzMzcyNjU5YiIsImMiOjR9', '_blank');">
-            <img
-              src="./assets/img/Iconos_ESSI.svg"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 80px; height: auto" />
-            <span>Deserciones y Abandonos</span>
-            <span style="font-size: 12px">Ver pestaña 7</span>
-            <!-- Indicador de nuevo -->
-          </div>
+        <!-- Estadísticas de Abandonos -->
+        <div class="card"
+          onclick="window.open('https://app.powerbi.com/view?r=eyJrIjoiZjliMGM4NWYtMmYwOS00NjQ3LWFlNDctMDdhMGVjZDc4YjVlIiwidCI6IjM0ZjMyNDE5LTFjMDUtNDc1Ni04OTZlLTQ1ZDYzMzcyNjU5YiIsImMiOjR9', '_blank');">
+          <img src="./assets/img/Iconos_ESSI.svg" alt="Speech Atención " class="card-img"
+            style="width: 80px; height: auto" />
+          <span>Deserciones y Abandonos</span>
+          <span style="font-size: 12px">Ver pestaña 7</span>
+          <!-- Indicador de nuevo -->
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://forms.gle/QCQMNcvreA6JkTxP8', '_blank');">
-            <img
-              src="./assets/img/Iconos_ESSI.svg"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 80px; height: auto" />
-            <span>Buzon de sugerencias</span>
-            <span class="new-badge">Nuevo</span>
+        <div class="card" onclick="window.open('https://forms.gle/QCQMNcvreA6JkTxP8', '_blank');">
+          <img src="./assets/img/Iconos_ESSI.svg" alt="Speech Atención " class="card-img"
+            style="width: 80px; height: auto" />
+          <span>Buzon de sugerencias</span>
+          <span class="new-badge">Nuevo</span>
 
-            <!-- Indicador de nuevo -->
-          </div>
+          <!-- Indicador de nuevo -->
         </div>
       </div>
-      <!--SECTION 2-->
-      <div
-        class="main-panel"
-        id="librarytad-content"
-        style="display: none">
-        <h1 class="main-panel__title">PANEL PRINCIPAL TAD</h1>
-        <div class="main-panel__content">
-          <!-- Aquí van los botones de la biblioteca -->
+    </div>
+    <!--SECTION 2-->
+    <div class="main-panel" id="librarytad-content" style="display: none">
+      <h1 class="main-panel__title">PANEL PRINCIPAL TAD</h1>
+      <div class="main-panel__content">
+        <!-- Aquí van los botones de la biblioteca -->
 
-          <div
-            class="card"
-            onclick="window.open('https://docs.google.com/spreadsheets/d/12snfDNG_zV4ThfDI2NDcW_paIi86cLJb1OQ1AJYuFpY/edit?gid=793847780#gid=793847780', '_blank');">
-            <img
-              src="./assets/img/Iconos_ESSI.svg"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 80px; height: auto" />
-            <span>Información para personal asistencial</span>
-            <span style="font-size: 12px"
-              >Horario - Teleconsultorio - Ubicación</span
-            >
-          </div>
+        <div class="card"
+          onclick="window.open('https://docs.google.com/spreadsheets/d/12snfDNG_zV4ThfDI2NDcW_paIi86cLJb1OQ1AJYuFpY/edit?gid=793847780#gid=793847780', '_blank');">
+          <img src="./assets/img/Iconos_ESSI.svg" alt="Speech Atención " class="card-img"
+            style="width: 80px; height: auto" />
+          <span>Información para personal asistencial</span>
+          <span style="font-size: 12px">Horario - Teleconsultorio - Ubicación</span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('http://10.56.1.158/sgss/servlet/hmain', '_blank');">
-            <img
-              src="./assets/img/Iconos_ESSI.svg"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 80px; height: auto" />
-            <span>ESSI</span>
-          </div>
+        <div class="card" onclick="window.open('http://10.56.1.158/sgss/servlet/hmain', '_blank');">
+          <img src="./assets/img/Iconos_ESSI.svg" alt="Speech Atención " class="card-img"
+            style="width: 80px; height: auto" />
+          <span>ESSI</span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('http://172.20.0.118:8080/distribucion/', '_blank');">
-            <img
-              src="./assets/img/Iconos_ESSI.svg"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 80px; height: auto" />
-            <span>Sistema de Distribución</span>
-          </div>
+        <div class="card" onclick="window.open('http://172.20.0.118:8080/distribucion/', '_blank');">
+          <img src="./assets/img/Iconos_ESSI.svg" alt="Speech Atención " class="card-img"
+            style="width: 80px; height: auto" />
+          <span>Sistema de Distribución</span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('http://10.0.89.139:8089/telemedicina/CENATE/pacs', '_blank');">
-            <img
-              src="./assets/img/Iconos_ESSI.svg"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 80px; height: auto" />
-            <span>PACS</span>
-          </div>
+        <div class="card" onclick="window.open('http://10.0.89.139:8089/telemedicina/CENATE/pacs', '_blank');">
+          <img src="./assets/img/Iconos_ESSI.svg" alt="Speech Atención " class="card-img"
+            style="width: 80px; height: auto" />
+          <span>PACS</span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('http://10.56.1.158/sgss/servlet/hmain', '_blank');">
-            <img
-              src="./assets/img/Iconos_ESSI.svg"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 80px; height: auto" />
-            <span>Protocolo Contacto y Atención</span>
-          </div>
+        <div class="card" onclick="window.open('http://10.56.1.158/sgss/servlet/hmain', '_blank');">
+          <img src="./assets/img/Iconos_ESSI.svg" alt="Speech Atención " class="card-img"
+            style="width: 80px; height: auto" />
+          <span>Protocolo Contacto y Atención</span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://app.powerbi.com/view?r=eyJrIjoiMDViMzhmMmEtYTM1Yy00OTJlLTgzMjAtMTFkZmM2NzEyZjVjIiwidCI6IjM0ZjMyNDE5LTFjMDUtNDc1Ni04OTZlLTQ1ZDYzMzcyNjU5YiIsImMiOjR9', '_blank');">
-            <img
-              src="./assets/img/Iconos_Estadisticas de produccion.svg"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span
-              ><br />
-              Estadísticas de Producción</span
-            >
-          </div>
+        <div class="card"
+          onclick="window.open('https://app.powerbi.com/view?r=eyJrIjoiMDViMzhmMmEtYTM1Yy00OTJlLTgzMjAtMTFkZmM2NzEyZjVjIiwidCI6IjM0ZjMyNDE5LTFjMDUtNDc1Ni04OTZlLTQ1ZDYzMzcyNjU5YiIsImMiOjR9', '_blank');">
+          <img src="./assets/img/Iconos_Estadisticas de produccion.svg" alt="Speech Atención " class="card-img"
+            style="width: 60px; height: auto" />
+          <span><br />
+            Estadísticas de Producción</span>
         </div>
       </div>
+    </div>
 
-      <!--SECTION 3-->
-      <div
-        class="main-panel"
-        id="subsection1"
-        style="display: none">
-        <h1 class="main-panel__title">Recursos en Medicina</h1>
-        <div class="main-panel__content">
-          <div
-            class="card"
-            onclick="window.open('https://medlineplus.gov', '_blank');">
-            <img
-              src="./assets/img/m_logo_primary_25.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 200px; height: auto" />
-          </div>
+    <!--SECTION 3-->
+    <div class="main-panel" id="subsection1" style="display: none">
+      <h1 class="main-panel__title">Recursos en Medicina</h1>
+      <div class="main-panel__content">
+        <div class="card" onclick="window.open('https://medlineplus.gov', '_blank');">
+          <img src="./assets/img/m_logo_primary_25.png" alt="Speech Atención " class="card-img"
+            style="width: 200px; height: auto" />
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://www.nih.gov/', '_blank');">
-            <img
-              src="./assets/img/nih-logo-color.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 250px; height: auto" />
-          </div>
+        <div class="card" onclick="window.open('https://www.nih.gov/', '_blank');">
+          <img src="./assets/img/nih-logo-color.png" alt="Speech Atención " class="card-img"
+            style="width: 250px; height: auto" />
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://www.cochranelibrary.com/', '_blank');">
-            <img
-              src="./assets/img/Cochrane.webp"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 150px; height: auto" />
-          </div>
+        <div class="card" onclick="window.open('https://www.cochranelibrary.com/', '_blank');">
+          <img src="./assets/img/Cochrane.webp" alt="Speech Atención " class="card-img"
+            style="width: 150px; height: auto" />
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://cdc.gov/index.html', '_blank');">
-            <img
-              src="./assets/img/CDC2.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 260px; height: auto" />
-          </div>
+        <div class="card" onclick="window.open('https://cdc.gov/index.html', '_blank');">
+          <img src="./assets/img/CDC2.png" alt="Speech Atención " class="card-img" style="width: 260px; height: auto" />
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://ietsi.essalud.gob.pe/gpc-guias-de-practica-clinica/', '_blank');">
-            <img
-              src="./assets/img/ietsi.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 200px; height: auto" />
-            <!-- Indicador de nuevo -->
-            <span class="new-badge">Nuevo</span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://ietsi.essalud.gob.pe/gpc-guias-de-practica-clinica/', '_blank');">
+          <img src="./assets/img/ietsi.png" alt="Speech Atención " class="card-img"
+            style="width: 200px; height: auto" />
+          <!-- Indicador de nuevo -->
+          <span class="new-badge">Nuevo</span>
         </div>
       </div>
+    </div>
 
-      <!--SUBSECTION 2-->
-      <div
-        class="main-panel"
-        id="subsection2"
-        style="display: none">
-        <h1 class="main-panel__title">Promoción de una buena prescripción</h1>
-        <div class="main-panel__content">
-          <div
-            class="card"
-            onclick="window.open('https://cdn.www.gob.pe/uploads/document/file/2906846/Ley%2029459.pdf?v=1647256236 ', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 50px; height: auto" />
-            <span style="font-size: 13px"
-              ><br />
-              Ley N.° 29459 <br />
-              Ley de los productos farmacéuticos, dispositivos médicos y
-              productos sanitarios
-            </span>
-          </div>
+    <!--SUBSECTION 2-->
+    <div class="main-panel" id="subsection2" style="display: none">
+      <h1 class="main-panel__title">Promoción de una buena prescripción</h1>
+      <div class="main-panel__content">
+        <div class="card"
+          onclick="window.open('https://cdn.www.gob.pe/uploads/document/file/2906846/Ley%2029459.pdf?v=1647256236 ', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 50px; height: auto" />
+          <span style="font-size: 13px"><br />
+            Ley N.° 29459 <br />
+            Ley de los productos farmacéuticos, dispositivos médicos y
+            productos sanitarios
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://cdn.www.gob.pe/uploads/document/file/787932/RM_N_351-2020-MINSA_ADJ_DIRECTIVA_SANITARIA_N_105-MINSA-2020-DIGEMID.pdf?v=1591323070 ', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 50px; height: auto" />
-            <span style="font-size: 13px"
-              ><br />
-              RM 351-2020-MINSA(Disposiciones y medidas para atención oportuna y
-              segura con MED, PF y DM)
-            </span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://cdn.www.gob.pe/uploads/document/file/787932/RM_N_351-2020-MINSA_ADJ_DIRECTIVA_SANITARIA_N_105-MINSA-2020-DIGEMID.pdf?v=1591323070 ', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 50px; height: auto" />
+          <span style="font-size: 13px"><br />
+            RM 351-2020-MINSA(Disposiciones y medidas para atención oportuna y
+            segura con MED, PF y DM)
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://www3.paho.org/hq/dmdocuments/2011/Seleccion-de-Medicamentos-Esenciales.pdf ', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 50px; height: auto" />
-            <span style="font-size: 12px"
-              ><br />
-              Selección de Medicamentos Esenciales. Es una publicación de
-              DIGEMID con OPS. Apartados 7, 8 y 9
-            </span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://www3.paho.org/hq/dmdocuments/2011/Seleccion-de-Medicamentos-Esenciales.pdf ', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 50px; height: auto" />
+          <span style="font-size: 12px"><br />
+            Selección de Medicamentos Esenciales. Es una publicación de
+            DIGEMID con OPS. Apartados 7, 8 y 9
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://www.paho.org/es/documentos/guia-para-buena-prescripcion ', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span style="font-size: 13px"
-              ><br />
-              Guía de la Buena Prescripción (Publicación de la OMS)
-            </span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://www.paho.org/es/documentos/guia-para-buena-prescripcion ', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 60px; height: auto" />
+          <span style="font-size: 13px"><br />
+            Guía de la Buena Prescripción (Publicación de la OMS)
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://cdn.www.gob.pe/uploads/document/file/391285/Manual_de_buenas_pr%C3%A1cticas_de_prescripci%C3%B3n20191017-26355-1b4weok.pdf?v=1571312504 ', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 50px; height: auto" />
-            <span style="font-size: 13px"
-              ><br />
-              Manual de Buenas Prácticas de Prescripción
-            </span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://cdn.www.gob.pe/uploads/document/file/391285/Manual_de_buenas_pr%C3%A1cticas_de_prescripci%C3%B3n20191017-26355-1b4weok.pdf?v=1571312504 ', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 50px; height: auto" />
+          <span style="font-size: 13px"><br />
+            Manual de Buenas Prácticas de Prescripción
+          </span>
         </div>
       </div>
+    </div>
 
-      <!--SUBSECTION 3-->
-      <div
-        class="main-panel"
-        id="subsection3"
-        style="display: none">
-        <h1 class="main-panel__title">Endocrinología</h1>
-        <div class="main-panel__content">
-          <div
-            class="card"
-            onclick="window.open('https://bvs.minsa.gob.pe/local/MINSA/3466.pdf', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 50px; height: auto" />
-            <span style="font-size: 13px"
-              ><br />
-              Guía de práctica clínica para el diagnóstico, tratamiento y
-              control de la diabetes mellitus tipo 2 en el primer nivel de
-              atención
-            </span>
-          </div>
+    <!--SUBSECTION 3-->
+    <div class="main-panel" id="subsection3" style="display: none">
+      <h1 class="main-panel__title">Endocrinología</h1>
+      <div class="main-panel__content">
+        <div class="card" onclick="window.open('https://bvs.minsa.gob.pe/local/MINSA/3466.pdf', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 50px; height: auto" />
+          <span style="font-size: 13px"><br />
+            Guía de práctica clínica para el diagnóstico, tratamiento y
+            control de la diabetes mellitus tipo 2 en el primer nivel de
+            atención
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://bvs.minsa.gob.pe/local/fi-admin/RM-115-2024-MINSA.pdf', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 50px; height: auto" />
-            <span style="font-size: 13px"
-              ><br />
-              Guía de práctica clínica para el diagnóstico y tratamiento de la
-              diabetes mellitus tipo 1 en niños, adolescentes adultos
-            </span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://bvs.minsa.gob.pe/local/fi-admin/RM-115-2024-MINSA.pdf', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 50px; height: auto" />
+          <span style="font-size: 13px"><br />
+            Guía de práctica clínica para el diagnóstico y tratamiento de la
+            diabetes mellitus tipo 1 en niños, adolescentes adultos
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://www.liebertpub.com/doi/pdfplus/10.1089/thy.2016.0229', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 50px; height: auto" />
-            <span style="font-size: 13px"
-              ><br />
-              Guidelines for Diagnosis and Management of Hyperthyroidism and
-              other causes of Thyrotoxicosis. American Thyroid Association
-              (2016)
-            </span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://www.liebertpub.com/doi/pdfplus/10.1089/thy.2016.0229', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 50px; height: auto" />
+          <span style="font-size: 13px"><br />
+            Guidelines for Diagnosis and Management of Hyperthyroidism and
+            other causes of Thyrotoxicosis. American Thyroid Association
+            (2016)
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://www.liebertpub.com/doi/pdfplus/10.1089/thy.2015.0020', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span style="font-size: 13px"
-              ><br />
-              Management Guidelines for Adult Patients with Thyroid Nodules and
-              Differentiated Thyroid Cancer, American Thyroid Association (2015)
-            </span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://www.liebertpub.com/doi/pdfplus/10.1089/thy.2015.0020', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 60px; height: auto" />
+          <span style="font-size: 13px"><br />
+            Management Guidelines for Adult Patients with Thyroid Nodules and
+            Differentiated Thyroid Cancer, American Thyroid Association (2015)
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://www.liebertpub.com/doi/pdfplus/10.1089/thy.2016.0457', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 50px; height: auto" />
-            <span style="font-size: 13px"
-              ><br />
-              Guidelines of the American Thyroid Association for the Diagnosis
-              and Management of Thyroid Disease during Pregnancy and the
-              Postpartum, American Thyroid Association (2017)
-            </span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://www.liebertpub.com/doi/pdfplus/10.1089/thy.2016.0457', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 50px; height: auto" />
+          <span style="font-size: 13px"><br />
+            Guidelines of the American Thyroid Association for the Diagnosis
+            and Management of Thyroid Disease during Pregnancy and the
+            Postpartum, American Thyroid Association (2017)
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://gpc-peru.com/gpcmqo', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span style="font-size: 13px"
-              ><br />
-              Guía práctica clínica: Para el manejo quirúrgico de la obesidad en
-              adultos
-            </span>
-          </div>
+        <div class="card" onclick="window.open('https://gpc-peru.com/gpcmqo', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 60px; height: auto" />
+          <span style="font-size: 13px"><br />
+            Guía práctica clínica: Para el manejo quirúrgico de la obesidad en
+            adultos
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://www.saedyn.es/wp-content/uploads/2024/02/Lipid-Management-in-Patients-with-Endocrine-Disorders-An-Endocrine-Society-Clinical-Practice-Guideline.pdf', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span style="font-size: 13px"
-              ><br />
-              Lipid Management in Patients with Endocrine Disorders (2020)
-            </span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://www.saedyn.es/wp-content/uploads/2024/02/Lipid-Management-in-Patients-with-Endocrine-Disorders-An-Endocrine-Society-Clinical-Practice-Guideline.pdf', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 60px; height: auto" />
+          <span style="font-size: 13px"><br />
+            Lipid Management in Patients with Endocrine Disorders (2020)
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://www.saedyn.es/wp-content/uploads/2024/02/Evaluation-and-Treatment-of-Hirsutism-in-Premenopausal-Women.-An-Endocrine-Society-Clinical-Practice-Guideline.pdf', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 50px; height: auto" />
-            <span style="font-size: 13px"
-              ><br />
-              Evaluation and Treatment of Hirsutism in Premenopausal Women: An
-              Endocrine Society Clinical Practice Guideline (2018)
-            </span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://www.saedyn.es/wp-content/uploads/2024/02/Evaluation-and-Treatment-of-Hirsutism-in-Premenopausal-Women.-An-Endocrine-Society-Clinical-Practice-Guideline.pdf', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 50px; height: auto" />
+          <span style="font-size: 13px"><br />
+            Evaluation and Treatment of Hirsutism in Premenopausal Women: An
+            Endocrine Society Clinical Practice Guideline (2018)
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://www.saedyn.es/wp-content/uploads/2024/02/Recommendations-From-the-2023-International-Evidence-based-Guideline-for-the-Assessment-and-Management-of-Polycystic-Ovary-Syndrome.pdf', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 50px; height: auto" />
-            <span style="font-size: 13px"
-              ><br />
-              Recommendations from the 2023 international evidence-based
-              guideline for the assessment and management of polycystic ovary
-              syndrome (2023)
-            </span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://www.saedyn.es/wp-content/uploads/2024/02/Recommendations-From-the-2023-International-Evidence-based-Guideline-for-the-Assessment-and-Management-of-Polycystic-Ovary-Syndrome.pdf', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 50px; height: auto" />
+          <span style="font-size: 13px"><br />
+            Recommendations from the 2023 international evidence-based
+            guideline for the assessment and management of polycystic ovary
+            syndrome (2023)
+          </span>
         </div>
       </div>
+    </div>
 
-      <!--SUBSECTION 4-->
-      <div
-        class="main-panel"
-        id="subsection4"
-        style="display: none">
-        <h1 class="main-panel__title">Reumatología</h1>
-        <div class="main-panel__content">
-          <div
-            class="card"
-            onclick="window.open('https://ietsi.essalud.gob.pe/wp-content/uploads/2018/06/GPC-OA_Version-extensa.pdf', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span style="font-size: 10px"
-              ><br />
-              Guía de práctica clínica para el diagnóstico y manejo de pacientes
-              con osteoartritis versión extensa
-            </span>
-          </div>
+    <!--SUBSECTION 4-->
+    <div class="main-panel" id="subsection4" style="display: none">
+      <h1 class="main-panel__title">Reumatología</h1>
+      <div class="main-panel__content">
+        <div class="card"
+          onclick="window.open('https://ietsi.essalud.gob.pe/wp-content/uploads/2018/06/GPC-OA_Version-extensa.pdf', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 60px; height: auto" />
+          <span style="font-size: 10px"><br />
+            Guía de práctica clínica para el diagnóstico y manejo de pacientes
+            con osteoartritis versión extensa
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://www.essalud.gob.pe/ietsi/pdfs/guias/GPC_Osteoartritis_v_corta.pdf ', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span style="font-size: 10px"
-              ><br />
-              Guía de práctica clínica para el diagnóstico y manejo de pacientes
-              con osteoartritis versión corta
-            </span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://www.essalud.gob.pe/ietsi/pdfs/guias/GPC_Osteoartritis_v_corta.pdf ', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 60px; height: auto" />
+          <span style="font-size: 10px"><br />
+            Guía de práctica clínica para el diagnóstico y manejo de pacientes
+            con osteoartritis versión corta
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://cdn.www.gob.pe/uploads/document/file/2661695/RD%20267-GPC%20DXyTTO%20OSTEOPOROSIS.pdf.pdf', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span style="font-size: 10px"
-              ><br />
-              Guía de práctica clínica para el diagnóstico y tratamiento de
-              osteoporosis
-            </span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://cdn.www.gob.pe/uploads/document/file/2661695/RD%20267-GPC%20DXyTTO%20OSTEOPOROSIS.pdf.pdf', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 60px; height: auto" />
+          <span style="font-size: 10px"><br />
+            Guía de práctica clínica para el diagnóstico y tratamiento de
+            osteoporosis
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://ietsi.essalud.gob.pe/wp-content/uploads/2019/12/GPC-AR_V.-Ext-Anexos.pdf', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span style="font-size: 10px"
-              ><br />
-              Guía de práctica clínica para el diagnóstico y manejo inicial de
-              artritis reumatoide
-            </span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://ietsi.essalud.gob.pe/wp-content/uploads/2019/12/GPC-AR_V.-Ext-Anexos.pdf', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 60px; height: auto" />
+          <span style="font-size: 10px"><br />
+            Guía de práctica clínica para el diagnóstico y manejo inicial de
+            artritis reumatoide
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://www.ser.es/wp-content/uploads/2020/07/Guia-de-Practica-Clinica-para-el-Manejo-de-Pacientes-con-Gota-1.pdf', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span style="font-size: 10px"
-              ><br />
-              Guía de práctica clínica para el manejo de pacientes con gota
-            </span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://www.ser.es/wp-content/uploads/2020/07/Guia-de-Practica-Clinica-para-el-Manejo-de-Pacientes-con-Gota-1.pdf', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 60px; height: auto" />
+          <span style="font-size: 10px"><br />
+            Guía de práctica clínica para el manejo de pacientes con gota
+          </span>
         </div>
       </div>
+    </div>
 
-      <!--SUBSECTION 5-->
-      <div
-        class="main-panel"
-        id="subsection5"
-        style="display: none">
-        <h1 class="main-panel__title">Urología</h1>
-        <div class="main-panel__content">
-          <div
-            class="card"
-            onclick="window.open('https://www.auanet.org/guidelines-and-quality/guidelines/benign-prostatic-hyperplasia-(bph)-guideline', '_blank');">
-            <img
-              src="./assets/img/AUA.svg"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 100px; height: auto" />
-            <span style="font-size: 10px"
-              ><br />
-              Manejo de los síntomas del tracto urinario inferior atribuidos a
-              la hiperplasia prostática benigna
-            </span>
-          </div>
+    <!--SUBSECTION 5-->
+    <div class="main-panel" id="subsection5" style="display: none">
+      <h1 class="main-panel__title">Urología</h1>
+      <div class="main-panel__content">
+        <div class="card"
+          onclick="window.open('https://www.auanet.org/guidelines-and-quality/guidelines/benign-prostatic-hyperplasia-(bph)-guideline', '_blank');">
+          <img src="./assets/img/AUA.svg" alt="Speech Atención " class="card-img" style="width: 100px; height: auto" />
+          <span style="font-size: 10px"><br />
+            Manejo de los síntomas del tracto urinario inferior atribuidos a
+            la hiperplasia prostática benigna
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://uroweb.org/guidelines/management-of-non-neurogenic-male-luts', '_blank');">
-            <img
-              src="./assets/img/eau.svg"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 100px; height: auto" />
-            <span style="font-size: 10px"
-              ><br />
-              Guía para la evaluación de los síntomas no neurogénicos del tracto
-              urinario inferior masculino, incluida la obstrucción prostática
-              benigna
-            </span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://uroweb.org/guidelines/management-of-non-neurogenic-male-luts', '_blank');">
+          <img src="./assets/img/eau.svg" alt="Speech Atención " class="card-img" style="width: 100px; height: auto" />
+          <span style="font-size: 10px"><br />
+            Guía para la evaluación de los síntomas no neurogénicos del tracto
+            urinario inferior masculino, incluida la obstrucción prostática
+            benigna
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://www.nccn.org/guidelines/guidelines-detail?category=1&id=1459', '_blank');">
-            <img
-              src="./assets/img/nccn.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 180px; height: auto" />
-            <span style="font-size: 10px"
-              ><br />
-              Guías de Práctica clínica y evidencia - Cáncer de Próstata
-            </span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://www.nccn.org/guidelines/guidelines-detail?category=1&id=1459', '_blank');">
+          <img src="./assets/img/nccn.png" alt="Speech Atención " class="card-img" style="width: 180px; height: auto" />
+          <span style="font-size: 10px"><br />
+            Guías de Práctica clínica y evidencia - Cáncer de Próstata
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://ietsi.essalud.gob.pe/wp-content/uploads/2023/06/GPC-Cancer-Prostata-Metastasico-Version-anexos.pdf', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span style="font-size: 10px"
-              ><br />
-              Guía de práctica clínica para el tratamiento del cáncer de
-              prostata metastásico hormonosensible - IETSI
-            </span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://ietsi.essalud.gob.pe/wp-content/uploads/2023/06/GPC-Cancer-Prostata-Metastasico-Version-anexos.pdf', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 60px; height: auto" />
+          <span style="font-size: 10px"><br />
+            Guía de práctica clínica para el tratamiento del cáncer de
+            prostata metastásico hormonosensible - IETSI
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://uroweb.org/guidelines/urolithiasis/chapter/guidelines', '_blank');">
-            <img
-              src="./assets/img/eau.svg"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 100px; height: auto" />
-            <span style="font-size: 10px"
-              ><br />
-              Litiasis renal - Asociación Europea de Urología
-            </span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://uroweb.org/guidelines/urolithiasis/chapter/guidelines', '_blank');">
+          <img src="./assets/img/eau.svg" alt="Speech Atención " class="card-img" style="width: 100px; height: auto" />
+          <span style="font-size: 10px"><br />
+            Litiasis renal - Asociación Europea de Urología
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://www.auanet.org/documents/education/clinical-guidance/translated-guidelines/GUIAS%20DE%20MANEJO%20MEDICO%20DE%20LA%20LITIASIS.pdf', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span style="font-size: 10px"
-              ><br />
-              Litiasis renal - Guía de la AUA (Confederación Americana de
-              Urología)
-            </span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://www.auanet.org/documents/education/clinical-guidance/translated-guidelines/GUIAS%20DE%20MANEJO%20MEDICO%20DE%20LA%20LITIASIS.pdf', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 60px; height: auto" />
+          <span style="font-size: 10px"><br />
+            Litiasis renal - Guía de la AUA (Confederación Americana de
+            Urología)
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://www.aeu.es/UserFiles/files/GuiaVejigaHiperactivaAEU.pdf', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span style="font-size: 10px"
-              ><br />
-              Vejiga hiperactiva - Asociación Española de Urología
-            </span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://www.aeu.es/UserFiles/files/GuiaVejigaHiperactivaAEU.pdf', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 60px; height: auto" />
+          <span style="font-size: 10px"><br />
+            Vejiga hiperactiva - Asociación Española de Urología
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://caunet.org/news/disfuncion-erectila/', '_blank');">
-            <img
-              src="./assets/img/dis-ere.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 100px; height: auto" />
-            <span style="font-size: 10px"
-              ><br />
-              Disfunción Eréctil - Guía de la Confederación Americana de
-              Urología
-            </span>
-          </div>
+        <div class="card" onclick="window.open('https://caunet.org/news/disfuncion-erectila/', '_blank');">
+          <img src="./assets/img/dis-ere.png" alt="Speech Atención " class="card-img"
+            style="width: 100px; height: auto" />
+          <span style="font-size: 10px"><br />
+            Disfunción Eréctil - Guía de la Confederación Americana de
+            Urología
+          </span>
         </div>
       </div>
+    </div>
 
-      <!--SUBSECTION 6-->
-      <div
-        class="main-panel"
-        id="subsection6"
-        style="display: none">
-        <h1 class="main-panel__title">Cardiología</h1>
-        <div class="main-panel__content">
-          <div
-            class="card"
-            onclick="window.open('https://doi.org/10.1093/eurheartj/ehae178', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span style="font-size: 10px"
-              ><br />
-              Guía para el tratamiento de la presión arterial elevada y la
-              hipertensión
-            </span>
-          </div>
+    <!--SUBSECTION 6-->
+    <div class="main-panel" id="subsection6" style="display: none">
+      <h1 class="main-panel__title">Cardiología</h1>
+      <div class="main-panel__content">
+        <div class="card" onclick="window.open('https://doi.org/10.1093/eurheartj/ehae178', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 60px; height: auto" />
+          <span style="font-size: 10px"><br />
+            Guía para el tratamiento de la presión arterial elevada y la
+            hipertensión
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://iris.who.int/bitstream/handle/10665/344424/9789240033986-eng.pdf ', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span style="font-size: 10px"
-              ><br />
-              Guía para el tratamiento farmacológico de la hipertensión en
-              adultos
-            </span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://iris.who.int/bitstream/handle/10665/344424/9789240033986-eng.pdf ', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 60px; height: auto" />
+          <span style="font-size: 10px"><br />
+            Guía para el tratamiento farmacológico de la hipertensión en
+            adultos
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://www.paho.org/es/temas/hipertension', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span style="font-size: 10px"
-              ><br />
-              Hipertensión – HEARTS (OPS)
-            </span>
-          </div>
+        <div class="card" onclick="window.open('https://www.paho.org/es/temas/hipertension', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 60px; height: auto" />
+          <span style="font-size: 10px"><br />
+            Hipertensión – HEARTS (OPS)
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://doi.org/10.1093/eurheartj/ehy339 ', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span style="font-size: 10px"
-              ><br />
-              Guía para el manejo de la hipertensión arterial
-            </span>
-          </div>
+        <div class="card" onclick="window.open('https://doi.org/10.1093/eurheartj/ehy339 ', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 60px; height: auto" />
+          <span style="font-size: 10px"><br />
+            Guía para el manejo de la hipertensión arterial
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://doi.org/10.1016/j.jacc.2021.07.053', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span style="font-size: 10px"
-              ><br />
-              Guía para la evaluación y diagnóstico del dolor torácico
-            </span>
-          </div>
+        <div class="card" onclick="window.open('https://doi.org/10.1016/j.jacc.2021.07.053', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 60px; height: auto" />
+          <span style="font-size: 10px"><br />
+            Guía para la evaluación y diagnóstico del dolor torácico
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://doi.org/10.1177/2048872619885346', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span style="font-size: 10px"
-              ><br />
-              Diagnóstico y estratificación de riesgo de pacientes con dolor
-              torácico en el servicio de urgencias.
-            </span>
-          </div>
+        <div class="card" onclick="window.open('https://doi.org/10.1177/2048872619885346', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 60px; height: auto" />
+          <span style="font-size: 10px"><br />
+            Diagnóstico y estratificación de riesgo de pacientes con dolor
+            torácico en el servicio de urgencias.
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://doi.org/10.1093/eurheartj/ehab368', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span style="font-size: 10px"
-              ><br />
-              Guía para el diagnóstico y tratamiento de la insuficiencia
-              cardíaca aguda y crónica
-            </span>
-          </div>
+        <div class="card" onclick="window.open('https://doi.org/10.1093/eurheartj/ehab368', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 60px; height: auto" />
+          <span style="font-size: 10px"><br />
+            Guía para el diagnóstico y tratamiento de la insuficiencia
+            cardíaca aguda y crónica
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://doi.org/10.1016/j.cardfail.2022.02.010', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span style="font-size: 10px"
-              ><br />
-              Guía para el tratamiento de la insuficiencia cardíaca
-            </span>
-          </div>
+        <div class="card" onclick="window.open('https://doi.org/10.1016/j.cardfail.2022.02.010', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 60px; height: auto" />
+          <span style="font-size: 10px"><br />
+            Guía para el tratamiento de la insuficiencia cardíaca
+          </span>
         </div>
       </div>
+    </div>
 
-      <!--SECTION 4-->
-      <div
-        class="main-panel"
-        id="subsection7"
-        style="display: none">
-        <h1 class="main-panel__title">Leyes</h1>
-        <div class="main-panel__content">
-          <div
-            class="card"
-            onclick="window.open('https://cdn.www.gob.pe/uploads/document/file/284868/ley-general-de-salud.pdf?v=1572397294', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 50px; height: auto" />
-            <span style="font-size: 13px"
-              ><br />
-              Ley N° 26842 - Ley General de Salud
-            </span>
-          </div>
+    <!--SECTION 4-->
+    <div class="main-panel" id="subsection7" style="display: none">
+      <h1 class="main-panel__title">Leyes</h1>
+      <div class="main-panel__content">
+        <div class="card"
+          onclick="window.open('https://cdn.www.gob.pe/uploads/document/file/284868/ley-general-de-salud.pdf?v=1572397294', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 50px; height: auto" />
+          <span style="font-size: 13px"><br />
+            Ley N° 26842 - Ley General de Salud
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://leyes.congreso.gob.pe/documentos/leyes/29414.pdf', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 50px; height: auto" />
-            <span style="font-size: 13px"
-              ><br />
-              Ley N° 29414 - Ley que establece los Derechos de las Personas
-              Usuarias de los Servicios de Salud - Consentimiento informado
-            </span>
-          </div>
+        <div class="card" onclick="window.open('https://leyes.congreso.gob.pe/documentos/leyes/29414.pdf', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 50px; height: auto" />
+          <span style="font-size: 13px"><br />
+            Ley N° 29414 - Ley que establece los Derechos de las Personas
+            Usuarias de los Servicios de Salud - Consentimiento informado
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://www.leyes.congreso.gob.pe/Documentos/ExpVirPal/Normas_Legales/29889-LEY.pdf', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 50px; height: auto" />
-            <span style="font-size: 13px"
-              ><br />
-              Ley N.° 29889 Ley que modifica el Art 11 de la Ley General de
-              Salud
-            </span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://www.leyes.congreso.gob.pe/Documentos/ExpVirPal/Normas_Legales/29889-LEY.pdf', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 50px; height: auto" />
+          <span style="font-size: 13px"><br />
+            Ley N.° 29889 Ley que modifica el Art 11 de la Ley General de
+            Salud
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://cdn.www.gob.pe/uploads/document/file/272360/Ley%20N%C2%BA%2029733.pdf.pdf?v=1618338779', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span style="font-size: 13px"
-              ><br />
-              Ley N.° 29733 - Ley de Protección de Datos Personales
-            </span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://cdn.www.gob.pe/uploads/document/file/272360/Ley%20N%C2%BA%2029733.pdf.pdf?v=1618338779', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 60px; height: auto" />
+          <span style="font-size: 13px"><br />
+            Ley N.° 29733 - Ley de Protección de Datos Personales
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://cdn.www.gob.pe/uploads/document/file/193756/Ley%20N%C2%BA%2030421.pdf.pdf?v=1606248451', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 50px; height: auto" />
-            <span style="font-size: 13px"
-              ><br />
-              Ley N.° 30421 - Ley Marco de Telesalud
-            </span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://cdn.www.gob.pe/uploads/document/file/193756/Ley%20N%C2%BA%2030421.pdf.pdf?v=1606248451', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 50px; height: auto" />
+          <span style="font-size: 13px"><br />
+            Ley N.° 30421 - Ley Marco de Telesalud
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://bvs.minsa.gob.pe/local/MINSA/5418.pdf', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span style="font-size: 13px"
-              ><br />
-              DS 003-2019 SA Reglamento de la Ley N° 30421, Ley Marco de
-              Telesalud
-            </span>
-          </div>
+        <div class="card" onclick="window.open('https://bvs.minsa.gob.pe/local/MINSA/5418.pdf', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 60px; height: auto" />
+          <span style="font-size: 13px"><br />
+            DS 003-2019 SA Reglamento de la Ley N° 30421, Ley Marco de
+            Telesalud
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://busquedas.elperuano.pe/dispositivo/NL/2288658-1', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 60px; height: auto" />
-            <span style="font-size: 13px"
-              ><br />
-              Decreto Supremo N° 006-2024-PRODUCE - Aprueba la Política Nacional
-              para la Calidad al 2030
-            </span>
-          </div>
+        <div class="card" onclick="window.open('https://busquedas.elperuano.pe/dispositivo/NL/2288658-1', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 60px; height: auto" />
+          <span style="font-size: 13px"><br />
+            Decreto Supremo N° 006-2024-PRODUCE - Aprueba la Política Nacional
+            para la Calidad al 2030
+          </span>
         </div>
       </div>
+    </div>
 
-      <!--SUBSECTION 1-->
-      <div
-        class="main-panel"
-        id="subsection8"
-        style="display: none">
-        <h1 class="main-panel__title">Normas MINSA</h1>
-        <div class="main-panel__content">
-          <div
-            class="card"
-            onclick="window.open('https://docs.bvsalud.org/biblioref/2019/02/969231/rm_214-2018_minsa.pdf', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 50px; height: auto" />
-            <span style="font-size: 13px"
-              ><br />
-              Norma Técnica de Salud para la Gestión de la Historia Clínica
-            </span>
-          </div>
+    <!--SUBSECTION 1-->
+    <div class="main-panel" id="subsection8" style="display: none">
+      <h1 class="main-panel__title">Normas MINSA</h1>
+      <div class="main-panel__content">
+        <div class="card"
+          onclick="window.open('https://docs.bvsalud.org/biblioref/2019/02/969231/rm_214-2018_minsa.pdf', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 50px; height: auto" />
+          <span style="font-size: 13px"><br />
+            Norma Técnica de Salud para la Gestión de la Historia Clínica
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://cdn.www.gob.pe/uploads/document/file/342325/Norma_t%C3%A9cnica_de_salud_de_auditor%C3%ADa_de_la_calidad_de_la_atenci%C3%B3n_en_salud_20190716-19467-c34c2y.pdf?v=1563295756', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 50px; height: auto" />
-            <span style="font-size: 13px"
-              ><br />
-              NTS N 029-MINSA/DIGEPRES-V.O2. NORMA TÉCNICA DE SALUD. DE
-              AUDITORÍA DE LA CALIDAD. DE LA ATENCIÓN EN SALUD
-            </span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://cdn.www.gob.pe/uploads/document/file/342325/Norma_t%C3%A9cnica_de_salud_de_auditor%C3%ADa_de_la_calidad_de_la_atenci%C3%B3n_en_salud_20190716-19467-c34c2y.pdf?v=1563295756', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 50px; height: auto" />
+          <span style="font-size: 13px"><br />
+            NTS N 029-MINSA/DIGEPRES-V.O2. NORMA TÉCNICA DE SALUD. DE
+            AUDITORÍA DE LA CALIDAD. DE LA ATENCIÓN EN SALUD
+          </span>
         </div>
       </div>
+    </div>
 
-      <!--SUBSECTION 2-->
-      <div
-        class="main-panel"
-        id="subsection9"
-        style="display: none">
-        <h1 class="main-panel__title">Normas EsSalud</h1>
-        <div class="main-panel__content">
-          <div
-            class="card"
-            onclick="window.open('https://www.essalud.gob.pe/transparencia/pdf/informacion/RGG_0225_GG_ESSALUD_2020.pdf', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 50px; height: auto" />
-            <span style="font-size: 13px"
-              ><br />
-              RGG 225 GG ESSALUD 2020 Procedimiento para la auditoria de calidad
-              de las prestaciones de Salud en EsSalud
-            </span>
-          </div>
+    <!--SUBSECTION 2-->
+    <div class="main-panel" id="subsection9" style="display: none">
+      <h1 class="main-panel__title">Normas EsSalud</h1>
+      <div class="main-panel__content">
+        <div class="card"
+          onclick="window.open('https://www.essalud.gob.pe/transparencia/pdf/informacion/RGG_0225_GG_ESSALUD_2020.pdf', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 50px; height: auto" />
+          <span style="font-size: 13px"><br />
+            RGG 225 GG ESSALUD 2020 Procedimiento para la auditoria de calidad
+            de las prestaciones de Salud en EsSalud
+          </span>
+        </div>
 
-          <div
-            class="card"
-            onclick="window.open('https://www.essalud.gob.pe/wp-content/uploads/RGG_1629_GG_ESSALUD_2021.pdf', '_blank');">
-            <img
-              src="./assets/img/pdf.png"
-              alt="Speech Atención "
-              class="card-img"
-              style="width: 50px; height: auto" />
-            <span style="font-size: 13px"
-              ><br />
-              RGG_1629_GG_ESSALUD_2021 Programación de actividades de Telesalud
-              en las IPRESS de EsSalud
-            </span>
-          </div>
+        <div class="card"
+          onclick="window.open('https://www.essalud.gob.pe/wp-content/uploads/RGG_1629_GG_ESSALUD_2021.pdf', '_blank');">
+          <img src="./assets/img/pdf.png" alt="Speech Atención " class="card-img" style="width: 50px; height: auto" />
+          <span style="font-size: 13px"><br />
+            RGG_1629_GG_ESSALUD_2021 Programación de actividades de Telesalud
+            en las IPRESS de EsSalud
+          </span>
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <script src="./script.js"></script>
-  </body>
+  <script src="./script.js"></script>
+</body>
+
 </html>
