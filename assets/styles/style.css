@@ -787,8 +787,9 @@ img {
   max-width: 650px;
 }
 
-/* --- Input buscador --- */
-#buscadorMedicos {
+/* --- Input buscadores --- */
+#buscadorMedicos,
+#buscadorEnfermeria {
   width: 100%;
   padding: 0.5rem 0.75rem;
   margin-top: 1rem;
@@ -799,14 +800,16 @@ img {
   box-sizing: border-box;
 }
 
-#buscadorMedicos:focus {
+#buscadorMedicos:focus,
+#buscadorEnfermeria:focus {
   border-color: #007bff;
   outline: none;
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
 }
 
-/* --- Lista de médicos --- */
-#listaMedicos {
+/* --- Lista de profesionales --- */
+#listaMedicos,
+#listaEnfermeria {
   list-style: none;
   padding: 0;
   margin: 0.75rem 0 0 0;
@@ -816,7 +819,8 @@ img {
   box-shadow: inset 0 0 5px #ddd;
 }
 
-#listaMedicos li {
+#listaMedicos li,
+#listaEnfermeria li {
   padding: 0.5rem 0.75rem;
   background-color: #f8f9fa;
   border-bottom: 1px solid #ddd;
@@ -826,7 +830,9 @@ img {
 }
 
 #listaMedicos li:hover,
-#listaMedicos li:focus-visible {
+#listaMedicos li:focus-visible,
+#listaEnfermeria li:hover,
+#listaEnfermeria li:focus-visible {
   background-color: #d6eaff;
   outline: none;
 }

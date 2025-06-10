@@ -56,7 +56,7 @@ function initMenuToggle() {
         event.preventDefault(); // Evitar navegación y cierre
         return; // No hacer nada más
       }
-  
+
       if (!link.classList.contains('dropdown-toggle1') && !link.classList.contains('dropdown-toggle2')) {
         if (window.innerWidth <= 768) {
           nav.classList.remove('show-menu');
@@ -67,7 +67,7 @@ function initMenuToggle() {
       }
     });
   });
-  
+
 }
 
 
@@ -102,22 +102,22 @@ function initSubmenuToggles() {
   document.querySelectorAll('.dropdown-toggle1, .dropdown-toggle2').forEach(toggle => {
     toggle.addEventListener('click', (e) => {
       e.preventDefault();
-    
+
       const isFirst = toggle.classList.contains('dropdown-toggle1');
       const submenu = isFirst
         ? document.querySelector('.sub-menu1')
         : document.querySelector('.sub-menu2');
-    
+
       submenu.classList.toggle('show-submenu');
-    
+
       // Cerrar el otro submenú para evitar superposiciones
       const otherSubmenu = isFirst
         ? document.querySelector('.sub-menu2')
         : document.querySelector('.sub-menu1');
-    
+
       otherSubmenu.classList.remove('show-submenu');
     });
-    
+
   });
 }
 
@@ -156,12 +156,12 @@ function initSectionNavigation() {
   navLinks.forEach(link => {
     link.addEventListener("click", function (event) {
       const sectionId = this.getAttribute("href");
-  
+
       // Si no hay href o no comienza con #, no es navegación, es solo un toggle de dropdown
       if (!sectionId || !sectionId.startsWith("#")) return;
-  
+
       event.preventDefault();
-  
+
       let targetSection;
       if (sectionId === "#main-content") {
         targetSection = mainContent;
@@ -170,11 +170,11 @@ function initSectionNavigation() {
       } else {
         targetSection = document.getElementById(sectionId.substring(1));
       }
-  
+
       showSection(targetSection);
     });
   });
-  
+
 }
 
 // ----------------------------------------
@@ -183,13 +183,13 @@ function initSectionNavigation() {
 function initVideoModal() {
   const modal = document.getElementById("videoModal");
   const video = document.getElementById("videoPlayer");
-const openBtn = document.getElementById("openVideoBtn"); 
+  const openBtn = document.getElementById("openVideoBtn");
 
   //window.openVideoModal = function () {
-   // if (modal) modal.style.display = "block";
+  // if (modal) modal.style.display = "block";
   //};
 
-   if (openBtn) {
+  if (openBtn) {
     openBtn.addEventListener('click', () => {
       if (modal) modal.style.display = "block";
     });
@@ -218,7 +218,7 @@ function initCerrarButton() {
   const btnCerrar = document.getElementById('btnCerrar');
   if (!btnCerrar) return;
 
-  btnCerrar.addEventListener('click', function(event) {
+  btnCerrar.addEventListener('click', function (event) {
     event.preventDefault();
     showMainSection();
   });
@@ -255,7 +255,7 @@ function showMainSection() {
 // 7. POP UP DE PACIENTES CRONICOS
 // ----------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
-   // Elementos principales
+  // Elementos principales
   const card = document.getElementById("cardSeguimiento");
   const modal = document.getElementById("popupModal");
   const cerrarTop = document.getElementById("cerrarModalTop");
@@ -270,47 +270,67 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnCerrarCriterios = document.getElementById('cerrarCriterios');
   const btnContainer = document.querySelector('.btn-container');
 
- 
+  const enfermeriaCard = document.querySelector('[data-profesion="enfermeria"]');
+  const enfermeriaLista = document.getElementById("enfermeria-lista");
+  const buscadorEnfermeria = document.getElementById("buscadorEnfermeria");
+  const listaEnfermeria = document.getElementById("listaEnfermeria");
+  const btnFlujo = document.getElementById('btnFlujo');
+  const contenedorFlujo = document.getElementById('contenedorFlujo');
+  const btnCerrarFlujo = document.getElementById('cerrarFlujo');
 
-const profesionales = [
-  { nombre: "Machuca Bazan Dhalia Del Rocio", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1418781266#gid=1418781266" },
-  { nombre: "Cueva Lopez, Raquel Johanna", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1101181357#gid=1101181357" },
-  { nombre: "Flores Machaca Jaime Raul", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1429308899#gid=1429308899" },
-  { nombre: "Medina Leiva, Jorge Ramiro", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=985270562#gid=985270562" },
-  { nombre: "Mayo Arpi Diana Alisson", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=859488515#gid=859488515" },
-  { nombre: "Herrera Palmi Carolina Raquel", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1751033990#gid=1751033990" },
-  { nombre: "Silva Toribio Rut Judit", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=648295653#gid=648295653" },
-  { nombre: "Roldan Montes Stephanie Karina", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1692554361#gid=1692554361" },
-  { nombre: "Abraham Hurtado, Sairah Carolina", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=13441560#gid=13441560" },
-  { nombre: "Acosta Hurtado, Xiomara Alexandra", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1458555454#gid=1458555454" },
-  { nombre: "Anicama Budiel, Daniel", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=29124731#gid=29124731" },
-  { nombre: "Aragon Arriola, Victor", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1039294332#gid=1039294332" },
-  { nombre: "Arones Santayana, Tania Milagros", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1808632685#gid=1808632685" },
-  { nombre: "Bastidas Ramos Evelyn Paola", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=652116364#gid=652116364" },
-  { nombre: "Canales Vasquez Bryam", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1914875513#gid=1914875513" },
-  { nombre: "Cecinario Lopez, Elena Milagros", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1925676282#gid=1925676282" },
-  { nombre: "Diaz Garcia Silvia Isabel", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=886179292#gid=886179292" },
-  { nombre: "García Marcano, Ennifer Karina", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=2013866336#gid=2013866336" },
-  { nombre: "Herrera Moncada, Sindy Romina", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1597740568#gid=1597740568" },
-  { nombre: "Jimenez Tornero, Ximena", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1034229989#gid=1034229989" },
-  { nombre: "Laban Leiva, Diana Emperatriz", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1468718713#gid=1468718713" },
-  { nombre: "Leonardo Gonzales, Roxana", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=489483443#gid=489483443" },
-  { nombre: "Medina Lopez Nathaly", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=926826109#gid=926826109" },
-  { nombre: "Rodriguez Bravo Marixandra", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1075082221#gid=1075082221" },
-  { nombre: "Sánchez Del Hierro, Maria Pia Sthefany", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=927285602#gid=927285602" },
-  { nombre: "Tinajeros Vega, Ivette Marilyn", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1187901923#gid=1187901923" },
-  { nombre: "Feijoo Galvez Sergio Mauricio", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1612924707#gid=1612924707" },
-  { nombre: "Gallegos Alvarado Karla Patricia", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=892155851#gid=892155851" },
-  { nombre: "Zegarra Inchausti Vanessa Daphne", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=2101624040#gid=2101624040" },
-  { nombre: "Mendoza Saldaña Juan", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1568390888#gid=1568390888" },
-  { nombre: "Cornejo Agama Marco", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1812840858#gid=1812840858" },
-  { nombre: "Toro Lozano, Yasany Madeleydy", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1183433806#gid=1183433806" },
-  { nombre: "Tatiana Emperatriz Avalos Cruz", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=591337825#gid=591337825" },
-  { nombre: "Yosselyn Gabriela Flores Perez", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1904161931#gid=1904161931" },
-  { nombre: "Jose Enrique Castañeda Apolinario", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1536927381#gid=1536927381" },
-  { nombre: "Gonzales Graus Ivan", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1187237906#gid=1187237906" },
-  { nombre: "Aquino Grande Dayhan Jennifer", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=786045073#gid=786045073" }
-];
+
+  const profesionales = [
+    { nombre: "Machuca Bazan Dhalia Del Rocio", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1418781266#gid=1418781266" },
+    { nombre: "Cueva Lopez, Raquel Johanna", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1101181357#gid=1101181357" },
+    { nombre: "Flores Machaca Jaime Raul", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1429308899#gid=1429308899" },
+    { nombre: "Medina Leiva, Jorge Ramiro", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=985270562#gid=985270562" },
+    { nombre: "Mayo Arpi Diana Alisson", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=859488515#gid=859488515" },
+    { nombre: "Herrera Palmi Carolina Raquel", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1751033990#gid=1751033990" },
+    { nombre: "Silva Toribio Rut Judit", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=648295653#gid=648295653" },
+    { nombre: "Roldan Montes Stephanie Karina", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1692554361#gid=1692554361" },
+    { nombre: "Abraham Hurtado, Sairah Carolina", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=13441560#gid=13441560" },
+    { nombre: "Acosta Hurtado, Xiomara Alexandra", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1458555454#gid=1458555454" },
+    { nombre: "Anicama Budiel, Daniel", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=29124731#gid=29124731" },
+    { nombre: "Aragon Arriola, Victor", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1039294332#gid=1039294332" },
+    { nombre: "Arones Santayana, Tania Milagros", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1808632685#gid=1808632685" },
+    { nombre: "Bastidas Ramos Evelyn Paola", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=652116364#gid=652116364" },
+    { nombre: "Canales Vasquez Bryam", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1914875513#gid=1914875513" },
+    { nombre: "Cecinario Lopez, Elena Milagros", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1925676282#gid=1925676282" },
+    { nombre: "Diaz Garcia Silvia Isabel", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=886179292#gid=886179292" },
+    { nombre: "García Marcano, Ennifer Karina", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=2013866336#gid=2013866336" },
+    { nombre: "Herrera Moncada, Sindy Romina", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1597740568#gid=1597740568" },
+    { nombre: "Jimenez Tornero, Ximena", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1034229989#gid=1034229989" },
+    { nombre: "Laban Leiva, Diana Emperatriz", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1468718713#gid=1468718713" },
+    { nombre: "Leonardo Gonzales, Roxana", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=489483443#gid=489483443" },
+    { nombre: "Medina Lopez Nathaly", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=926826109#gid=926826109" },
+    { nombre: "Rodriguez Bravo Marixandra", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1075082221#gid=1075082221" },
+    { nombre: "Sánchez Del Hierro, Maria Pia Sthefany", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=927285602#gid=927285602" },
+    { nombre: "Tinajeros Vega, Ivette Marilyn", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1187901923#gid=1187901923" },
+    { nombre: "Feijoo Galvez Sergio Mauricio", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1612924707#gid=1612924707" },
+    { nombre: "Gallegos Alvarado Karla Patricia", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=892155851#gid=892155851" },
+    { nombre: "Zegarra Inchausti Vanessa Daphne", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=2101624040#gid=2101624040" },
+    { nombre: "Mendoza Saldaña Juan", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1568390888#gid=1568390888" },
+    { nombre: "Cornejo Agama Marco", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1812840858#gid=1812840858" },
+    { nombre: "Toro Lozano, Yasany Madeleydy", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1183433806#gid=1183433806" },
+    { nombre: "Tatiana Emperatriz Avalos Cruz", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=591337825#gid=591337825" },
+    { nombre: "Yosselyn Gabriela Flores Perez", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1904161931#gid=1904161931" },
+    { nombre: "Jose Enrique Castañeda Apolinario", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1536927381#gid=1536927381" },
+    { nombre: "Gonzales Graus Ivan", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1187237906#gid=1187237906" },
+    { nombre: "Aquino Grande Dayhan Jennifer", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=786045073#gid=786045073" }
+  ];
+
+  const profesionalesEnfermeria = [
+    { nombre: "Baquero Rodriguez Tania", url: "https://docs.google.com/spreadsheets/d/1NPti10knKUkohXwIJVTTE8OV3xQK6Zeh-cj2yBTN200/edit?gid=1243032331#gid=1243032331" },
+    { nombre: "Caceres Valdez Ilda", url: "https://docs.google.com/spreadsheets/d/1NPti10knKUkohXwIJVTTE8OV3xQK6Zeh-cj2yBTN200/edit?gid=1368772361#gid=1368772361" },
+    { nombre: "Casique Carbajal Karla Betsabe", url: "https://docs.google.com/spreadsheets/d/1NPti10knKUkohXwIJVTTE8OV3xQK6Zeh-cj2yBTN200/edit?gid=1504212023#gid=1504212023" },
+    { nombre: "Cieza Huisa Elizabeth Jackeline", url: "https://docs.google.com/spreadsheets/d/1NPti10knKUkohXwIJVTTE8OV3xQK6Zeh-cj2yBTN200/edit?gid=1048287853#gid=1048287853" },
+    { nombre: "Goñas Sopla Ceida", url: "https://docs.google.com/spreadsheets/d/1NPti10knKUkohXwIJVTTE8OV3xQK6Zeh-cj2yBTN200/edit?gid=963096201#gid=963096201" },
+    { nombre: "Orellana Gutierrez Sandra Rocio", url: "https://docs.google.com/spreadsheets/d/1NPti10knKUkohXwIJVTTE8OV3xQK6Zeh-cj2yBTN200/edit?gid=633431742#gid=633431742" },
+    { nombre: "Quispe Evangelista Maria", url: "https://docs.google.com/spreadsheets/d/1NPti10knKUkohXwIJVTTE8OV3xQK6Zeh-cj2yBTN200/edit?gid=192149304#gid=192149304" },
+    { nombre: "Vasquez Venancino Rocio", url: "https://docs.google.com/spreadsheets/d/1NPti10knKUkohXwIJVTTE8OV3xQK6Zeh-cj2yBTN200/edit?gid=172090975#gid=172090975" }
+  ];
+
+
 
   // Función para cerrar modal y limpiar buscador/lista
   function cerrarModal() {
@@ -333,17 +353,41 @@ const profesionales = [
   });
 
   // Mostrar buscador Medicina
-  if(medicinaCard && medicinaLista && buscador) {
+  if (medicinaCard && medicinaLista && buscador) {
     medicinaCard.addEventListener("click", () => {
       medicinaLista.style.display = "block";
       buscador.focus();
     });
   }
 
-  
+  const cards = document.querySelectorAll(".profile-card");
 
-  // Buscar profesionales
-  if(buscador && lista) {
+  cards.forEach((card) => {
+    card.addEventListener("click", () => {
+      // Oculta todos los desplegables primero
+      medicinaLista.style.display = "none";
+      enfermeriaLista.style.display = "none";
+
+      // Elimina clase activa de todas las tarjetas
+      cards.forEach((c) => c.classList.remove("active"));
+
+      // Marca esta tarjeta como activa
+      card.classList.add("active");
+
+      const profesion = card.dataset.profesion;
+
+      if (profesion === "medicina") {
+        medicinaLista.style.display = "block";
+      } else if (profesion === "enfermeria") {
+        enfermeriaLista.style.display = "block";
+      }
+    });
+  });
+
+
+
+  // Buscar profesionales medicos
+  if (buscador && lista) {
     buscador.addEventListener("input", () => {
       const texto = buscador.value.toLowerCase().trim();
       lista.innerHTML = "";
@@ -364,13 +408,31 @@ const profesionales = [
     });
   }
 
+  buscadorEnfermeria.addEventListener("input", () => {
+    const filtro = buscadorEnfermeria.value.toLowerCase();
+    listaEnfermeria.innerHTML = "";
+
+    profesionalesEnfermeria.forEach((prof) => {
+      if (prof.nombre.toLowerCase().includes(filtro)) {
+        const li = document.createElement("li");
+        li.textContent = prof.nombre;
+        li.classList.add("doctor-name");
+        li.addEventListener("click", () => {
+          window.open(prof.url, "_blank");
+        });
+        listaEnfermeria.appendChild(li);
+      }
+    });
+  });
+
+
   // Cerrar modal haciendo clic fuera
   window.addEventListener("click", (e) => {
     if (e.target === modal) cerrarModal();
   });
 
   // Mostrar criterios
-  if(btnCriterio && contenedorCriterios && btnCerrarCriterios && btnContainer && cerrarTop) {
+  if (btnCriterio && contenedorCriterios && btnCerrarCriterios && btnContainer && cerrarTop) {
     btnCriterio.addEventListener('click', () => {
       contenedorCriterios.style.display = 'flex';
       btnContainer.style.display = 'none';
@@ -384,6 +446,27 @@ const profesionales = [
     });
   }
 
+});
+
+
+// Mostrar popup de Criterios
+btnCriterio.addEventListener('click', () => {
+  contenedorCriterios.style.display = 'flex';
+});
+
+// Cerrar popup de Criterios
+btnCerrarCriterios.addEventListener('click', () => {
+  contenedorCriterios.style.display = 'none';
+});
+
+// Mostrar popup de Flujo de trabajo
+btnFlujo.addEventListener('click', () => {
+  contenedorFlujo.style.display = 'flex';
+});
+
+// Cerrar popup de Flujo de trabajo
+btnCerrarFlujo.addEventListener('click', () => {
+  contenedorFlujo.style.display = 'none';
 });
 
 

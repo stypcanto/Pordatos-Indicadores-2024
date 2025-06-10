@@ -251,7 +251,7 @@
 
         <!-- MODAL -->
 
-        <!-- Modal principal -->
+      
         <!-- Modal principal -->
         <div id="popupModal" class="modal-overlay" style="display: none;">
           <div class="modal-content">
@@ -263,8 +263,8 @@
 
             <!-- Tarjetas de selección de perfil -->
             <div class="profile-cards">
-              <div class="profile-card" data-profesion="medicina">Medicina</div>
-              <div class="profile-card inactive" data-profesion="enfermeria">Enfermería</div>
+              <div class="profile-card" data-profesion="medicina">Medicina </div>
+              <div class="profile-card" data-profesion="enfermeria">Enfermería</div>
               <div class="profile-card inactive" data-profesion="psicologia">Psicología</div>
               <div class="profile-card inactive" data-profesion="nutricion">Nutrición</div>
               <div class="profile-card inactive" data-profesion="terapia">Terapia Física</div>
@@ -273,44 +273,53 @@
             <!-- Desplegable de médicos (solo visible al seleccionar "Medicina") -->
             <div id="medicina-lista" class="desplegable" style="display: none;">
               <h4>
-                Ingrese su nombre y haga clic para redirigirse a la lista de sus pacientes
+                Ingrese su nombre y haga clic para redirigirse a la lista de sus pacientes de medicina
               </h4>
               <input type="text" id="buscadorMedicos" placeholder="Ingrese el nombre del profesional" />
               <ul id="listaMedicos"></ul>
             </div>
 
+
+            <!-- Desplegable de enfermería (solo visible al seleccionar "Enfermería") -->
+            <div id="enfermeria-lista" class="desplegable" style="display: none;">
+              <h4>Ingrese su nombre y haga clic para redirigirse a la lista de sus pacientes de enfermeria</h4>
+              <input type="text" id="buscadorEnfermeria" placeholder="Ingrese el nombre del profesional" />
+              <ul id="listaEnfermeria"></ul>
+            </div>
+
+
             <!-- Botones inferiores -->
             <div class="btn-container">
-              <button id="cerrarModal" class="btn-close-bottom">Cerrar</button>
               <button id="btnCriterio" class="btn-criterio">Criterios de Inclusión</button>
+              <button id="btnFlujo" class="btn-criterio">Flujo de trabajo</button>
             </div>
+
+
+
+
           </div>
         </div>
 
 
-        <!-- Contenedor Criterios -->
-        <div id="contenedorCriterios" class="criterios-overlay" style="display: none">
-          <div class="criterios-content">
-            <button id="cerrarCriterios" class="btn-close-top">
-              X
-            </button>
-            <h3>Criterios de Inclusión y Exclusión</h3>
-            <img src="./assets/img/criterios.jpeg" alt="Criterios de inclusión y exclusión" />
-            <p class="texto-imagen-descripcion">
-              Esta imagen resume los lineamientos que rigen la inclusión y
-              exclusión de pacientes en la estrategia.
-            </p>
-          </div>
-        </div>
+       <!-- Popup Criterios -->
+<div id="contenedorCriterios" class="criterios-overlay" style="display: none">
+  <div class="criterios-content">
+    <button id="cerrarCriterios" class="btn-close-top">X</button>
+    <h3>Criterios de Inclusión y Exclusión</h3>
+    <img src="./assets/img/criterios.jpeg" alt="Criterios de inclusión y exclusión" />
+    <p class="texto-imagen-descripcion">Esta imagen resume los lineamientos que rigen la inclusión y exclusión de pacientes en la estrategia.</p>
+  </div>
+</div>
 
-        <!-- Termino de la funcion -->
-        <div class="card"
-          onclick="window.open('https://docs.google.com/spreadsheets/d/1FQPw2nPaRM74CXLOZ1nvFQR08qXQS8rwccPIRlHPCZ4/edit?gid=1416608776#gid=1416608776', '_blank');">
-          <img src="./assets/img/Iconos_listado de pacientes TC A-N.svg" alt="Speech Atención " class="card-img"
-            style="width: 60px; height: auto" />
-          <span><br />
-            Listado de pacientes TC (A-N)</span>
-        </div>
+<!-- Popup Flujo de Trabajo -->
+<div id="contenedorFlujo" class="criterios-overlay" style="display: none">
+  <div class="criterios-content">
+    <button id="cerrarFlujo" class="btn-close-top">X</button>
+    <h3>Flujo de Trabajo</h3>
+    <img src="./assets/img/flujo-trabajo.jpeg" alt="Flujo de trabajo" />
+    <p class="texto-imagen-descripcion">Esta imagen muestra el proceso detallado del flujo de atención.</p>
+  </div>
+</div>
 
         <div class="card"
           onclick="window.open('https://docs.google.com/spreadsheets/d/1xB78sklAHAC1wi0-0F5v9xnIBVAUxfdjaHPzEV-anEE/edit?gid=2014624632#gid=2014624632', '_blank');">
@@ -383,7 +392,7 @@
           <div class="tutoriales-content">
             <button id="cerrarVideoModal" class="tutoriales-btn-close" onclick="closeVideoModal()">X</button>
             <h3 class="tutoriales-heading">Tutoriales Educativos CENATE</h3>
-        
+
             <div class="tutoriales-scrollable">
               <div class="tutoriales-video-grid">
                 <div class="video-item">
@@ -418,16 +427,16 @@
                   <h4 class="video-title">Tratamiento de la fiebre amarilla</h4>
                   <iframe src="https://www.youtube.com/embed/6BeXlcs8PCo" allowfullscreen></iframe>
                 </div>
-                
+
               </div>
             </div>
-        
+
             <p class="tutoriales-descripcion">
               Esta sección contiene videos educativos para el personal de CENATE.
             </p>
           </div>
         </div>
-        
+
 
 
 
