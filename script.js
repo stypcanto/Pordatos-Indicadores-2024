@@ -278,6 +278,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const contenedorFlujo = document.getElementById('contenedorFlujo');
   const btnCerrarFlujo = document.getElementById('cerrarFlujo');
 
+  const btnMesaAyuda = document.getElementById("btnMesaAyuda");
+  const contenedorMesaAyuda = document.getElementById("contenedorMesaAyuda");
+  const cerrarMesaAyuda = document.getElementById("cerrarMesaAyuda");
+
 
   const profesionales = [
     { nombre: "Machuca Bazan Dhalia Del Rocio", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1418781266#gid=1418781266" },
@@ -352,13 +356,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Mostrar buscador Medicina
-  if (medicinaCard && medicinaLista && buscador) {
+  // Mostrar buscador de Medicina
+  if (medicinaCard && medicinaLista && buscador && enfermeriaLista) {
     medicinaCard.addEventListener("click", () => {
       medicinaLista.style.display = "block";
       buscador.focus();
+      enfermeriaLista.style.display = "none"; // Oculta Enfermería
     });
   }
+
+  // Mostrar buscador de Enfermería
+  if (enfermeriaCard && enfermeriaLista && buscadorEnfermeria && medicinaLista) {
+    enfermeriaCard.addEventListener("click", () => {
+      enfermeriaLista.style.display = "block";
+      buscadorEnfermeria.focus();
+      medicinaLista.style.display = "none"; // Oculta Medicina
+    });
+  }
+
 
   const cards = document.querySelectorAll(".profile-card");
 
@@ -446,27 +461,29 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-});
+  // Lógica para abrir el popup de Flujo
+  btnFlujo.addEventListener('click', () => {
+    contenedorFlujo.style.display = 'flex';
+  });
+
+  // Lógica para cerrar el popup de Flujo
+  btnCerrarFlujo.addEventListener('click', () => {
+    contenedorFlujo.style.display = 'none';
+  });
 
 
-// Mostrar popup de Criterios
-btnCriterio.addEventListener('click', () => {
-  contenedorCriterios.style.display = 'flex';
-});
+  if (btnMesaAyuda && contenedorMesaAyuda && cerrarMesaAyuda) {
+    btnMesaAyuda.addEventListener("click", () => {
+      contenedorMesaAyuda.style.display = "flex";
+    });
 
-// Cerrar popup de Criterios
-btnCerrarCriterios.addEventListener('click', () => {
-  contenedorCriterios.style.display = 'none';
-});
+    cerrarMesaAyuda.addEventListener("click", () => {
+      contenedorMesaAyuda.style.display = "none";
+    });
+  }
 
-// Mostrar popup de Flujo de trabajo
-btnFlujo.addEventListener('click', () => {
-  contenedorFlujo.style.display = 'flex';
-});
 
-// Cerrar popup de Flujo de trabajo
-btnCerrarFlujo.addEventListener('click', () => {
-  contenedorFlujo.style.display = 'none';
+
 });
 
 
@@ -497,6 +514,7 @@ function closeVideoModal() {
     }, 100);
   });
 }
+
 
 
 // Cerrar modal si haces clic fuera del contenido
