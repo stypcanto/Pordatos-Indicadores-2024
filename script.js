@@ -490,41 +490,96 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// ========================================
+// 9. MODAL DE UTILITARIOS (Código mejorado)
+// ========================================
 
-// ----------------------------------------
-// 8. VIDEOS TUTORIALES
-// ----------------------------------------
+function initUtilitariosModal() {
+  // Elementos del modal principal
+  const modal = document.getElementById('modalRemoto');
+  const card = document.getElementById('cardRemoto');
+  const closeBtn = document.getElementById('cerrarRemotoModal');
+  
+  // Elementos del submodal de firma digital
+  const firmaDigitalTrigger = document.getElementById('firmaDigitalTrigger');
+  const submodalFirma = document.getElementById('submodalFirma');
+  const cerrarSubmodal = document.getElementById('cerrarSubmodal');
 
+  // Verificar que existan los elementos principales
+  if (!modal || !card || !closeBtn) {
+    console.error('Elementos principales del modal no encontrados');
+    return;
+  }
 
-function openVideoModal() {
-  const modal = document.getElementById('videoModal');
-  modal.style.display = 'flex';
-}
+  // Función para abrir el modal principal
+  function openUtilitariosModal() {
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
 
-function closeVideoModal() {
-  const modal = document.getElementById("videoModal");
-  modal.style.display = "none";
+  // Función para cerrar el modal principal
+  function closeUtilitariosModal() {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
 
-  // Detener los videos: reiniciar los src con un pequeño delay
-  const iframes = modal.querySelectorAll("iframe");
-  iframes.forEach((iframe) => {
-    const src = iframe.src;
-    iframe.src = ""; // Limpia primero
+  // Función para abrir el submodal de firma digital
+  function openFirmaDigitalModal(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    submodalFirma.style.display = 'flex';
+  }
 
-    // Espera un poquito para recargar
-    setTimeout(() => {
-      iframe.src = src;
-    }, 100);
+  // Función para cerrar el submodal de firma digital
+  function closeFirmaDigitalModal() {
+    submodalFirma.style.display = 'none';
+  }
+
+  // Event listeners para el modal principal
+  card.addEventListener('click', openUtilitariosModal);
+  closeBtn.addEventListener('click', closeUtilitariosModal);
+
+  // Event listeners para el submodal (si existen los elementos)
+  if (firmaDigitalTrigger && submodalFirma && cerrarSubmodal) {
+    firmaDigitalTrigger.addEventListener('click', openFirmaDigitalModal);
+    cerrarSubmodal.addEventListener('click', closeFirmaDigitalModal);
+    
+    // Cerrar submodal al hacer clic fuera
+    submodalFirma.addEventListener('click', function(e) {
+      if (e.target === submodalFirma) {
+        closeFirmaDigitalModal();
+      }
+    });
+  } else {
+    console.warn('Elementos del submodal de firma digital no encontrados');
+  }
+
+  // Cerrar modales al hacer clic fuera del contenido
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      closeUtilitariosModal();
+    }
+  });
+
+  // Cerrar modales con tecla ESC
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      if (submodalFirma && submodalFirma.style.display === 'flex') {
+        closeFirmaDigitalModal();
+      } else if (modal.style.display === 'flex') {
+        closeUtilitariosModal();
+      }
+    }
   });
 }
 
-
-
-// Cerrar modal si haces clic fuera del contenido
-window.addEventListener('click', function (event) {
-  const modal = document.getElementById('videoModal');
-  const content = document.querySelector('.tutoriales-content');
-  if (event.target === modal) {
-    closeVideoModal();
-  }
+// Agregar al inicializador principal
+document.addEventListener("DOMContentLoaded", () => {
+  initMenuToggle();
+  initNavLinks();
+  initSubmenuToggles();
+  initSectionNavigation();
+  initVideoModal();
+  initCerrarButton();
+  initUtilitariosModal(); // <-- Inicializar el modal de utilitarios
 });
