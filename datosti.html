@@ -1,0 +1,268 @@
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal Web CENATE</title>
+  <link rel="stylesheet" href="./assets/styles/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+
+  <meta name="description" content="Descripción de la página para SEO" />
+  <meta property="og:title" content="Título para redes sociales" />
+  <meta property="og:description" content="Descripción para redes sociales" />
+  <meta property="og:image" content="URL de la imagen para redes sociales" />
+</head>
+
+<body>
+  <!--HEADER-->
+  <header class="header">
+    <div class="header__container">
+      <img src="./assets/img/Web Development Logo.png" class="header__img__rectangle" />
+      <div class="header__toggle">
+        <i class="bx bx-menu" id="header-toggle"></i>
+      </div>
+    </div>
+  </header>
+  <!--NAV-->
+  <div class="nav" id="navbar">
+    <nav class="nav__container">
+      <div>
+        <a href="#" class="nav__link nav__logo">
+          <span class="nav__logo-name"> Portal de información </span>
+        </a>
+        <div class="nav__list">
+          <!-- PERFIL DE USUARIO QUE POR AHORA NO SE USARÁ
+            <div class="nav__items">
+              <h1 class="nav__subtitle">Profile</h1>
+              <a href="#" class="nav__link active">
+                <i class="bx bx-home nav__icon"></i>
+                <span class="nav__name">Inicio</span>
+              </a>
+              <div class="nav__dropdown">
+                <a href="#" class="nav__link">
+                  <i class="bx bx-user nav__icon"></i>
+                  <span class="nav__name">Perfil</span>
+                  <i
+                    class="bx bx-chevron-down nav__icon nav__dropdown-icon"
+                  ></i>
+                </a>
+                <div class="nav__dropdown-collapse">
+                  <div class="nav__dropdown-content">
+                    <a href="#" class="nav__dropdown-item">Contraseñas</a>
+                    <a href="#" class="nav__dropdown-item">Correo</a>
+                    <a href="#" class="nav__dropdown-item">Cuentas</a>
+                  </div>
+                </div>
+              </div>
+              <a href="#" class="nav__link">
+                <i class="bx bx-mail-send nav__icon"></i>
+                <span class="nav__name">Correos</span>
+              </a>
+            </div>
+
+      -->
+
+          <div class="nav__items">
+            <h3 class="nav__subtitle_menu">Menú</h3>
+
+            <div class="nav__dropdown">
+              <a href="#main-content" class="nav__link">
+                <!--Por defecto cuando se pulsa sobre Informacion General mostrar la pagina de Panel Principal TC TM y TO, por ahora estara asi luego se cambiara-->
+
+                <i class="bx bx-sitemap nav__icon"></i>
+                <span class="nav__name">Información General</span>
+                <i class="bx bx-chevron-down nav__icon nav__dropdown-icon"></i>
+              </a>
+              <div class="nav__dropdown-collapse">
+                <div class="nav__dropdown-content">
+                  <a href="#main-content" class="nav__dropdown-item">Panel Principal TC TM TO</a>
+                  <a href="#librarytad-content" class="nav__dropdown-item">Panel Principal TAD</a>
+
+                  <a href="teledot.html" class="nav__dropdown-item" id="teledot-link">
+                    Teledot
+                  </a>
+
+                  <script>
+                    document
+                      .getElementById("teledot-link")
+                      .addEventListener("click", function (event) {
+                        event.preventDefault(); // Prevenir la acción por defecto
+                        window.open("teledot.html", "_blank"); // Abrir la página en una nueva pestaña
+                      });
+                  </script>
+
+                  <div class="nav__dropdown-item dropdown1">
+                    <span class="dropdown-toggle dropdown-toggle1">Biblioteca Médica</span>
+                    <ul class="sub-menu sub-menu1">
+                      <li>
+                        <a href="#subsection1" class="nav__dropdown-item1">Recursos en Medicina</a>
+                      </li>
+
+                      <li>
+                        <a href="#subsection2" class="nav__dropdown-item1">Promoción de una buena prescripción</a>
+                      </li>
+
+                      <li>
+                        <a href="#subsection3" class="nav__dropdown-item1">Endocrinología</a>
+                      </li>
+
+                      <li>
+                        <a href="#subsection4" class="nav__dropdown-item1">Reumatología</a>
+                      </li>
+
+                      <li>
+                        <a href="#subsection5" class="nav__dropdown-item1">Urología</a>
+                      </li>
+
+                      <li>
+                        <a href="#subsection6" class="nav__dropdown-item1">Cardiología</a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="nav__dropdown-item dropdown2">
+                    <span class="dropdown-toggle dropdown-toggle2">Leyes y Normas</span>
+                    <ul class="sub-menu sub-menu2">
+                      <li>
+                        <a href="#subsection7" class="nav__dropdown-item2">Leyes</a>
+                      </li>
+
+                      <li>
+                        <a href="#subsection8" class="nav__dropdown-item2">Normas MINSA</a>
+                      </li>
+
+                      <li>
+                        <a href="#subsection9" class="nav__dropdown-item2">Normas EsSalud</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PERFIL DE MENUS QUE POR AHORA NO SE USARÁ
+              <a href="#" class="nav__link">
+                <i class="bx bx-analyse nav__icon"></i>
+                <span class="nav__name">Estadística</span>
+              </a>
+              <a href="#" class="nav__link">
+                <i class="bx bx-heart nav__icon"></i>
+                <span class="nav__name">Indicadores</span>
+              </a>
+
+              <a href="#" class="nav__link">
+                <i class="bx bx-briefcase nav__icon"></i>
+                <span class="nav__name">Normas legales</span>
+              </a>
+
+              <a href="#" class="nav__link">
+                <i class="bx bx-star nav__icon"></i>
+                <span class="nav__name">Mapa de procesos</span>
+              </a>
+              <a href="#" class="nav__link">
+                <i class="bx bx-sitemap nav__icon"></i>
+                <span class="nav__name">Organigrama</span>
+              </a>
+              <a href="#" class="nav__link">
+                <i class="bx bx-user nav__icon"></i>
+                <span class="nav__name">Directorio de personal</span>
+              </a>
+              <a href="#" class="nav__link">
+                <i class="bx bx-analyse nav__icon"></i>
+                <span class="nav__name">Reuniones</span>
+              </a>
+
+ -->
+          </div>
+        </div>
+      </div>
+      <a href="#" id="btnCerrar" class="nav__link nav__logout">
+        <i class="bx bx-log-out nav__icon"></i>
+        <span class="nav__name">Cerrar</span>
+      </a>
+    </nav>
+  </div>
+
+  <!--CONTENIDO-->
+  <!--SECTION 1-->
+  <main>
+    <div class="main-panel" id="main-content">
+      
+      <h1 class="main-panel__title">Matriz de accesos rápidos para TI</h1>
+      <div class="main-panel__content">
+     
+
+
+
+
+     
+
+        <div class="card"
+          onclick="window.open('https://us02web.zoom.us/j/81483580541?pwd=9JHZ44eQKPv11MuTATtuyw9jDf9uJ7.1', '_blank');">
+          <img src="./assets/img/Zoom.svg" alt="Speech Atención " class="card-img" style="width: 80px; height: auto" />
+          <span>Cuentas Zoom</span>
+          <span style="font-size: 12px">Para Teleconsultorios</span>
+        </div>
+
+        <div class="card" onclick="window.open('http://10.56.1.158/sgss/servlet/hmain', '_blank');">
+          <img src="./assets/img/Iconos_ESSI.svg" alt="Speech Atención " class="card-img"
+            style="width: 80px; height: auto" />
+          <span>ESSI</span>
+        </div>
+
+
+        <div class="card"
+          onclick="window.open('https://docs.google.com/spreadsheets/d/1xYQfmu70tIV5QhhDEPDs26nC8GSRW6H9sPsgXMS6pW8/edit?usp=sharing', '_blank');">
+          <img src="./assets/img/Iconos_Informacion de las IPRESS.svg" alt="Lineamientos Básicos" class="card-img"
+            style="width: 60px; height: auto" />
+          <span>Manuales TI</span>
+        </div>
+
+        <div class="card" onclick="window.open('http://10.0.89.139:8089/telemedicina/', '_blank');">
+          <img src="./assets/img/Iconos_Mesa de ayuda.svg" alt="Mesa de Ayuda" class="card-img"
+            style="width: 60px; height: auto" />
+          <span>Videos TI</span>
+        </div>
+
+      
+
+      
+
+
+
+        <div class="card" More actions
+          onclick="window.open('https://docs.google.com/spreadsheets/d/1FQPw2nPaRM74CXLOZ1nvFQR08qXQS8rwccPIRlHPCZ4/edit?gid=1416608776#gid=1416608776', '_blank');">
+          <img src="./assets/img/Iconos_listado de pacientes TC A-N.svg" alt="Speech Atención " class="card-img"
+            style="width: 60px; height: auto" />
+          <span><br />
+           Programaciones</span>
+        </div>
+
+
+        <div class="card"
+          onclick="window.open('https://docs.google.com/spreadsheets/d/1xB78sklAHAC1wi0-0F5v9xnIBVAUxfdjaHPzEV-anEE/edit?gid=2014624632#gid=2014624632', '_blank');">
+          <img src="./assets/img/Iconos_listado de pacientes TC O-Z.svg" alt="Speech Atención " class="card-img"
+            style="width: 60px; height: auto" />
+          <span><br />
+            Soporte</span>
+        </div>
+
+
+        <div class="card"
+        onclick="window.open('https://docs.google.com/spreadsheets/d/18nWZkeUQ8wv0BUcZynDvAzg-R8LOGPZ-ffb7vgg6DIg/edit?usp=sharing', '_blank');">
+        <img src="./assets/img/Iconos_listado de pacientes TC O-Z.svg" alt="Speech Atención " class="card-img"
+          style="width: 60px; height: auto" />
+        <span><br />
+          Control de Incidencias TI para trabajo remoto remoto</span>
+      </div>
+
+
+      </div>
+    </div>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
