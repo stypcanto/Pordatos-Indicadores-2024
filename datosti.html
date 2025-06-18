@@ -114,11 +114,13 @@
 
 
               <div class="dropdown-divider"></div>
-              <button id="logoutBtn" class="dropdown-item logout-btn">
-                <i class='bx bx-log-out'></i>
-                <span>Cerrar sesión</span>
-                <div class="logout-confirm-tooltip">¿Confirmar salida?</div>
-              </button>
+             <button id="logoutBtn" class="dropdown-item logout-btn" aria-label="Cerrar sesión" aria-haspopup="dialog">
+  <span class="logout-content">
+    <i class='bx bx-log-out logout-icon'></i>
+    <span class="logout-text">Cerrar sesión</span>
+  </span>
+  <span class="logout-confirm-tooltip" role="tooltip">¿Confirmar salida?</span>
+</button>
             </div>
           </div>
         </div>
@@ -126,49 +128,49 @@
     </header>
 
     <!-- Sidebar -->
- <aside class="admin-sidebar" id="adminSidebar">
+<aside class="admin-sidebar" id="adminSidebar">
   <nav class="sidebar-nav">
     <ul>
       <li class="active">
-        <a href="#bienes">
-          <i class='bx bx-chip'></i>
-          <span>Bienes tecnológicos</span>
-          <div class="tooltip">Administración de equipos</div>
+        <a href="#bienes" class="menu-item">
+          <i class='bx bx-chip menu-icon'></i>
+          <span class="menu-text">Bienes tecnológicos</span>
+          <span class="menu-tooltip">Administración de equipos</span>
         </a>
       </li>
       <li>
-        <a href="#manuales">
-          <i class='bx bx-book-open'></i>
-          <span>Manuales</span>
-          <div class="tooltip">Documentación técnica</div>
+        <a href="#manuales" class="menu-item">
+          <i class='bx bx-book-open menu-icon'></i>
+          <span class="menu-text">Manuales</span>
+          <span class="menu-tooltip">Documentación técnica</span>
         </a>
       </li>
       <li>
-        <a href="#instaladores">
-          <i class='bx bx-package'></i>
-          <span>Instaladores</span>
-          <div class="tooltip">Software y drivers</div>
+        <a href="#instaladores" class="menu-item">
+          <i class='bx bx-package menu-icon'></i>
+          <span class="menu-text">Instaladores</span>
+          <span class="menu-tooltip">Software y drivers</span>
         </a>
       </li>
       <li>
-        <a href="#listas">
-          <i class='bx bx-list-ul'></i>
-          <span>Listas de programación</span>
-          <div class="tooltip">Cronogramas y planning</div>
+        <a href="#listas" class="menu-item">
+          <i class='bx bx-list-ul menu-icon'></i>
+          <span class="menu-text">Listas de programación</span>
+          <span class="menu-tooltip">Cronogramas y planning</span>
         </a>
       </li>
       <li>
-        <a href="#videos">
-          <i class='bx bx-video'></i>
-          <span>Videos Tutoriales</span>
-          <div class="tooltip">Guías en video</div>
+        <a href="#videos" class="menu-item">
+          <i class='bx bx-video menu-icon'></i>
+          <span class="menu-text">Videos Tutoriales</span>
+          <span class="menu-tooltip">Guías en video</span>
         </a>
       </li>
       <li>
-        <a href="#contraseñas">
-          <i class='bx bx-lock-alt'></i>
-          <span>Contraseñas</span>
-          <div class="tooltip">Gestión de accesos</div>
+        <a href="#contraseñas" class="menu-item">
+          <i class='bx bx-lock-alt menu-icon'></i>
+          <span class="menu-text">Contraseñas</span>
+          <span class="menu-tooltip">Gestión de accesos</span>
         </a>
       </li>
     </ul>
@@ -183,11 +185,11 @@
           <div class="dashboard-actions">
             <div class="search-box">
               <i class='bx bx-search'></i>
-              <input type="text" placeholder="Buscar...">
+              <input type="text" placeholder="Buscar..." aria-label="Buscar en el panel">
             </div>
-            <button class="btn-refresh">
-              <i class='bx bx-refresh'></i>
-            </button>
+           <button class="btn-refresh" aria-label="Actualizar contenido">
+  <i class='bx bx-refresh'></i>
+</button>
           </div>
         </div>
         
@@ -196,6 +198,8 @@
         </div>
       </div>
     </main>
+
+      <div class="sidebar-overlay"></div>
   </div>
 
   <!-- Scripts -->

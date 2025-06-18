@@ -19,6 +19,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Función principal de inicialización
   async function initApp() {
+    
+    // Crear overlay dinámicamente
+  const overlay = document.createElement('div');
+  overlay.className = 'sidebar-overlay';
+  document.getElementById('dashboard-container').appendChild(overlay);
     try {
       await loadSweetAlert();
       
@@ -225,7 +230,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Lista de credenciales válidas (usuario: contraseña)
 const CREDENCIALES_VALIDAS = {
-  'admin': 'Tecnologia2024!',
+  'admin': 'admin123',
   'soporte': 'SoporteTI#2024',
   'desarrollo': 'Dev$2024',
   'redes': 'Redes1Segura',
@@ -277,24 +282,77 @@ function simulateLogin(username, password, remember, DOM) {
 }
 
   // Configurar menú toggle para móviles
-  function setupMenuToggle(toggle, sidebar) {
-    if (toggle && sidebar) {
-      toggle.addEventListener('click', function() {
-        const isExpanded = sidebar.classList.toggle('show');
-        this.setAttribute('aria-expanded', isExpanded);
-        document.body.style.overflow = isExpanded ? 'hidden' : '';
-      });
+// Actualízala para incluir el overlay
+function setupMenuToggle(toggle, sidebar) {
+  if (toggle && sidebar) {
+    toggle.addEventListener('click', function() {
+      const isExpanded = sidebar.classList.toggle('show');
+      this.setAttribute('aria-expanded', isExpanded);
+      document.body.style.overflow = isExpanded ? 'hidden' : '';
       
-      // Cerrar sidebar al hacer clic fuera
-      document.addEventListener('click', (e) => {
-        if (!sidebar.contains(e.target) && !toggle.contains(e.target)) {
-          sidebar.classList.remove('show');
-          toggle.setAttribute('aria-expanded', 'false');
-          document.body.style.overflow = '';
-        }
-      });
-    }
+      // Manejar overlay
+      const overlay = document.querySelector('.sidebar-overlay');
+      if (isExpanded) {
+        overlay.style.display = 'block';
+        setTimeout(() => overlay.style.opacity = '1', 10);
+      } else {
+        overlay.style.opacity = '0';
+        setTimeout(() => overlay.style.display = 'none', 300);
+      }
+    });
+    
+    // Cerrar al hacer clic fuera (en el overlay)
+    document.querySelector('.sidebar-overlay').addEventListener('click', () => {
+      sidebar.classList.remove('show');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      const overlay = document.querySelector('.sidebar-overlay');
+      overlay.style.opacity = '0';
+      setTimeout(() => overlay.style.display = 'none', 300);
+    });
   }
+}
+
+// Crear overlay para el sidebar en móviles
+function createSidebarOverlay(sidebar) {
+  const existingOverlay = document.querySelector('.sidebar-overlay');
+  if (existingOverlay) return;
+  
+  const overlay = document.createElement('div');
+  overlay.className = 'sidebar-overlay';
+  overlay.style.position = 'fixed';
+  overlay.style.top = '70px';
+  overlay.style.left = '0';
+  overlay.style.right = '0';
+  overlay.style.bottom = '0';
+  overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
+  overlay.style.zIndex = '80';
+  overlay.style.transition = 'opacity 0.3s ease';
+  
+  overlay.addEventListener('click', () => {
+    const toggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('adminSidebar');
+    sidebar.classList.remove('show');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    removeSidebarOverlay();
+  });
+  
+  document.body.appendChild(overlay);
+  setTimeout(() => {
+    overlay.style.opacity = '1';
+  }, 10);
+}
+
+function removeSidebarOverlay() {
+  const overlay = document.querySelector('.sidebar-overlay');
+  if (overlay) {
+    overlay.style.opacity = '0';
+    setTimeout(() => {
+      overlay.remove();
+    }, 300);
+  }
+}
 
   // Configurar menú de usuario
   function setupUserMenu(userMenu) {
