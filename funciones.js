@@ -447,3 +447,57 @@ function removeSidebarOverlay() {
   // Iniciar la aplicación
   initApp();
 });
+
+
+
+
+// ========================================
+// Para mis tarjetas interacticas
+// ========================================
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Modal principal
+  const cardRemoto = document.getElementById('cardRemoto');
+  const modalRemoto = document.getElementById('modalRemoto');
+  const cerrarRemotoModal = document.getElementById('cerrarRemotoModal');
+  
+  // Submodal de firma digital
+  const firmaDigitalTrigger = document.getElementById('firmaDigitalTrigger');
+  const submodalFirma = document.getElementById('submodalFirma');
+  const cerrarSubmodal = document.getElementById('cerrarSubmodal');
+  
+  // Abrir modal principal
+  cardRemoto.addEventListener('click', function() {
+    modalRemoto.style.display = 'flex';
+    document.body.classList.add('body-modal-open');
+  });
+  
+  // Cerrar modal principal
+  cerrarRemotoModal.addEventListener('click', function() {
+    modalRemoto.style.display = 'none';
+    document.body.classList.remove('body-modal-open');
+  });
+  
+  // Abrir submodal
+  firmaDigitalTrigger.addEventListener('click', function(e) {
+    e.stopPropagation(); // Evita que se cierre el modal principal
+    submodalFirma.style.display = 'flex';
+  });
+  
+  // Cerrar submodal
+  cerrarSubmodal.addEventListener('click', function() {
+    submodalFirma.style.display = 'none';
+  });
+  
+  // Cerrar modales al hacer clic fuera del contenido
+  window.addEventListener('click', function(event) {
+    if (event.target === modalRemoto) {
+      modalRemoto.style.display = 'none';
+      document.body.classList.remove('body-modal-open');
+    }
+    if (event.target === submodalFirma) {
+      submodalFirma.style.display = 'none';
+    }
+  });
+});
