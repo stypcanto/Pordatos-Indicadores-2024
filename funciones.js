@@ -47,14 +47,14 @@ document.addEventListener('DOMContentLoaded', function () {
         cardsContainer: document.getElementById('cards-container')
       };
 
-  // Verificar si hay un usuario logueado
-    const userData = sessionStorage.getItem('currentUser');
-    if (userData) {
-      const { categories } = JSON.parse(userData);
-      updateUIForUser(categories);
-      DOM.loginContainer.style.display = 'none';
-      DOM.dashboardContainer.style.display = 'grid';
-    }
+      // Verificar si hay un usuario logueado
+      const userData = sessionStorage.getItem('currentUser');
+      if (userData) {
+        const { categories } = JSON.parse(userData);
+        updateUIForUser(categories);
+        DOM.loginContainer.style.display = 'none';
+        DOM.dashboardContainer.style.display = 'grid';
+      }
 
       setupPasswordToggle(DOM.togglePassword, DOM.passwordInput);
 
@@ -250,68 +250,70 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const CREDENCIALES_VALIDAS = {
     'Styp': { password: 'admin12345', categories: ['aplicativo', 'bienes', 'manuales', 'instaladores', 'videos', 'contraseñas'] },
-    'Enrique': { password: 'admin123', categories: ['aplicativo', 'manuales', 'instaladores'] },
+    'Katherine': { password: 'admin345', categories: ['aplicativo', 'bienes', 'manuales', 'instaladores', 'videos', 'contraseñas'] },
+    'Erick': { password: 'admin234', categories: ['aplicativo', 'bienes', 'manuales', 'instaladores', 'videos', 'contraseñas'] },
+    'Enrique': { password: 'admin1233', categories: ['aplicativo', 'manuales', 'instaladores'] },
     'Robinson': { password: 'SoporteTI#2024', categories: ['aplicativo', 'manuales', 'instaladores'] },
-    'Erick': { password: 'Dev$2024', categories: ['aplicativo', 'videos', 'contraseñas'] },
+    'Gala': { password: 'Cenate@2024', categories: ['aplicativo', 'bienes', 'manuales', 'instaladores', 'videos', 'contraseñas'] },
   };
 
- function simulateLogin(user, pass, remember, DOM) {
-  setTimeout(() => {
-    const userData = CREDENCIALES_VALIDAS[user];
-    
-    if (userData && userData.password === pass) {
-      // Guardar datos del usuario en sessionStorage
-      sessionStorage.setItem('currentUser', JSON.stringify({
-        username: user,
-        categories: userData.categories
-      }));
-      
-      DOM.loginContainer.style.display = 'none';
-      DOM.dashboardContainer.style.display = 'grid';
-      if (remember) localStorage.setItem('rememberedUser', user);
-      else localStorage.removeItem('rememberedUser');
+  function simulateLogin(user, pass, remember, DOM) {
+    setTimeout(() => {
+      const userData = CREDENCIALES_VALIDAS[user];
 
-      Swal.fire({ title: `Bienvenido, ${user}`, icon: 'success', timer: 2000, showConfirmButton: false });
-      initInactivityTimer(DOM.dashboardContainer);
-      
-      // Actualizar la interfaz según los permisos
-      updateUIForUser(userData.categories);
-    } else {
-      showLoginError(DOM.loginError, 'Usuario o contraseña incorrectos');
-      DOM.loginForm.style.animation = 'shake 0.5s';
-      setTimeout(() => DOM.loginForm.style.animation = '', 500);
-    }
-  }, 800);
-}
+      if (userData && userData.password === pass) {
+        // Guardar datos del usuario en sessionStorage
+        sessionStorage.setItem('currentUser', JSON.stringify({
+          username: user,
+          categories: userData.categories
+        }));
 
-function updateUIForUser(allowedCategories) {
-  // Ocultar elementos del sidebar que no tenga permiso
-  document.querySelectorAll('.sidebar-nav li').forEach(li => {
-    const category = li.querySelector('a').getAttribute('href').substring(1);
-    if (!allowedCategories.includes(category)) {
-      li.style.display = 'none';
-    } else {
-      li.style.display = 'block';
-    }
-  });
-  
-  // Mostrar solo las categorías permitidas
-  const cardsContainer = document.getElementById('cards-container');
-  if (cardsContainer) {
-    const cards = cardsContainer.querySelectorAll('.card');
-    cards.forEach(card => {
-      if (!allowedCategories.includes(card.dataset.category)) {
-        card.style.display = 'none';
+        DOM.loginContainer.style.display = 'none';
+        DOM.dashboardContainer.style.display = 'grid';
+        if (remember) localStorage.setItem('rememberedUser', user);
+        else localStorage.removeItem('rememberedUser');
+
+        Swal.fire({ title: `Bienvenido, ${user}`, icon: 'success', timer: 2000, showConfirmButton: false });
+        initInactivityTimer(DOM.dashboardContainer);
+
+        // Actualizar la interfaz según los permisos
+        updateUIForUser(userData.categories);
+      } else {
+        showLoginError(DOM.loginError, 'Usuario o contraseña incorrectos');
+        DOM.loginForm.style.animation = 'shake 0.5s';
+        setTimeout(() => DOM.loginForm.style.animation = '', 500);
+      }
+    }, 800);
+  }
+
+  function updateUIForUser(allowedCategories) {
+    // Ocultar elementos del sidebar que no tenga permiso
+    document.querySelectorAll('.sidebar-nav li').forEach(li => {
+      const category = li.querySelector('a').getAttribute('href').substring(1);
+      if (!allowedCategories.includes(category)) {
+        li.style.display = 'none';
+      } else {
+        li.style.display = 'block';
       }
     });
+
+    // Mostrar solo las categorías permitidas
+    const cardsContainer = document.getElementById('cards-container');
+    if (cardsContainer) {
+      const cards = cardsContainer.querySelectorAll('.card');
+      cards.forEach(card => {
+        if (!allowedCategories.includes(card.dataset.category)) {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Activar la primera categoría permitida
+    const firstAllowedCategory = document.querySelector(`.sidebar-nav li a[href="#${allowedCategories[0]}"]`);
+    if (firstAllowedCategory) {
+      firstAllowedCategory.click();
+    }
   }
-  
-  // Activar la primera categoría permitida
-  const firstAllowedCategory = document.querySelector(`.sidebar-nav li a[href="#${allowedCategories[0]}"]`);
-  if (firstAllowedCategory) {
-    firstAllowedCategory.click();
-  }
-}
 
 
 
@@ -361,25 +363,25 @@ function updateUIForUser(allowedCategories) {
     }
   }
 
-  
- function performLogout() {
-  Swal.fire({
-    title: '¿Cerrar sesión?',
-    text: '¿Estás seguro que deseas salir del sistema?',
-    icon: 'question',
-    showCancelButton: true,
-    confirmButtonText: 'Sí, cerrar sesión'
-  }).then(result => {
-    if (result.isConfirmed) {
-      document.body.classList.add('session-exit');
-      setTimeout(() => {
-        localStorage.removeItem('rememberedUser');
-        sessionStorage.removeItem('currentUser');
-        window.location.href = 'datosti.html';
-      }, 500);
-    }
-  });
-}
+
+  function performLogout() {
+    Swal.fire({
+      title: '¿Cerrar sesión?',
+      text: '¿Estás seguro que deseas salir del sistema?',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonText: 'Sí, cerrar sesión'
+    }).then(result => {
+      if (result.isConfirmed) {
+        document.body.classList.add('session-exit');
+        setTimeout(() => {
+          localStorage.removeItem('rememberedUser');
+          sessionStorage.removeItem('currentUser');
+          window.location.href = 'datosti.html';
+        }, 500);
+      }
+    });
+  }
 
   function initInactivityTimer(container) {
     if (!container) return;
