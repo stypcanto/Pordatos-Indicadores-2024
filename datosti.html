@@ -134,7 +134,14 @@
     <aside class="admin-sidebar" id="adminSidebar">
       <nav class="sidebar-nav">
         <ul>
-          <li class="active">
+           <li class="active">
+            <a href="#aplicativo" class="menu-item">
+              <i class='bx bx-list-ul menu-icon'></i>
+              <span class="menu-text">Aplicativos</span>
+              <span class="menu-tooltip">Básicos de CENATE</span>
+            </a>
+          </li>
+          <li >
             <a href="#bienes" class="menu-item">
               <i class='bx bx-chip menu-icon'></i>
               <span class="menu-text">Bienes tecnológicos</span>
@@ -155,13 +162,7 @@
               <span class="menu-tooltip">Software y drivers</span>
             </a>
           </li>
-          <li>
-            <a href="#listas" class="menu-item">
-              <i class='bx bx-list-ul menu-icon'></i>
-              <span class="menu-text">Listas de programación</span>
-              <span class="menu-tooltip">Cronogramas y planning</span>
-            </a>
-          </li>
+         
           <li>
             <a href="#videos" class="menu-item">
               <i class='bx bx-video menu-icon'></i>
@@ -199,7 +200,7 @@
         <div class="dashboard-content">
           <!-- Contenido dinámico iría aquí -->
 
-          <div class="card"
+          <div class="card" data-category="aplicativo" 
             onclick="window.open('https://docs.google.com/spreadsheets/d/12snfDNG_zV4ThfDI2NDcW_paIi86cLJb1OQ1AJYuFpY/edit?gid=1679895487#gid=1679895487', '_blank');">
             <img src="./assets/img/Iconos_Informacion para personal asistencial.svg" alt="Speech Atención "
               class="card-img" style="width: 80px; height: auto" />
@@ -215,7 +216,7 @@
             <span style="font-size: 12px">Para Teleconsultorios</span>
           </div>
 
-          <div class="card" onclick="window.open('http://10.56.1.158/sgss/servlet/hmain', '_blank');">
+          <div class="card" data-category="aplicativo"  onclick="window.open('http://10.56.1.158/sgss/servlet/hmain', '_blank');">
             <img src="./assets/img/Iconos_ESSI.svg" alt="Speech Atención " class="card-img"
               style="width: 80px; height: auto" />
             <span>ESSI</span>
@@ -227,20 +228,20 @@
             <span>Información de las IPRESS</span>
           </div>
 
-          <div class="card" onclick="window.open('http://10.0.89.139:8089/telemedicina/', '_blank');">
+          <div class="card" data-category="aplicativo"  onclick="window.open('http://10.0.89.139:8089/telemedicina/', '_blank');">
             <img src="./assets/img/Iconos_Mesa de ayuda.svg" alt="Mesa de Ayuda" class="card-img"
               style="width: 60px; height: auto" />
             <span>Mesa de Ayuda</span>
           </div>
 
-          <div class="card" onclick="window.open('http://anatpat.essalud/ANATPAT/', '_blank');">
+          <div class="card" data-category="aplicativo"  onclick="window.open('http://anatpat.essalud/ANATPAT/', '_blank');">
             <img src="./assets/img/Anatomia patologica.svg" alt="Speech Atención " class="card-img"
               style="width: 80px; height: auto" />
             <span>ANATPAT</span>
             <span style="font-size: 12px">Módulo Anatomía Patológica</span>
           </div>
 
-          <div class="card"
+          <div class="card" data-category="aplicativo" 
             onclick="window.open('http://oasprod.essalud.gob.pe:7777/Referencia/servlet/Index', '_blank');">
             <img src="./assets/img/Referencia.svg" alt="Speech Atención " class="card-img"
               style="width: 80px; height: auto" />
@@ -250,7 +251,7 @@
 
 
           <!-- Contenedor Mesa de Ayuda -->
-          <div id="contenedorMesaAyuda" class="criterios-overlay" style="display: none">
+          <div id="contenedorMesaAyuda" data-category="aplicativo"  class="criterios-overlay" style="display: none">
             <div class="criterios-content mesa-ayuda-popup">
               <button id="cerrarMesaAyuda" class="btn-close-top">X</button>
               <h3 class="mesa-ayuda-titulo">Actividades de la Mesa de Ayuda</h3>
@@ -288,7 +289,7 @@
           </div>
 
 
-          <div class="card" More actions
+          <div class="card" data-category="aplicativo"  More actions
             onclick="window.open('https://docs.google.com/spreadsheets/d/1FQPw2nPaRM74CXLOZ1nvFQR08qXQS8rwccPIRlHPCZ4/edit?gid=1416608776#gid=1416608776', '_blank');">
             <img src="./assets/img/Iconos_listado de pacientes TC A-N.svg" alt="Speech Atención " class="card-img"
               style="width: 60px; height: auto" />
@@ -297,7 +298,7 @@
           </div>
 
 
-          <div class="card"
+          <div class="card" data-category="aplicativo" 
             onclick="window.open('https://docs.google.com/spreadsheets/d/1xB78sklAHAC1wi0-0F5v9xnIBVAUxfdjaHPzEV-anEE/edit?gid=2014624632#gid=2014624632', '_blank');">
             <img src="./assets/img/Iconos_listado de pacientes TC O-Z.svg" alt="Speech Atención " class="card-img"
               style="width: 60px; height: auto" />
@@ -305,7 +306,7 @@
               Listado de pacientes TC (O-Z)</span>
           </div>
 
-          <div class="card"
+          <div class="card" data-category="aplicativo" 
             onclick="window.open('https://docs.google.com/spreadsheets/d/1T-i46PdoDImBYTev5C9Lbg2M8T-D-Hkw0fVaOXH-3oI/edit?pli=1&gid=1004858258#gid=1004858258', '_blank');">
             <img src="./assets/img/Iconos_listado de pacientes TC de Oncolog¡a.svg" alt="Speech Atención "
               class="card-img" style="width: 60px; height: auto" />
@@ -313,7 +314,7 @@
               Listado de pacientes TC de Oncología</span>
           </div>
 
-          <div class="card"
+          <div class="card" data-category="aplicativo" 
             onclick="window.open('https://docs.google.com/spreadsheets/d/1kxaynWjZ8sqWDEhYTsn4G054AA3pX2-gkg-EY8MljS0/edit?gid=814128024#gid=814128024', '_blank');">
             <img src="./assets/img/Iconos_listado de pacientes TO.svg" alt="Speech Atención " class="card-img"
               style="width: 60px; height: auto" />
@@ -321,14 +322,14 @@
               Listado de pacientes TO</span>
           </div>
 
-          <div class="card"
+          <div class="card" data-category="aplicativo" 
             onclick="window.open('https://docs.google.com/spreadsheets/d/1NPti10knKUkohXwIJVTTE8OV3xQK6Zeh-cj2yBTN200/edit?gid=633431742#gid=633431742', '_blank');">
             <img src="./assets/img/Iconos_listado de pacientes TM.svg" alt="Speech Atención " class="card-img"
               style="width: 80px; height: auto" />
             <span>Listado de pacientes TM</span>
           </div>
 
-          <div class="card"
+          <div class="card" data-category="aplicativo" 
             onclick="window.open('https://docs.google.com/spreadsheets/d/1MZwCPfmuW_-f0FHEaOKwdfwYwxz57WxjMz2dnYnmqno/edit?usp=sharing', '_blank');">
             <img src="./assets/img/Iconos_Imagenes - teleconsulta.svg" alt="Imagenes - Teleconsulta" class="card-img"
               style="width: 60px; height: auto" />
@@ -337,7 +338,7 @@
 
 
 
-          <div class="card"
+          <div class="card" data-category="aplicativo" 
             onclick="window.open('https://docs.google.com/spreadsheets/d/1G62LZNvjvhtODJfzvve4kP6ulwiQAORI/edit?usp=sharing&ouid=100131508450278586704&rtpof=true&sd=true', '_blank');">
             <img src="./assets/img/Iconos_Protocolo de contacto y atencion.svg" alt="Imagenes - Teleconsulta"
               class="card-img" style="width: 60px; height: auto" />
@@ -350,7 +351,7 @@
 
 
           <!-- Tarjeta Utilitarios -->
-          <div id="cardRemoto" class="card">
+          <div id="cardRemoto" class="card" data-category="aplicativo" > 
             <img src="./assets/img/RECURSOS REMOTO.png" alt="Utilitarios" class="util-card-icon"
               style="width: 60px; height: auto">
             <span>Utilitarios de trabajo remoto</span>
@@ -358,7 +359,7 @@
           </div>
 
           <!-- Modal de Utilitarios -->
-          <div id="modalRemoto" class="util-modal">
+          <div id="modalRemoto" class="util-modal"  >
             <div class="util-modal-content">
               <button id="cerrarRemotoModal" class="util-close-btn">×</button>
               <h3 class="util-modal-title">Aplicaciones necesarias para trabajo remoto</h3>
@@ -420,7 +421,7 @@
 
 
           <!-- Submodal para Firma Digital -->
-          <div id="submodalFirma" class="util-submodal">
+          <div id="submodalFirma" class="util-submodal" >
             <div class="util-submodal-content">
               <button id="cerrarSubmodal" class="util-close-btn">×</button>
               <h3 class="util-modal-title">Seleccione tipo de firma digital</h3>
