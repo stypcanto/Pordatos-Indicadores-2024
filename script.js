@@ -322,8 +322,8 @@ document.addEventListener("DOMContentLoaded", () => {
     { nombre: "Gonzales Graus Ivan", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1187237906#gid=1187237906" },
     { nombre: "Aquino Grande Dayhan Jennifer", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=786045073#gid=786045073" },
     { nombre: "Raiza Fiorella Atoccsa Rojas ", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=1914875513#gid=1914875513" },
-    { nombre: "Andrea Lorena Chavez Delgado ", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=844668857#gid=844668857" }
-  
+    { nombre: "Andrea Lorena Chavez Delgado ", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=844668857#gid=844668857" },
+    { nombre: "Flavia Andrea Alatrista Valdez ", url: "https://docs.google.com/spreadsheets/d/1vQm05ucuNpFvu4rzaGXM4h22sxDwYr2qwozN66P1S-w/edit?gid=890162293#gid=890162293" }
   ];
 
   const profesionalesEnfermeria = [
