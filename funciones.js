@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Variables de estado global
   let currentCategory = 'aplicativo';
-  
+
   // Cargar SweetAlert2 dinámicamente
   function loadSweetAlert() {
     return new Promise((resolve, reject) => {
@@ -46,6 +46,15 @@ document.addEventListener('DOMContentLoaded', function () {
         searchInput: document.getElementById('searchInput'),
         cardsContainer: document.getElementById('cards-container')
       };
+
+  // Verificar si hay un usuario logueado
+    const userData = sessionStorage.getItem('currentUser');
+    if (userData) {
+      const { categories } = JSON.parse(userData);
+      updateUIForUser(categories);
+      DOM.loginContainer.style.display = 'none';
+      DOM.dashboardContainer.style.display = 'grid';
+    }
 
       setupPasswordToggle(DOM.togglePassword, DOM.passwordInput);
 
@@ -108,56 +117,56 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-// Configuración del modal de utilitarios
-function setupModalUtilities() {
-  // Modal principal
-  const cardRemoto = document.getElementById('cardRemoto');
-  const modalRemoto = document.getElementById('modalRemoto');
-  const cerrarRemotoModal = document.getElementById('cerrarRemotoModal');
-  
-  // Submodal de firma digital
-  const firmaDigitalTrigger = document.getElementById('firmaDigitalTrigger');
-  const submodalFirma = document.getElementById('submodalFirma');
-  const cerrarSubmodal = document.getElementById('cerrarSubmodal');
-  
-  if (cardRemoto && modalRemoto) {
-    // Abrir modal principal
-    cardRemoto.addEventListener('click', function() {
-      modalRemoto.style.display = 'flex';
-      document.body.classList.add('body-modal-open');
-    });
-    
-    // Cerrar modal principal
-    cerrarRemotoModal.addEventListener('click', function() {
-      modalRemoto.style.display = 'none';
-      document.body.classList.remove('body-modal-open');
+  // Configuración del modal de utilitarios
+  function setupModalUtilities() {
+    // Modal principal
+    const cardRemoto = document.getElementById('cardRemoto');
+    const modalRemoto = document.getElementById('modalRemoto');
+    const cerrarRemotoModal = document.getElementById('cerrarRemotoModal');
+
+    // Submodal de firma digital
+    const firmaDigitalTrigger = document.getElementById('firmaDigitalTrigger');
+    const submodalFirma = document.getElementById('submodalFirma');
+    const cerrarSubmodal = document.getElementById('cerrarSubmodal');
+
+    if (cardRemoto && modalRemoto) {
+      // Abrir modal principal
+      cardRemoto.addEventListener('click', function () {
+        modalRemoto.style.display = 'flex';
+        document.body.classList.add('body-modal-open');
+      });
+
+      // Cerrar modal principal
+      cerrarRemotoModal.addEventListener('click', function () {
+        modalRemoto.style.display = 'none';
+        document.body.classList.remove('body-modal-open');
+      });
+    }
+
+    if (firmaDigitalTrigger && submodalFirma) {
+      // Abrir submodal
+      firmaDigitalTrigger.addEventListener('click', function (e) {
+        e.stopPropagation(); // Evita que se cierre el modal principal
+        submodalFirma.style.display = 'flex';
+      });
+
+      // Cerrar submodal
+      cerrarSubmodal.addEventListener('click', function () {
+        submodalFirma.style.display = 'none';
+      });
+    }
+
+    // Cerrar modales al hacer clic fuera del contenido
+    window.addEventListener('click', function (event) {
+      if (modalRemoto && event.target === modalRemoto) {
+        modalRemoto.style.display = 'none';
+        document.body.classList.remove('body-modal-open');
+      }
+      if (submodalFirma && event.target === submodalFirma) {
+        submodalFirma.style.display = 'none';
+      }
     });
   }
-  
-  if (firmaDigitalTrigger && submodalFirma) {
-    // Abrir submodal
-    firmaDigitalTrigger.addEventListener('click', function(e) {
-      e.stopPropagation(); // Evita que se cierre el modal principal
-      submodalFirma.style.display = 'flex';
-    });
-    
-    // Cerrar submodal
-    cerrarSubmodal.addEventListener('click', function() {
-      submodalFirma.style.display = 'none';
-    });
-  }
-  
-  // Cerrar modales al hacer clic fuera del contenido
-  window.addEventListener('click', function(event) {
-    if (modalRemoto && event.target === modalRemoto) {
-      modalRemoto.style.display = 'none';
-      document.body.classList.remove('body-modal-open');
-    }
-    if (submodalFirma && event.target === submodalFirma) {
-      submodalFirma.style.display = 'none';
-    }
-  });
-}
 
 
 
@@ -165,11 +174,11 @@ function setupModalUtilities() {
 
 
 
-  
+
   // Filtrar tarjetas por búsqueda
   function filterCardsBySearch(searchTerm, category, container) {
     if (!container) return;
-    
+
     const cards = container.querySelectorAll('.card');
     cards.forEach(card => {
       // Solo filtrar las tarjetas de la categoría actual
@@ -201,7 +210,7 @@ function setupModalUtilities() {
     if (titleEl && titles[category]) {
       titleEl.textContent = titles[category];
     }
-    
+
     // Si hay un término de búsqueda, aplicarlo nuevamente
     if (DOM && DOM.searchInput && DOM.searchInput.value) {
       filterCardsBySearch(DOM.searchInput.value.toLowerCase(), category, DOM.cardsContainer);
@@ -240,35 +249,73 @@ function setupModalUtilities() {
   }
 
   const CREDENCIALES_VALIDAS = {
-    'admin': 'admin123',
-    'soporte': 'SoporteTI#2024',
-    'desarrollo': 'Dev$2024',
-    'redes': 'Redes1Segura',
-    'jefe': 'JefeArea$2024',
-    'analista1': 'Analista_1',
-    'analista2': 'Analista_2',
-    'consultor': 'Consultor@2024',
-    'invitado': 'Invitado123',
-    'auditor': 'Auditoria.2024'
+    'Styp': { password: 'admin12345', categories: ['aplicativo', 'bienes', 'manuales', 'instaladores', 'videos', 'contraseñas'] },
+    'Enrique': { password: 'admin123', categories: ['aplicativo', 'manuales', 'instaladores'] },
+    'Robinson': { password: 'SoporteTI#2024', categories: ['aplicativo', 'manuales', 'instaladores'] },
+    'Erick': { password: 'Dev$2024', categories: ['aplicativo', 'videos', 'contraseñas'] },
   };
 
-  function simulateLogin(user, pass, remember, DOM) {
-    setTimeout(() => {
-      if (CREDENCIALES_VALIDAS[user] === pass) {
-        DOM.loginContainer.style.display = 'none';
-        DOM.dashboardContainer.style.display = 'grid';
-        if (remember) localStorage.setItem('rememberedUser', user);
-        else localStorage.removeItem('rememberedUser');
+ function simulateLogin(user, pass, remember, DOM) {
+  setTimeout(() => {
+    const userData = CREDENCIALES_VALIDAS[user];
+    
+    if (userData && userData.password === pass) {
+      // Guardar datos del usuario en sessionStorage
+      sessionStorage.setItem('currentUser', JSON.stringify({
+        username: user,
+        categories: userData.categories
+      }));
+      
+      DOM.loginContainer.style.display = 'none';
+      DOM.dashboardContainer.style.display = 'grid';
+      if (remember) localStorage.setItem('rememberedUser', user);
+      else localStorage.removeItem('rememberedUser');
 
-        Swal.fire({ title: `Bienvenido, ${user}`, icon: 'success', timer: 2000, showConfirmButton: false });
-        initInactivityTimer(DOM.dashboardContainer);
-      } else {
-        showLoginError(DOM.loginError, 'Usuario o contraseña incorrectos');
-        DOM.loginForm.style.animation = 'shake 0.5s';
-        setTimeout(() => DOM.loginForm.style.animation = '', 500);
+      Swal.fire({ title: `Bienvenido, ${user}`, icon: 'success', timer: 2000, showConfirmButton: false });
+      initInactivityTimer(DOM.dashboardContainer);
+      
+      // Actualizar la interfaz según los permisos
+      updateUIForUser(userData.categories);
+    } else {
+      showLoginError(DOM.loginError, 'Usuario o contraseña incorrectos');
+      DOM.loginForm.style.animation = 'shake 0.5s';
+      setTimeout(() => DOM.loginForm.style.animation = '', 500);
+    }
+  }, 800);
+}
+
+function updateUIForUser(allowedCategories) {
+  // Ocultar elementos del sidebar que no tenga permiso
+  document.querySelectorAll('.sidebar-nav li').forEach(li => {
+    const category = li.querySelector('a').getAttribute('href').substring(1);
+    if (!allowedCategories.includes(category)) {
+      li.style.display = 'none';
+    } else {
+      li.style.display = 'block';
+    }
+  });
+  
+  // Mostrar solo las categorías permitidas
+  const cardsContainer = document.getElementById('cards-container');
+  if (cardsContainer) {
+    const cards = cardsContainer.querySelectorAll('.card');
+    cards.forEach(card => {
+      if (!allowedCategories.includes(card.dataset.category)) {
+        card.style.display = 'none';
       }
-    }, 800);
+    });
   }
+  
+  // Activar la primera categoría permitida
+  const firstAllowedCategory = document.querySelector(`.sidebar-nav li a[href="#${allowedCategories[0]}"]`);
+  if (firstAllowedCategory) {
+    firstAllowedCategory.click();
+  }
+}
+
+
+
+
 
   function setupMenuToggle(toggle, sidebar) {
     if (!toggle || !sidebar) return;
@@ -314,24 +361,25 @@ function setupModalUtilities() {
     }
   }
 
-  function performLogout() {
-    Swal.fire({
-      title: '¿Cerrar sesión?',
-      text: '¿Estás seguro que deseas salir del sistema?',
-      icon: 'question',
-      showCancelButton: true,
-      confirmButtonText: 'Sí, cerrar sesión'
-    }).then(result => {
-      if (result.isConfirmed) {
-        document.body.classList.add('session-exit');
-        setTimeout(() => {
-          localStorage.removeItem('rememberedUser');
-          sessionStorage.clear();
-          window.location.href = 'datosti.html';
-        }, 500);
-      }
-    });
-  }
+  
+ function performLogout() {
+  Swal.fire({
+    title: '¿Cerrar sesión?',
+    text: '¿Estás seguro que deseas salir del sistema?',
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonText: 'Sí, cerrar sesión'
+  }).then(result => {
+    if (result.isConfirmed) {
+      document.body.classList.add('session-exit');
+      setTimeout(() => {
+        localStorage.removeItem('rememberedUser');
+        sessionStorage.removeItem('currentUser');
+        window.location.href = 'datosti.html';
+      }, 500);
+    }
+  });
+}
 
   function initInactivityTimer(container) {
     if (!container) return;
