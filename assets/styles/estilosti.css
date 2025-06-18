@@ -662,14 +662,14 @@ body {
 .admin-main {
   grid-area: main;
   padding: var(--space-lg);
-  margin-top: 70px;
+ 
   transition: var(--transition-normal);
 }
 
 @media (min-width: 992px) {
   .admin-main {
     padding: var(--space-xl) var(--space-lg);
-    margin-left: 280px;
+    ;
   }
 }
 
