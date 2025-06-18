@@ -1,268 +1,182 @@
-<html lang="es">
-
+<!DOCTYPE html>
+<html lang="es" class="no-js">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portal Web CENATE</title>
-  <link rel="stylesheet" href="./assets/styles/style.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
-
-  <meta name="description" content="Descripción de la página para SEO" />
-  <meta property="og:title" content="Título para redes sociales" />
-  <meta property="og:description" content="Descripción para redes sociales" />
-  <meta property="og:image" content="URL de la imagen para redes sociales" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Admin Profesional</title>
+  <meta name="description" content="Sistema de administración profesional con autenticación segura">
+  <link rel="stylesheet" href="./assets/styles/estilosti.css">
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="assets/img/favicon.ico">
+  
+  <style>
+    /* CSS inicial para evitar FOUC */
+    .no-js #login-container,
+    .no-js #dashboard-container {
+      display: none;
+    }
+  </style>
+   
+ 
 </head>
-
 <body>
-  <!--HEADER-->
-  <header class="header">
-    <div class="header__container">
-      <img src="./assets/img/Web Development Logo.png" class="header__img__rectangle" />
-      <div class="header__toggle">
-        <i class="bx bx-menu" id="header-toggle"></i>
+  <!-- Pantalla de Login -->
+  <div id="login-container" class="login-overlay">
+    <div class="login-box">
+      <div class="login-header">
+        <div class="logo-container">
+          <img src="assets/img/logo.svg" alt="Logo" class="login-logo">
+        </div>
+        <h1 class="login-title">Sistema Administrativo</h1>
+        <p class="login-subtitle">Ingrese sus credenciales</p>
       </div>
+      
+      <form id="login-form" class="login-form">
+        <div class="form-group">
+          <div class="input-container">
+            <i class='bx bx-user'></i>
+            <input type="text" id="username" required>
+            <label for="username">Usuario</label>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <div class="input-container">
+            <i class='bx bx-lock-alt'></i>
+            <input type="password" id="password" required>
+            <label for="password">Contraseña</label>
+            <button type="button" class="toggle-password">
+              <i class='bx bx-hide'></i>
+            </button>
+          </div>
+        </div>
+        
+        <div class="form-options">
+          <label class="remember-me">
+            <input type="checkbox" id="remember">
+            <span class="checkmark"></span>
+            Recordar sesión
+          </label>
+          <a href="#forgot" class="forgot-password">¿Olvidó su contraseña?</a>
+        </div>
+        
+        <button type="submit" class="btn btn-login">
+          <span>Ingresar</span>
+          <i class='bx bx-log-in'></i>
+        </button>
+        
+        <div id="login-error" class="error-message"></div>
+      </form>
     </div>
-  </header>
-  <!--NAV-->
-  <div class="nav" id="navbar">
-    <nav class="nav__container">
-      <div>
-        <a href="#" class="nav__link nav__logo">
-          <span class="nav__logo-name"> Portal de información </span>
-        </a>
-        <div class="nav__list">
-          <!-- PERFIL DE USUARIO QUE POR AHORA NO SE USARÁ
-            <div class="nav__items">
-              <h1 class="nav__subtitle">Profile</h1>
-              <a href="#" class="nav__link active">
-                <i class="bx bx-home nav__icon"></i>
-                <span class="nav__name">Inicio</span>
-              </a>
-              <div class="nav__dropdown">
-                <a href="#" class="nav__link">
-                  <i class="bx bx-user nav__icon"></i>
-                  <span class="nav__name">Perfil</span>
-                  <i
-                    class="bx bx-chevron-down nav__icon nav__dropdown-icon"
-                  ></i>
-                </a>
-                <div class="nav__dropdown-collapse">
-                  <div class="nav__dropdown-content">
-                    <a href="#" class="nav__dropdown-item">Contraseñas</a>
-                    <a href="#" class="nav__dropdown-item">Correo</a>
-                    <a href="#" class="nav__dropdown-item">Cuentas</a>
-                  </div>
-                </div>
-              </div>
-              <a href="#" class="nav__link">
-                <i class="bx bx-mail-send nav__icon"></i>
-                <span class="nav__name">Correos</span>
-              </a>
+    
+    <div id="particles-js" class="particles-background"></div>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="dashboard-container" class="admin-dashboard">
+    <!-- Header -->
+    <header class="admin-header">
+      <div class="header-container">
+        <div class="header-left">
+          <button id="menuToggle" class="menu-toggle">
+            <i class='bx bx-menu'></i>
+          </button>
+          <h1 class="logo">
+            <img src="assets/img/logo-sm.svg" alt="Logo">
+            <span>Panel Admin</span>
+          </h1>
+        </div>
+        
+        <div class="header-right">
+          <div class="user-menu" id="userMenu">
+            <div class="user-avatar">
+              <i class='bx bx-user-circle'></i>
             </div>
-
-      -->
-
-          <div class="nav__items">
-            <h3 class="nav__subtitle_menu">Menú</h3>
-
-            <div class="nav__dropdown">
-              <a href="#main-content" class="nav__link">
-                <!--Por defecto cuando se pulsa sobre Informacion General mostrar la pagina de Panel Principal TC TM y TO, por ahora estara asi luego se cambiara-->
-
-                <i class="bx bx-sitemap nav__icon"></i>
-                <span class="nav__name">Información General</span>
-                <i class="bx bx-chevron-down nav__icon nav__dropdown-icon"></i>
+            <span class="user-name">Administrador</span>
+            <i class='bx bx-chevron-down'></i>
+            
+            <div class="user-dropdown">
+              <a href="#profile" class="dropdown-item">
+                <i class='bx bx-user'></i>
+                <span>Mi perfil</span>
               </a>
-              <div class="nav__dropdown-collapse">
-                <div class="nav__dropdown-content">
-                  <a href="#main-content" class="nav__dropdown-item">Panel Principal TC TM TO</a>
-                  <a href="#librarytad-content" class="nav__dropdown-item">Panel Principal TAD</a>
-
-                  <a href="teledot.html" class="nav__dropdown-item" id="teledot-link">
-                    Teledot
-                  </a>
-
-                  <script>
-                    document
-                      .getElementById("teledot-link")
-                      .addEventListener("click", function (event) {
-                        event.preventDefault(); // Prevenir la acción por defecto
-                        window.open("teledot.html", "_blank"); // Abrir la página en una nueva pestaña
-                      });
-                  </script>
-
-                  <div class="nav__dropdown-item dropdown1">
-                    <span class="dropdown-toggle dropdown-toggle1">Biblioteca Médica</span>
-                    <ul class="sub-menu sub-menu1">
-                      <li>
-                        <a href="#subsection1" class="nav__dropdown-item1">Recursos en Medicina</a>
-                      </li>
-
-                      <li>
-                        <a href="#subsection2" class="nav__dropdown-item1">Promoción de una buena prescripción</a>
-                      </li>
-
-                      <li>
-                        <a href="#subsection3" class="nav__dropdown-item1">Endocrinología</a>
-                      </li>
-
-                      <li>
-                        <a href="#subsection4" class="nav__dropdown-item1">Reumatología</a>
-                      </li>
-
-                      <li>
-                        <a href="#subsection5" class="nav__dropdown-item1">Urología</a>
-                      </li>
-
-                      <li>
-                        <a href="#subsection6" class="nav__dropdown-item1">Cardiología</a>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div class="nav__dropdown-item dropdown2">
-                    <span class="dropdown-toggle dropdown-toggle2">Leyes y Normas</span>
-                    <ul class="sub-menu sub-menu2">
-                      <li>
-                        <a href="#subsection7" class="nav__dropdown-item2">Leyes</a>
-                      </li>
-
-                      <li>
-                        <a href="#subsection8" class="nav__dropdown-item2">Normas MINSA</a>
-                      </li>
-
-                      <li>
-                        <a href="#subsection9" class="nav__dropdown-item2">Normas EsSalud</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              <a href="#settings" class="dropdown-item">
+                <i class='bx bx-cog'></i>
+                <span>Configuración</span>
+              </a>
+              <div class="dropdown-divider"></div>
+              <button id="logoutBtn" class="dropdown-item logout-btn">
+                <i class='bx bx-log-out'></i>
+                <span>Cerrar sesión</span>
+                <div class="logout-confirm-tooltip">¿Confirmar salida?</div>
+              </button>
             </div>
-
-            <!-- PERFIL DE MENUS QUE POR AHORA NO SE USARÁ
-              <a href="#" class="nav__link">
-                <i class="bx bx-analyse nav__icon"></i>
-                <span class="nav__name">Estadística</span>
-              </a>
-              <a href="#" class="nav__link">
-                <i class="bx bx-heart nav__icon"></i>
-                <span class="nav__name">Indicadores</span>
-              </a>
-
-              <a href="#" class="nav__link">
-                <i class="bx bx-briefcase nav__icon"></i>
-                <span class="nav__name">Normas legales</span>
-              </a>
-
-              <a href="#" class="nav__link">
-                <i class="bx bx-star nav__icon"></i>
-                <span class="nav__name">Mapa de procesos</span>
-              </a>
-              <a href="#" class="nav__link">
-                <i class="bx bx-sitemap nav__icon"></i>
-                <span class="nav__name">Organigrama</span>
-              </a>
-              <a href="#" class="nav__link">
-                <i class="bx bx-user nav__icon"></i>
-                <span class="nav__name">Directorio de personal</span>
-              </a>
-              <a href="#" class="nav__link">
-                <i class="bx bx-analyse nav__icon"></i>
-                <span class="nav__name">Reuniones</span>
-              </a>
-
- -->
           </div>
         </div>
       </div>
-      <a href="#" id="btnCerrar" class="nav__link nav__logout">
-        <i class="bx bx-log-out nav__icon"></i>
-        <span class="nav__name">Cerrar</span>
-      </a>
-    </nav>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="admin-sidebar" id="adminSidebar">
+      <nav class="sidebar-nav">
+        <ul>
+          <li class="active">
+            <a href="#dashboard">
+              <i class='bx bx-home'></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="#users">
+              <i class='bx bx-user'></i>
+              <span>Usuarios</span>
+            </a>
+          </li>
+          <li>
+            <a href="#reports">
+              <i class='bx bx-bar-chart-alt'></i>
+              <span>Reportes</span>
+            </a>
+          </li>
+          <li>
+            <a href="#settings">
+              <i class='bx bx-cog'></i>
+              <span>Configuración</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main" id="adminMain">
+      <div class="container">
+        <div class="dashboard-header">
+          <h2>Bienvenido al Panel de Control</h2>
+          <div class="dashboard-actions">
+            <div class="search-box">
+              <i class='bx bx-search'></i>
+              <input type="text" placeholder="Buscar...">
+            </div>
+            <button class="btn-refresh">
+              <i class='bx bx-refresh'></i>
+            </button>
+          </div>
+        </div>
+        
+        <div class="dashboard-content">
+          <!-- Contenido dinámico iría aquí -->
+        </div>
+      </div>
+    </main>
   </div>
 
-  <!--CONTENIDO-->
-  <!--SECTION 1-->
-  <main>
-    <div class="main-panel" id="main-content">
-      
-      <h1 class="main-panel__title">Matriz de accesos rápidos para TI</h1>
-      <div class="main-panel__content">
-     
-
-
-
-
-     
-
-        <div class="card"
-          onclick="window.open('https://us02web.zoom.us/j/81483580541?pwd=9JHZ44eQKPv11MuTATtuyw9jDf9uJ7.1', '_blank');">
-          <img src="./assets/img/Zoom.svg" alt="Speech Atención " class="card-img" style="width: 80px; height: auto" />
-          <span>Cuentas Zoom</span>
-          <span style="font-size: 12px">Para Teleconsultorios</span>
-        </div>
-
-        <div class="card" onclick="window.open('http://10.56.1.158/sgss/servlet/hmain', '_blank');">
-          <img src="./assets/img/Iconos_ESSI.svg" alt="Speech Atención " class="card-img"
-            style="width: 80px; height: auto" />
-          <span>ESSI</span>
-        </div>
-
-
-        <div class="card"
-          onclick="window.open('https://docs.google.com/spreadsheets/d/1xYQfmu70tIV5QhhDEPDs26nC8GSRW6H9sPsgXMS6pW8/edit?usp=sharing', '_blank');">
-          <img src="./assets/img/Iconos_Informacion de las IPRESS.svg" alt="Lineamientos Básicos" class="card-img"
-            style="width: 60px; height: auto" />
-          <span>Manuales TI</span>
-        </div>
-
-        <div class="card" onclick="window.open('http://10.0.89.139:8089/telemedicina/', '_blank');">
-          <img src="./assets/img/Iconos_Mesa de ayuda.svg" alt="Mesa de Ayuda" class="card-img"
-            style="width: 60px; height: auto" />
-          <span>Videos TI</span>
-        </div>
-
-      
-
-      
-
-
-
-        <div class="card" More actions
-          onclick="window.open('https://docs.google.com/spreadsheets/d/1FQPw2nPaRM74CXLOZ1nvFQR08qXQS8rwccPIRlHPCZ4/edit?gid=1416608776#gid=1416608776', '_blank');">
-          <img src="./assets/img/Iconos_listado de pacientes TC A-N.svg" alt="Speech Atención " class="card-img"
-            style="width: 60px; height: auto" />
-          <span><br />
-           Programaciones</span>
-        </div>
-
-
-        <div class="card"
-          onclick="window.open('https://docs.google.com/spreadsheets/d/1xB78sklAHAC1wi0-0F5v9xnIBVAUxfdjaHPzEV-anEE/edit?gid=2014624632#gid=2014624632', '_blank');">
-          <img src="./assets/img/Iconos_listado de pacientes TC O-Z.svg" alt="Speech Atención " class="card-img"
-            style="width: 60px; height: auto" />
-          <span><br />
-            Soporte</span>
-        </div>
-
-
-        <div class="card"
-        onclick="window.open('https://docs.google.com/spreadsheets/d/18nWZkeUQ8wv0BUcZynDvAzg-R8LOGPZ-ffb7vgg6DIg/edit?usp=sharing', '_blank');">
-        <img src="./assets/img/Iconos_listado de pacientes TC O-Z.svg" alt="Speech Atención " class="card-img"
-          style="width: 60px; height: auto" />
-        <span><br />
-          Control de Incidencias TI para trabajo remoto remoto</span>
-      </div>
-
-
-      </div>
-    </div>
-  </main>
-
-  <script src="./script.js"></script>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="./funciones.js"></script>
 </body>
-
 </html>
