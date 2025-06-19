@@ -1350,6 +1350,72 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
+
+/* Estilos apra el Card Zoom */
+
+.zoom-card-title {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.zoom-card-subtitle {
+  font-size: 12px;
+  color: #555;
+}
+
+.zoom-modal-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.zoom-grid-container {
+  padding: 10px 0;
+}
+
+.zoom-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.zoom-account-box {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 12px 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.zoom-account-title {
+  margin-bottom: 6px;
+  color: #0056b3;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.zoom-account-info p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.zoom-account-info button {
+  margin-left: 10px;
+  padding: 3px 8px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.zoom-account-info button:hover {
+  background-color: #0056b3;
+}
+
+
 @keyframes scaleIn {
   to {
     transform: scale(1);

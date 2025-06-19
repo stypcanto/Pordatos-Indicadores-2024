@@ -105,7 +105,7 @@
             <div class="user-dropdown">
               <a href="#profile" class="dropdown-item">
                 <i class='bx bx-user'></i>
-                <span>Mi perfil</span>
+                <span>Ir a Portal Web</span>
               </a>
               <a href="#settings" class="dropdown-item">
                 <i class='bx bx-cog'></i>
@@ -199,31 +199,133 @@
         <!-- Contenedor único para todas las cards -->
         <div class="dashboard-content" id="cards-container">
           <!-- Aplicativos -->
-          <div class="card" data-category="aplicativo"
-            onclick="window.open('https://docs.google.com/spreadsheets/d/12snfDNG_zV4ThfDI2NDcW_paIi86cLJb1OQ1AJYuFpY/edit?gid=1679895487', '_blank')">
-            <img src="./assets/img/Iconos_Informacion para personal asistencial.svg" alt="Ubicaciones PC"
-              class="card-img" style="width: 80px; height: auto">
-            <span>Ubicaciones PC</span>
-            <span style="font-weight: 700; font-size: 12px">Para Teleurgencias y CENACRON</span>
+
+
+
+
+          <!-- Tarjeta de acceso a cuentas Zoom -->
+          <div id="cardZoom" class="card" data-category="aplicativo">
+            <img src="./assets/img/Zoom.svg" alt="Sala Zoom" class="card-img"
+              style="width: 70px; margin: 8px;  height: auto">
+            <span>Cuentas Zoom</span><br>
+
           </div>
 
-          <div class="card" data-category="aplicativo"
-            onclick="window.open('https://us02web.zoom.us/j/81483580541?pwd=9JHZ44eQKPv11MuTATtuyw9jDf9uJ7.1', '_blank')">
-            <img src="./assets/img/Zoom.svg" alt="Sala Zoom" class="card-img" style="width: 80px; height: auto">
-            <span>Sala Zoom</span>
-            <span style="font-size: 12px">Para Teleconsultorios</span>
+          <!-- Modal de cuentas Zoom -->
+          <div id="modalZoom" class="util-modal">
+            <div class="util-modal-content">
+              <button id="cerrarZoomModal" class="util-close-btn">×</button>
+              <h3 class="zoom-modal-title">Cuentas Zoom institucionales</h3>
+
+              <div class="zoom-grid-container">
+                <div class="zoom-grid">
+
+                  <!-- Cuenta 1 -->
+                  <div class="zoom-account-box">
+                    <h4 class="zoom-account-title">Telecapacitaciones y TeleIEC</h4>
+                    <div class="zoom-account-info">
+                      <p>
+                        <strong>Usuario:</strong>
+                        <span id="user1">capacitacionescenate@gmail.com</span>
+                        <button onclick="copiarTexto('user1')">Copiar</button>
+                      </p>
+                      <p>
+                        <strong>Contraseña:</strong>
+                        <span id="pass1">C3n4t3#XXIV</span>
+                        <button onclick="copiarTexto('pass1')">Copiar</button>
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Cuenta 2 -->
+                  <div class="zoom-account-box">
+                    <h4 class="zoom-account-title">Telecolpo y Terapia Física</h4>
+                    <div class="zoom-account-info">
+                      <p>
+                        <strong>Usuario:</strong>
+                        <span id="user2">actividades.cenate@gmail.com</span>
+                        <button onclick="copiarTexto('user2')">Copiar</button>
+                      </p>
+                      <p>
+                        <strong>Contraseña:</strong>
+                        <span id="pass2">C3n4t3#XXIV</span>
+                        <button onclick="copiarTexto('pass2')">Copiar</button>
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Cuenta 3 -->
+                  <div class="zoom-account-box">
+                    <h4 class="zoom-account-title">Teleconsulta / Teleorientaciones</h4>
+                    <div class="zoom-account-info">
+                      <p>
+                        <strong>Usuario:</strong>
+                        <span id="user3">eventos.cenate@gmail.com</span>
+                        <button onclick="copiarTexto('user3')">Copiar</button>
+                      </p>
+                      <p>
+                        <strong>Contraseña:</strong>
+                        <span id="pass3">C3n4t3#XXIV</span>
+                        <button onclick="copiarTexto('pass3')">Copiar</button>
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Cuenta 4 -->
+                  <div class="zoom-account-box">
+                    <h4 class="zoom-account-title">Teleurgencias</h4>
+                    <div class="zoom-account-info">
+                      <p>
+                        <strong>Usuario:</strong>
+                        <span id="user4">teleconsultas.cenate@gmail.com</span>
+                        <button onclick="copiarTexto('user4')">Copiar</button>
+                      </p>
+                      <p>
+                        <strong>Contraseña:</strong>
+                        <span id="pass4">C3n4t3#XXIV</span>
+                        <button onclick="copiarTexto('pass4')">Copiar</button>
+                      </p>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+
+              <p class="zoom-modal-footer" style="text-align: center; font-size: 13px;">
+                Estas cuentas están destinadas exclusivamente para soporte en sesiones virtuales institucionales.
+              </p>
+            </div>
           </div>
+
 
           <div class="card" data-category="aplicativo"
             onclick="window.open('http://10.56.1.158/sgss/servlet/hmain', '_blank')">
-            <img src="./assets/img/Iconos_ESSI.svg" alt="ESSI" class="card-img" style="width: 80px; height: auto">
+            <img src="./assets/img/Iconos_ESSI.svg" alt="ESSI" class="card-img"
+              style="width: 70px; margin: 8px;  height: auto">
             <span>ESSI</span>
           </div>
+
+
+             <!-- PACS -->
+          <div class="card" data-category="aplicativo"
+            onclick="window.open('http://10.0.89.139:8089/telemedicina/CENATE/pacs', '_blank')">
+            <img src="./assets/img/Iconos_ESSI.svg" alt="PACS" class="card-img" style="width: 80px; height: auto">
+            <span>PACS</span>
+          </div>
+
+
+  <!-- Sistema de Distribucion-->
+            <div class="card"  data-category="aplicativo"  onclick="window.open('http://172.20.0.118:8080/distribucion/', '_blank');">
+          <img src="./assets/img/Iconos_ESSI.svg" alt="Speech Atención " class="card-img"
+            style="width: 80px; height: auto" />
+          <span>Sistema de Distribución</span>
+        </div>
 
           <div class="card" data-category="aplicativo"
             onclick="window.open('https://docs.google.com/spreadsheets/d/1xYQfmu70tIV5QhhDEPDs26nC8GSRW6H9sPsgXMS6pW8/edit?usp=sharing', '_blank');">
             <img src="./assets/img/Iconos_Informacion de las IPRESS.svg" alt="Lineamientos Básicos" class="card-img"
-              style="width: 60px; height: auto">
+              style="width: 70px; margin: 8px;  height: auto">
             <span>Información de las IPRESS</span>
           </div>
 
@@ -248,6 +350,16 @@
             <span>Sistema de </span>
             <span style="font-size: 12px">Referencia y Contrareferencias</span>
           </div>
+
+
+
+          <!-- Reprogramaciones -->
+          <div class="card" data-category="aplicativo"
+            onclick="window.open('https://docs.google.com/spreadsheets/d/1jYAy5O6fD4DT7UG36O7BL_cfgp8A_ehZJF8J1n70UJo/edit?gid=620257077#gid=620257077', '_blank')">
+            <img src="./assets/img/Iconos_ESSI.svg" alt="PACS" class="card-img" style="width: 80px; height: auto">
+            <span>Drive de Reprogramaciones</span>
+          </div>
+
 
           <div class="card" data-category="aplicativo"
             onclick="window.open('https://docs.google.com/spreadsheets/d/1FQPw2nPaRM74CXLOZ1nvFQR08qXQS8rwccPIRlHPCZ4/edit?gid=1416608776#gid=1416608776', '_blank');">
@@ -291,15 +403,13 @@
             <span>Imágenes - Teleconsulta</span>
           </div>
 
-          <div class="card" data-category="aplicativo"
-            onclick="window.open('https://docs.google.com/spreadsheets/d/1G62LZNvjvhtODJfzvve4kP6ulwiQAORI/edit?usp=sharing&ouid=100131508450278586704&rtpof=true&sd=true', '_blank');">
-            <img src="./assets/img/Iconos_Protocolo de contacto y atencion.svg" alt="Protocolo" class="card-img"
-              style="width: 60px; height: auto">
-            <span>Protocolo de contacto y atención</span>
-          </div>
+       
 
-          <!-- Tarjeta Utilitarios -->
-          <div id="cardRemoto" class="card" data-category="aplicativo">
+       
+       
+
+   <!-- Utilitarios para remoto -->
+          <div id="cardUtilitarios" class="card" data-category="aplicativo">
             <img src="./assets/img/RECURSOS REMOTO.png" alt="Utilitarios" class="util-card-icon"
               style="width: 60px; height: auto">
             <span>Utilitarios de trabajo remoto</span>
@@ -307,9 +417,9 @@
           </div>
 
           <!-- Modal de Utilitarios -->
-          <div id="modalRemoto" class="util-modal">
+          <div id="modalUtilitarios" class="util-modal">
             <div class="util-modal-content">
-              <button id="cerrarRemotoModal" class="util-close-btn">×</button>
+              <button id="cerrarUtilitariosModal" class="util-close-btn">×</button>
               <h3 class="util-modal-title">Aplicaciones necesarias para trabajo remoto</h3>
 
               <div class="util-grid-container">
@@ -366,109 +476,106 @@
           </div>
 
 
-<!-- Submodal para Firma Digital -->
-<div id="submodalFirma" class="util-submodal">
-  <div class="util-submodal-content">
-    <button id="cerrarSubmodal" class="util-close-btn">×</button>
-    <h3 class="util-modal-title">Seleccione tipo de firma digital</h3>
-    
-    <div class="util-subgrid">
-      
-      
-      <!-- Opción 1 - DNIe 2.0 -->
-      <div class="util-subgrid-item">
-        <h4 class="util-item-title">DNI Electrónico 2.0</h4>
-        <div class="util-item-content">
-          <a href="https://drive.google.com/drive/folders/1NqBGzImzhyZpU72Cg-8wB9HmrcleqIXP?usp=drive_link" target="_blank" class="util-img-link">
-            <img src="./assets/img/dni 2.0.jpeg" alt="DNIe 2.0" class="util-item-img">
-          </a>
-        </div>
-      </div>
-      
-      <!-- Opción 2 - DNIe 3.0 -->
-      <div class="util-subgrid-item">
-        <h4 class="util-item-title">DNI Electrónico 3.0</h4>
-        <div class="util-item-content">
-          <a href="https://drive.google.com/drive/folders/1u8bIH2vu1UriPEVwRvInxPcDoNe8WuqX?usp=drive_link" target="_blank" class="util-img-link">
-            <img src="./assets/img/dni 3.0" alt="DNIe 3.0" class="util-item-img">
-          </a>
-        </div>
-      </div>
+          <!-- Submodal para Firma Digital -->
+          <div id="submodalFirma" class="util-submodal">
+            <div class="util-submodal-content">
+              <button id="cerrarSubmodal" class="util-close-btn">×</button>
+              <h3 class="util-modal-title">Seleccione tipo de firma digital</h3>
 
-        <!-- Opción 3 - Bit 4id -->
-        <div class="util-subgrid-item">
-          <h4 class="util-item-title">Bit 4id</h4>
-          <div class="util-item-content">
-            <a href="https://drive.google.com/drive/folders/13D9FoG1FSxkD_mSt0PXwMG-9id-5hgXW?usp=drive_link" target="_blank" class="util-img-link">
-              <img src="./assets/img/Bit 4ID.png" alt="DNIe 3.0" class="util-item-img">
-            </a>
-          </div>
-        </div>
+              <div class="util-subgrid">
 
 
-            <!-- Opción 4 - mToken CryptoID  -->
-            <div class="util-subgrid-item">
-              <h4 class="util-item-title">mToken CryptoID</h4>
-              <div class="util-item-content">
-                <a href="https://drive.google.com/drive/folders/1kOXAo6_nXPhhWS9WS8wk1QGSBhw0GTN4?usp=drive_link" target="_blank" class="util-img-link">
-                  <img src="./assets/img/mtoken Crypto.png" alt="DNIe 3.0" class="util-item-img">
-                </a>
-              </div>
-            </div>
-
-              <!-- Opción 5 - Tu Firma ESSALUD -->
-              <div class="util-subgrid-item">
-                <h4 class="util-item-title">Tu Firma ESSALUD</h4>
-                <div class="util-item-content">
-                  <a href="https://drive.google.com/drive/folders/1IHX0BvxuJNN0TyGM7jyQZTou9hUCGX9p?usp=drive_link" target="_blank" class="util-img-link">
-                    <img src="./assets/img/tu-firma-essalud.png" alt="DNIe 3.0" class="util-item-img">
-                  </a>
+                <!-- Opción 1 - DNIe 2.0 -->
+                <div class="util-subgrid-item">
+                  <h4 class="util-item-title">DNI Electrónico 2.0</h4>
+                  <div class="util-item-content">
+                    <a href="https://drive.google.com/drive/folders/1NqBGzImzhyZpU72Cg-8wB9HmrcleqIXP?usp=drive_link"
+                      target="_blank" class="util-img-link">
+                      <img src="./assets/img/dni 2.0.jpeg" alt="DNIe 2.0" class="util-item-img">
+                    </a>
+                  </div>
                 </div>
-              </div>
 
-               <!-- Opción 6 - ReFirma PDF -->
-               <div class="util-subgrid-item">
-                <h4 class="util-item-title">ReFirma PDF</h4>
-                <div class="util-item-content">
-                  <a href="https://dsp.reniec.gob.pe/refirma_suite/pdf/web/main.jsf" target="_blank" class="util-img-link">
-                    <img src="./assets/img/refirmapdf.png" alt="DNIe 3.0" class="util-item-img">
-                  </a>
+                <!-- Opción 2 - DNIe 3.0 -->
+                <div class="util-subgrid-item">
+                  <h4 class="util-item-title">DNI Electrónico 3.0</h4>
+                  <div class="util-item-content">
+                    <a href="https://drive.google.com/drive/folders/1u8bIH2vu1UriPEVwRvInxPcDoNe8WuqX?usp=drive_link"
+                      target="_blank" class="util-img-link">
+                      <img src="./assets/img/dni 3.0" alt="DNIe 3.0" class="util-item-img">
+                    </a>
+                  </div>
                 </div>
-              </div>
+
+                <!-- Opción 3 - Bit 4id -->
+                <div class="util-subgrid-item">
+                  <h4 class="util-item-title">Bit 4id</h4>
+                  <div class="util-item-content">
+                    <a href="https://drive.google.com/drive/folders/13D9FoG1FSxkD_mSt0PXwMG-9id-5hgXW?usp=drive_link"
+                      target="_blank" class="util-img-link">
+                      <img src="./assets/img/Bit 4ID.png" alt="DNIe 3.0" class="util-item-img">
+                    </a>
+                  </div>
+                </div>
+
+
+                <!-- Opción 4 - mToken CryptoID  -->
+                <div class="util-subgrid-item">
+                  <h4 class="util-item-title">mToken CryptoID</h4>
+                  <div class="util-item-content">
+                    <a href="https://drive.google.com/drive/folders/1kOXAo6_nXPhhWS9WS8wk1QGSBhw0GTN4?usp=drive_link"
+                      target="_blank" class="util-img-link">
+                      <img src="./assets/img/mtoken Crypto.png" alt="DNIe 3.0" class="util-item-img">
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Opción 5 - Tu Firma ESSALUD -->
+                <div class="util-subgrid-item">
+                  <h4 class="util-item-title">Tu Firma ESSALUD</h4>
+                  <div class="util-item-content">
+                    <a href="https://drive.google.com/drive/folders/1IHX0BvxuJNN0TyGM7jyQZTou9hUCGX9p?usp=drive_link"
+                      target="_blank" class="util-img-link">
+                      <img src="./assets/img/tu-firma-essalud.png" alt="DNIe 3.0" class="util-item-img">
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Opción 6 - ReFirma PDF -->
+                <div class="util-subgrid-item">
+                  <h4 class="util-item-title">ReFirma PDF</h4>
+                  <div class="util-item-content">
+                    <a href="https://dsp.reniec.gob.pe/refirma_suite/pdf/web/main.jsf" target="_blank"
+                      class="util-img-link">
+                      <img src="./assets/img/refirmapdf.png" alt="DNIe 3.0" class="util-item-img">
+                    </a>
+                  </div>
+                </div>
 
                 <!-- Opción 7 - ReFirma PDF PCX -->
                 <div class="util-subgrid-item">
                   <h4 class="util-item-title">ReFirma PCX</h4>
                   <div class="util-item-content">
-                    <a href="https://dsp.reniec.gob.pe/refirma_suite/pcx/web/main.jsf" target="_blank" class="util-img-link">
+                    <a href="https://dsp.reniec.gob.pe/refirma_suite/pcx/web/main.jsf" target="_blank"
+                      class="util-img-link">
                       <img src="./assets/img/refirmapcx.png" alt="DNIe 3.0" class="util-item-img">
                     </a>
                   </div>
                 </div>
 
 
-               
-    </div>
-    <p class="util-modal-footer">
-      Para que funcione la firma digital el sistema operativo debe tener windows 10 de 64 bits. En caso de no tenerlo, puede regularizar la firma digital en el CENATE.
 
-    </p>
-  </div>
-</div>
+              </div>
+              <p class="util-modal-footer">
+                Para que funcione la firma digital el sistema operativo debe tener windows 10 de 64 bits. En caso de no
+                tenerlo, puede regularizar la firma digital en el CENATE.
 
-          <!-- PACS -->
-          <div class="card" data-category="aplicativo"
-            onclick="window.open('http://10.0.89.139:8089/telemedicina/CENATE/pacs', '_blank')">
-            <img src="./assets/img/Iconos_ESSI.svg" alt="PACS" class="card-img" style="width: 80px; height: auto">
-            <span>PACS</span>
+              </p>
+            </div>
           </div>
 
-              <!-- Reprogramaciones -->
-          <div class="card" data-category="aplicativo"
-            onclick="window.open('https://docs.google.com/spreadsheets/d/1jYAy5O6fD4DT7UG36O7BL_cfgp8A_ehZJF8J1n70UJo/edit?gid=620257077#gid=620257077', '_blank')">
-            <img src="./assets/img/Iconos_ESSI.svg" alt="PACS" class="card-img" style="width: 80px; height: auto">
-            <span>Drive de Reprogramaciones</span>
-          </div>
+
+
 
           <!-- Bienes Tecnológicos -->
           <div class="card" data-category="bienes"
@@ -506,7 +613,11 @@
               style="width: 80px; height: auto">
             <span>Contraseñas</span>
           </div>
-        </div>
+
+
+
+        
+        
       </div>
     </main>
 
