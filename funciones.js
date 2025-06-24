@@ -151,6 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Simulación de login con usuarios predefinidos
  const CREDENCIALES_VALIDAS = {
     'Styp': { password: 'admin12345', categories: ['aplicativo', 'bienes', 'manuales', 'instaladores', 'videos', 'contraseñas'] },
+    'Katherine': { password: 'admin123', categories: ['aplicativo', 'bienes', 'manuales', 'instaladores', 'videos', 'contraseñas'] },
     'Geraldo': { password: 'Cenate@2025', categories: ['aplicativo', 'bienes', 'manuales', 'instaladores', 'videos', 'contraseñas'] },
     'Jesus': { password: 'Cenate2025!', categories: ['aplicativo', 'bienes', 'manuales', 'instaladores', 'videos', 'contraseñas'] },
     'Luis': { password: 'Cenate2025!', categories: ['aplicativo', 'bienes', 'manuales', 'instaladores', 'videos', 'contraseñas'] },
@@ -164,6 +165,7 @@ document.addEventListener('DOMContentLoaded', function () {
     'Daniela': { password: 'Cenate@2024', categories: ['aplicativo',  'manuales', 'instaladores'] },
     'Gabriela': { password: 'Cenate@2024', categories: ['aplicativo',  'manuales', 'instaladores'] },
     'Franshesca': { password: 'Cenate@2024', categories: ['aplicativo',  'manuales', 'instaladores'] },
+
  
   };
 
